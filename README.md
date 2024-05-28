@@ -9,3 +9,7 @@ https://github.com/akopetsch/swe1r-assets-unity/assets/8048046/0094fd64-4f0f-460
 Imported OBJ model is by [Leadphalanx](https://forums.tigsource.com/index.php?topic=68973.0).
 
 ![Screenshot](screenshot.png)
+
+## Community
+
+Join the ``# modding`` channel of the discord server ['Star Wars Episode I: Racer'](https://discord.gg/xfvYpCma) for general discussions about hacking and modding of the game.
