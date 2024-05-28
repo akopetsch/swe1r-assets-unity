@@ -1,0 +1,660 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SWE1R.Assets.Blocks</name>
+    </assembly>
+    <members>
+        <member name="M:SWE1R.Assets.Blocks.ByteArrayExtensions.IndexOf(System.Byte[],System.Int32,System.Byte[])">
+            <summary>Looks for the next occurrence of a sequence in a byte array</summary>
+            <param name="bytes">Array that will be scanned</param>
+            <param name="start">Index in the array at which scanning will begin</param>
+            <param name="sequence">Sequence the array will be scanned for</param>
+            <returns>
+              The index of the next occurrence of the sequence of -1 if not found
+            </returns>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L553">SWR_Anim_Header</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.Bitmask">
+            <summary>
+            Always one of the values in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.OriginalBitmaskValues">OriginalBitmaskValues</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.FramesCount">
+            <summary>
+            Always a value from 1 to 634.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.Int114">
+            <summary>
+            Always 0.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.Int118">
+            <summary>
+            Always 0.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.Int_128">
+            <summary>
+            Always one of the values in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.OriginalInt_128Values">OriginalInt_128Values</see>
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.OriginalBitmaskValues">
+            <summary>
+            The original values of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.Bitmask">Bitmask</see>.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.OriginalInt_128Values">
+            <summary>
+            The original values of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.Int_128">Int_128</see>.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Animations.MaterialReference.Material">
+            <summary>
+            Never null.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Materials.Material">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L230">SWR_MODEL_Section4</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Texture">
+            <summary>
+            Sometimes null.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Properties">
+            <summary>
+            Always has a value.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.OriginalBitmaskValues">
+            <summary>
+            The original values of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Bitmask">Bitmask</see>.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L368">SWR_MODEL_Section6</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.AlphaBpp">
+            <summary>
+            Always one of these values: 0, 1, 8, 9
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_16">
+            <summary>
+            Always 0, except in model 3001. Seems like float16.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_20">
+            <summary>
+            Always 0, except in model 3001. Seems like float16.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_26">
+            <summary>
+            Always 0, except in model 3001. Seems like float16.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_28">
+            <summary>
+            Always 0, except in model 3001. Seems like float16.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_2a">
+            <summary>
+            Always 0, except in model 3001. Seems like float16.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_2c">
+            <summary>
+            Always 0, except in model 3001. Seems like float16.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_32">
+            <summary>
+            Always 0, except in model 3001. Seems like float16.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L241">SWR_MODEL_Section5</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Mask_Unk">
+            <summary>
+            Always 0, 1, 0x41 (0100 0001) or 0x49 (0100 1001). 
+            Strong positive correllation with <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Word_0e">Word_0e</see>.
+            Strong positive correlation with the number of elements in <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Children">Children</see> 
+            that are not null.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Width4">
+            <summary>
+            Always four times <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Width">Width</see>.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Height4">
+            <summary>
+            Always four times <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Height">Height</see>.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Always0_08">
+            <summary>
+            Always zero.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Always0_0a">
+            <summary>
+            Always zero.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Word_0e">
+            <summary>
+            Most of the time 0 (6383 times). Sometimes 4 (28 times). 
+            Strong positive correlation with <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Mask_Unk">Mask_Unk</see>. 
+            Very strong positive correlation with the number of elements in <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Children">Children</see> that are not null.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Width_Unk">
+            <summary>
+            Always 128, 256 or 512 times <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Width">Width</see>.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Height_Unk">
+            <summary>
+            Always 128, 256 or 512 times <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Height">Height</see>.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Flags">
+            <summary>
+            Original values are in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.OriginalFlagsValues">OriginalFlagsValues</see>.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Mask">
+            <summary>
+            Strong negative correlation with 
+            <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Mask_Unk">Mask_Unk</see> and 
+            <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Word_0e">Word_0e</see>.
+            Significant negative correlation with the number of elements in <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Children">Children</see> that are not null.
+            Original values are in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.OriginalMaskValues">OriginalMaskValues</see>.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.OriginalFlagsValues">
+            <summary>
+            The original values of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Flags">Flags</see>.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.OriginalMaskValues">
+            <summary>
+            The original values of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Mask">Mask</see>.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTextureChild">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L266">SWR_MODEL_Section5_b</see>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.Geometry.Triangle">
+            <summary>
+            Represents a triangle defined by the indices of its vertices which are arranged counter-clockwise.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mapping">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L389">SWR_MODEL_Section7</see>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L488">SWR_MODEL_Section8</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Vector_00">
+            <summary>
+            Seems to be a position vector.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Vector_0c">
+            <summary>
+            X: -1.0 - 1.0,  two decimal places
+            Y: -1.0 - 1.0,  two decimal places
+            Z: -0.3 - 0.11, two decimal places
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Byte_1e">
+            <summary>
+            53 different values, 59 times 163
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Byte_1f">
+            <summary>
+            25 different values, 59 times 31, 59 times 215
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.FlaggedNode_20">
+            <summary>
+            Nullable.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Word_26">
+            <summary>
+            Padding. (always 0)
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Next">
+            <summary>
+            Null if this is the last one.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L203">SWR_MODEL_Section3</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Material">
+            <summary>
+            Must have a value.
+            <para>Offset: 0x00</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Mapping">
+            <summary>
+            Can be <see langword="null"/>.
+            <para>Offset: 0x04</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Bounds0">
+            <summary>
+            Both <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Bounds0">Bounds0</see> and <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Bounds1">Bounds1</see> can be <c>(0, 0, 0)</c>.
+            <para>Offset: 0x08</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Bounds1">
+            <summary>
+            Both <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Bounds0">Bounds0</see> and <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Bounds1">Bounds1</see> can be <c>(0, 0, 0)</c>.
+            <para>Offset: 0x14</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.FacesCount">
+            <summary>
+            Gets or sets the number of faces. Must be greater than zero.
+            <para>See also: <seealso cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.FacesVertexCounts">FacesVertexCounts</seealso></para>
+            <para>Offset: 0x20</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.PrimitiveType">
+            <summary>
+            <para>Offset: 0x22</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.FacesVertexCounts">
+            <summary>
+            Gets or sets the vertex counts of the faces. 
+            If not <see langword="null"/>, the list's length is <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.FacesCount">FacesCount</see>.
+            Has a value if <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.PrimitiveType">PrimitiveType</see> is <see cref="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.PrimitiveType.Polygons"/>, otherwise is <see langword="null"/>.
+            <para>Offset: 0x24</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.MeshGroupOrShorts">
+            <summary>
+            Gets or sets a referenced <see cref="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroup3064"/> or <see langword="short"/><c>[]</c>. 
+            <list type="bullet">
+              <item><description>If <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Unk_Count">Unk_Count</see> is greater than 0 (only in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.ModelType.Scen">Scen</see> or <see cref="F:SWE1R.Assets.Blocks.ModelBlock.ModelType.Pupp">Pupp</see> models), has a <see cref="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroup3064"/> value.</description></item>
+              <item><description>If it is 0, has a <see langword="short"/><c>[]</c> value (only once in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.ModelType.Trak">Trak</see> model 1) or is <see langword="null"/>.</description></item>
+            </list>
+            <para>Offset: 0x28</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.CollisionVertices">
+            <summary>
+            Gets or sets the list of collision vertices. 
+            The list's length is <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.CollisionVerticesCount">CollisionVerticesCount</see>. Is <see langword="null"/> if that value is 0.
+            <para>Offset: 0x2C</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleIndicesChunks">
+            <summary>
+            Gets or sets the list of index chunks for the visible vertices. 
+            Has a value if <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVerticesCount">VisibleVerticesCount</see> is greater than 0, otherwise is <see langword="null"/>.
+            <para>Offset: 0x30</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVertices">
+            <summary>
+            Gets or sets the list of visible vertices. 
+            The list's length is <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVerticesCount">VisibleVerticesCount</see>. Is <see langword="null"/> if that value is 0.
+            <para>Offset: 0x34</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.CollisionVerticesCount">
+            <summary>
+            Gets or sets the count of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.CollisionVertices">CollisionVertices</see>. 
+            If 0, <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVerticesCount">VisibleVerticesCount</see> is greater than 0.
+            <para>Offset: 0x38</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVerticesCount">
+            <summary>
+            Gets or sets the count of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVertices">VisibleVertices</see>. 
+            If 0, <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.CollisionVerticesCount">CollisionVerticesCount</see> is greater than 0.
+            <para>Offset: 0x3A</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Unk_Count">
+            <summary>
+            Unknown count. 
+            <para>
+              If greater than 0, the following applies:
+              <list type="bullet">
+                <item><description><see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.PrimitiveType">PrimitiveType</see> == <see cref="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.PrimitiveType.Triangles"/></description></item>
+                <item><description><see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVerticesCount">VisibleVerticesCount</see> > 0</description></item>
+                <item><description><see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.CollisionVerticesCount">CollisionVerticesCount</see> >= 0</description></item>
+              </list>
+            </para>
+            <para>Offset: 0x3E</para>
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.ZOn">
+            <summary>
+            zero-gravity on (Oovo IV)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.ZOff">
+            <summary>
+            zero-gravity off (Oovo IV)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Fast">
+            <summary>
+            ? (several)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Slow">
+            <summary>
+            slow (several)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Swst">
+            <summary>
+            ? (Baroo Coast)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Slip">
+            <summary>
+            ? (Ando Prime)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Dust">
+            <summary>
+            ? (several)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Snow">
+            <summary>
+            ? (Ando Prime)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Wet">
+            <summary>
+            ? (Aquilaris, Baroonda, Malastare)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Ruff">
+            <summary>
+            ? (several)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Swmp">
+            <summary>
+            ? (Ando Prime, Baroonda, Tatooine)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.NSnw">
+            <summary>
+            ? (Baroonda, Ando Prime)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Mirr">
+            <summary>
+            mirror (Ando Prime)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Lava">
+            <summary>
+            Lava (Baroonda)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Fall">
+            <summary>
+            ? (several)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Soft">
+            <summary>
+            ? (Ando Prime Centrum, Baroonda)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.NRSp">
+            <summary>
+            ? (several)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Flat">
+            <summary>
+            ? (several)
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Side">
+            <summary>
+            ? (Tatooine, Ord Ibanna)
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.Vertex">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L530">SWR_MODEL_Section52</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Vertex.U">
+            <summary>
+            Offset: 0x08
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Vertex.V">
+            <summary>
+            Offset: 0x0A
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Vertex.Byte_F">
+            <summary>
+            In the original asset files, if the vertex has a normal and not a color, the value is always 255. 
+            But that is just an indicator. A value somewhere else in the binary structures determines whether 
+            the game interprets it as a normal or a color, which means that if you change this value to 255 
+            that does not automatically make the vertex to have a normal instead of a color in the game. 
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.VertexIndices.IndicesChunk">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L515">SWR_MODEL_Section48</see>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L85">SWR_AltN_Header</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode.Number">
+            <summary>
+            Always is 0, 3, 11 19, 27, 35 or 43 and thus seems to be a bit field.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5064">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L85">SWR_AltN_Header</see>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5065">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L104">SWR_AltN_0x5065</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5065.Int">
+            <summary>
+            Always 0 or -1.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5066">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L111">SWR_AltN_0x5066</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5066.Ints">
+            <summary>
+            Always <c>{0, 0x80000000, 0}</c>.
+            <para>
+            Not sure if these are float32 values composing a vector, because 0x80000000 would be an unusual value (-0).
+            </para>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroup3064">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L188">SWR_AltN_0x3064</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.UnknownD066.Word1">
+            <summary>
+            Always 1 if <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.UnknownD066.Word2">Word2</see> is 0, otherwise 0.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.UnknownD066.Word2">
+            <summary>
+            Always 1 if <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.UnknownD066.Word1">Word1</see> is 0, otherwise 0.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.UnknownD066.Vector">
+            <summary>
+            Always (0.0, 0.0, 1.0).
+            <para>
+            X and Y are always 0x00000000 (0.0 as float32) and Z is always 0x3F800000 (1.0 as float32), thus these values are assumed to be float32 values composing a vector.
+            </para>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.SpriteBlock.Sprite">
+            <summary>
+            <see href="https://github.com/OpenSWE1R/swe1r-re/blob/master/swep1rcr.exe/Sprites.md">SpriteTexture</see>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SpriteBlock.Sprite.Width">
+            <summary>
+            Always has a value from 1 to 640.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SpriteBlock.Sprite.Height">
+            <summary>
+            Always has a value from 1 to 256.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SpriteBlock.Sprite.Format">
+            <summary>
+            Always 0, 2 or 4.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SpriteBlock.Sprite.Word_6">
+            <summary>
+            Always 0.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SpriteBlock.Sprite.Palette">
+            <summary>
+            Can be null.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SpriteBlock.Sprite.TilesCount">
+            <summary>
+            Always a value from 0 to 80.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SpriteBlock.Sprite.Word_E">
+            <summary>
+            Always 32.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SpriteBlock.Sprite.Tiles">
+            <summary>
+            Never null.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SpriteBlock.SpriteTile.Width">
+            <summary>
+            Always a value from 2 to 64.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SpriteBlock.SpriteTile.Height">
+            <summary>
+            Always a value from 1 to 32.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SpriteBlock.SpriteTile.PixelsBytes">
+            <summary>
+            Never null. Always has a length from 16 to 4096.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.Textures.ColorFormat.RGBA32">
+            <summary>
+            32 bit defining all RGBA channels with 8 bit per R, G, B and A channel.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.Textures.ColorFormat.RGBA5551">
+            <summary>
+            16 bit defining all RGBA channels with 5 bit per R, G and B channel and 1 bit for A channel.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.Textures.ColorFormat.FourBitGrayscale">
+            <summary>
+            4 bit defining all RGB channels.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.Textures.ColorFormat.FourBitGrayscaleAndAlpha">
+            <summary>
+            4 bit defining all RGBA channels.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.Textures.TextureFormat">
+            <summary>
+            <see href="// https://github.com/Olganix/Sw_Racer/issues/9">Olganix/Sw_Racer - 'Known texture formats #9'</see>
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.Textures.TextureFormat.RGBA32">
+            <summary>
+            32 bit defining all RGBA channels with 8 bit per channel.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.Textures.TextureFormat.FourBitGrayscaleAndAlpha">
+            <summary>
+            4 bit defining all RGBA channels equally.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.Textures.TextureFormat.EightBitGrayscale">
+            <summary>
+            8 bit defining all RGB channels equally.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.Textures.TextureFormat.RGBA5551_I4">
+            <summary>
+            4 bits indexing a
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.Textures.TextureFormat.RGBA5551_I8">
+            <summary>
+            8 bits indexing a
+            </summary>
+        </member>
+    </members>
+</doc>
