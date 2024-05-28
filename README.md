@@ -1,4 +1,4 @@
-# swe1r-assets-untiy
+# swe1r-assets-unity
 
 A Unity package that allows you to import, modify and re-export assets of the game Star Wars Episode I: Racer.
 
