@@ -4,4 +4,4 @@ A Unity package (WIP, currently just a sample project) that allows you to import
 
 Based on [swe1r-assets](https://github.com/akopetsch/swe1r-assets), it allows for bit-perfect re-exporting, meaning that if you import a block item (e.g., a model), make no changes in the Unity Editor, and export it again, the output binary data will be identical to the input data. Changing certain values will only alter the respective bytes in the output.
 
-![Screenshot of SWE1R.Assets.Unity](screenshot.png)
+![Screenshot](screenshot.png)
