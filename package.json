@@ -1,0 +1,16 @@
+{
+  "name": "com.github.akopetsch.swe1r-assets-unity",
+  "version": "0.0.1-alpha.0",
+  "displayName": "swe1r-assets-unity",
+  "description": "Allows you to import, modify and re-export assets of the game Star Wars Episode I: Racer.",
+  "unity": "2022.3",
+  "unityRelease": "30f1",
+  "keywords": [
+    "assets",
+    "import",
+    "export"
+  ],
+  "author": {
+    "name": "Alexander Kopetsch"
+  }
+}
