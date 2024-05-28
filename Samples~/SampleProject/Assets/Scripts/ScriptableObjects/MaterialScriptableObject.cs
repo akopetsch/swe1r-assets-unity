@@ -18,7 +18,7 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
 
         public override void Import(Swe1rMaterial source, ModelImporter importer)
         {
-            integer = source.Int;
+            integer = source.Bitmask;
             width_Unk_Dividend = source.Width_Unk_Dividend;
             height_Unk_Dividend = source.Height_Unk_Dividend;
             if (source.Texture != null)
@@ -29,7 +29,7 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
         public override Swe1rMaterial Export(ModelExporter exporter)
         {
             var result = new Swe1rMaterial();
-            result.Int = integer;
+            result.Bitmask = integer;
             result.Width_Unk_Dividend = width_Unk_Dividend;
             result.Height_Unk_Dividend = height_Unk_Dividend;
             if (texture != null)
