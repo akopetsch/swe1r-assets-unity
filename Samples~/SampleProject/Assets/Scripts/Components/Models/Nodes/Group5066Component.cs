@@ -1,6 +1,4 @@
-// Copyright 2023 SWE1R.Assets Maintainers
-// Licensed under GPLv2 or any later version
-// Refer to the included LICENSE.txt file.
+// SPDX-License-Identifier: GPL-2.0-only
 
 using Swe1rGroup5066 = SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5066;
 using Swe1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
