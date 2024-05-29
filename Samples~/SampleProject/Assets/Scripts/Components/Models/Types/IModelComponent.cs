@@ -1,4 +1,4 @@
-﻿// SPDX-License-Identifier: GPL-2.0-only
+﻿// SPDX-License-Identifier: MIT
 
 using UnityEngine;
 using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;

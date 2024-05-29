@@ -1,4 +1,4 @@
-﻿// SPDX-License-Identifier: GPL-2.0-only
+﻿// SPDX-License-Identifier: MIT
 
 using NumericsVector2 = System.Numerics.Vector2;
 using UnityVector2 = UnityEngine.Vector2;

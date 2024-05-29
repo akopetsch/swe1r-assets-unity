@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-2.0-only
+// SPDX-License-Identifier: MIT
 
 using Swe1rVector3Float = SWE1R.Assets.Blocks.Vectors.Vector3Single;
 using Swe1rVector3Int16 = SWE1R.Assets.Blocks.Vectors.Vector3Int16;

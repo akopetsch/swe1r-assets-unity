@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-2.0-only
+// SPDX-License-Identifier: MIT
 
 using Swe1rGroup5066 = SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5066;
 using Swe1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;

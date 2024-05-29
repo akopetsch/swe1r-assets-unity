@@ -1,4 +1,4 @@
-﻿// SPDX-License-Identifier: GPL-2.0-only
+﻿// SPDX-License-Identifier: MIT
 
 using Swe1rPuppModel = SWE1R.Assets.Blocks.ModelBlock.Types.PuppModel;
 

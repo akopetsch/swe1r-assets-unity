@@ -1,4 +1,4 @@
-﻿// SPDX-License-Identifier: GPL-2.0-only
+﻿// SPDX-License-Identifier: MIT
 
 using System;
 using Swe1rDimensionsBitmask = SWE1R.Assets.Blocks.ModelBlock.Meshes.DimensionsBitmask;

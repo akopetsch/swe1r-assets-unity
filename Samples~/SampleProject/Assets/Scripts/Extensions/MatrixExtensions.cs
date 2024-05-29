@@ -1,4 +1,4 @@
-﻿// SPDX-License-Identifier: GPL-2.0-only
+﻿// SPDX-License-Identifier: MIT
 
 using UnityEngine;
 using Swe1rMatrix3x4Single = SWE1R.Assets.Blocks.Vectors.Matrix3x4Single;

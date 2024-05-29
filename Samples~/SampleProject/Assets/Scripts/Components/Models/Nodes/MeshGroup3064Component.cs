@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-2.0-only
+// SPDX-License-Identifier: MIT
 
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using Swe1rBounds3Single = SWE1R.Assets.Blocks.Vectors.Bounds3Single;

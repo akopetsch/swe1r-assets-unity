@@ -1,4 +1,4 @@
-﻿// SPDX-License-Identifier: GPL-2.0-only
+﻿// SPDX-License-Identifier: MIT
 
 using Swe1rVector3Byte = SWE1R.Assets.Blocks.Vectors.Vector3Byte;
 using Swe1rVector3SByte = SWE1R.Assets.Blocks.Vectors.Vector3SByte;
