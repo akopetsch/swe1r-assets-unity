@@ -1,10 +1,14 @@
 # ByteSerialization
 
+[![NuGet](https://img.shields.io/nuget/vpre/ByteSerialization)](https://nuget.org/packages/ByteSerialization)
+
 A declarative serialization library designed for bit-perfect control over binary representation. 
 You can define C# classes like C structs by assigning attributes to classes and properties. 
 Inspired by [BinarySerializer](https://github.com/jefffhaynes/BinarySerializer) by Jeff Haynes. 
 
 This library was created from the ground up to support features like references/pointers.
+
+Notably, this libary is used by [swe1r-assets](https://github.com/akopetsch/swe1r-assets).
 
 ## Example
 

@@ -2,17 +2,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>ByteSerialization</id>
-    <version>0.1.0-alpha.5</version>
-    <authors>ByteSerialization</authors>
-    <license type="expression">GPL-2.0-only</license>
-    <licenseUrl>https://licenses.nuget.org/GPL-2.0-only</licenseUrl>
+    <version>0.0.1-alpha.0</version>
+    <authors>Alexander Kopetsch</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     <readme>README.md</readme>
-    <projectUrl>https://github.com/akopetsch/swe1r-assets</projectUrl>
+    <projectUrl>https://github.com/akopetsch/ByteSerialization</projectUrl>
     <description>A declarative serialization library designed for bit-perfect control over binary representation.
       You can define C# classes like C structs by assigning attributes to classes and properties.
       Inspired by BinarySerializer by Jeff Haynes.</description>
     <tags>Serialization Serializer Binary Format Protocol</tags>
-    <repository type="git" url="https://github.com/akopetsch/swe1r-assets" commit="49aab7f838f5d2cb66d48d11d543a36b20f8315d" />
+    <repository type="git" url="https://github.com/akopetsch/ByteSerialization" commit="697af536c827a8cacd241582fdbf6d595d5eadd1" />
     <dependencies>
       <group targetFramework=".NETStandard2.1" />
     </dependencies>
