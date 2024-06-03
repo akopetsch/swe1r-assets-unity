@@ -15,13 +15,13 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
             Dictionary<NodeFlags, Type> componentTypeByNodeFlags =
             new Dictionary<NodeFlags, Type>()
         {
-            { NodeFlags.Group5064, typeof(Group5064Component) },
-            { NodeFlags.Group5065, typeof(Group5065Component) },
-            { NodeFlags.Group5066, typeof(Group5066Component) },
-            { NodeFlags.MeshGroup3064, typeof(MeshGroup3064Component) },
-            { NodeFlags.TransformableD064, typeof(TransformableD064Component) },
-            { NodeFlags.TransformableD065, typeof(TransformableD065Component) },
-            { NodeFlags.UnknownD066, typeof(UnknownD066Component) },
+            { NodeFlags.BasicNode, typeof(BasicNodeComponent) },
+            { NodeFlags.SelectorNode, typeof(SelectorNodeComponent) },
+            { NodeFlags.LodSelectorNode, typeof(LodSelectorNodeComponent) },
+            { NodeFlags.MeshGroupNode, typeof(MeshGroupNodeComponent) },
+            { NodeFlags.TransformedNode, typeof(TransformedNodeComponent) },
+            { NodeFlags.TransformedWithPivotNode, typeof(TransformedWithPivotNodeComponent) },
+            { NodeFlags.TransformedComputedNode, typeof(TransformedComputedNodeComponent) },
         };
 
         public Type GetComponentType(FlaggedNode node) =>

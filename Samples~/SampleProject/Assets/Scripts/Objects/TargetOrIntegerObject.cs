@@ -6,7 +6,7 @@ using System;
 using UnityEngine;
 using Swe1rTarget = SWE1R.Assets.Blocks.ModelBlock.Animations.Target;
 using Swe1rTargetOrInteger = SWE1R.Assets.Blocks.ModelBlock.Animations.TargetOrInteger;
-using Swe1rTransformableD065 = SWE1R.Assets.Blocks.ModelBlock.Nodes.TransformableD065;
+using Swe1rTransformedWithPivotNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.TransformedWithPivotNode;
 
 namespace SWE1R.Assets.Blocks.Unity.Objects
 {
@@ -15,7 +15,7 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
     {
         [SerializeReference] public MaterialReferenceObject doubleMaterial;
         [SerializeReference] public MaterialScriptableObject material;
-        [SerializeReference] public TransformableD065Component transformableD065;
+        [SerializeReference] public TransformedWithPivotNodeComponent transformedWithPivotNode;
         public int? integer;
 
         public TargetOrIntegerObject(Swe1rTargetOrInteger source, ModelImporter modelImporter)
@@ -30,9 +30,10 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
                 else if (source.Target.Material != null)
                     material = modelImporter.GetMaterialScriptableObject(
                         source.Target.Material);
-                else if (source.Target.TransformableD065 != null)
-                    transformableD065 = modelImporter.GetFlaggedNodeComponent<TransformableD065Component>(
-                        source.Target.TransformableD065);
+                else if (source.Target.TransformedWithPivotNode != null)
+                    transformedWithPivotNode = 
+                        modelImporter.GetFlaggedNodeComponent<TransformedWithPivotNodeComponent>(
+                            source.Target.TransformedWithPivotNode);
             }
         }
 
@@ -48,8 +49,10 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
                     target.MaterialReference = modelExporter.GetMaterialReference(doubleMaterial);
                 else if (material != null)
                     target.Material = modelExporter.GetMaterial(material);
-                else if (transformableD065 != null)
-                    target.TransformableD065 = (Swe1rTransformableD065)modelExporter.GetFlaggedNode(transformableD065.gameObject);
+                else if (transformedWithPivotNode != null)
+                    target.TransformedWithPivotNode = 
+                        (Swe1rTransformedWithPivotNode)modelExporter.GetFlaggedNode(
+                            transformedWithPivotNode.gameObject);
             }
             return swe1rTargetOrInteger;
         }

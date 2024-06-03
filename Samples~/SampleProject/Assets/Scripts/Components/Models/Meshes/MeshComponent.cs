@@ -38,7 +38,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Meshes
         public short facesCount;
         public Swe1rPrimitiveType primitiveType;
         [SerializeReference] public List<int> facesVertexCounts;
-        public MeshGroupOrShortsObject meshGroupOrShorts;
+        public MeshGroupNodeOrShortsObject meshGroupOrShorts;
         [SerializeReference] public CollisionVerticesObject collisionVertices;
         [SerializeReference] public List<N64GspCommandObject> commandList;
         public List<VertexObject> vertices;
@@ -62,7 +62,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Meshes
             primitiveType = source.PrimitiveType;
             if (source.FacesVertexCounts != null)
                 facesVertexCounts = source.FacesVertexCounts;
-            meshGroupOrShorts = new MeshGroupOrShortsObject(source.MeshGroupOrShorts, importer);
+            meshGroupOrShorts = new MeshGroupNodeOrShortsObject(source.MeshGroupOrShorts, importer);
             if (source.CollisionVertices != null)
                 collisionVertices = new CollisionVerticesObject(source.CollisionVertices);
             if (source.CommandList != null)

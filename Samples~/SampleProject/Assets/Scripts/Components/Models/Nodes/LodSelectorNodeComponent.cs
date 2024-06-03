@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: MIT
 
-using Swe1rGroup5066 = SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5066;
 using Swe1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
+using Swe1rLodSelectorNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.LodSelectorNode;
 
 namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
-    public class Group5066Component : FlaggedNodeComponent<Swe1rGroup5066>
+    public class LodSelectorNodeComponent : FlaggedNodeComponent<Swe1rLodSelectorNode>
     {
         public float[] floats;
         public int[] ints;
 
-        public override void Import(Swe1rGroup5066 source)
+        public override void Import(Swe1rLodSelectorNode source)
         {
             base.Import(source);
             floats = source.Floats;
@@ -19,7 +19,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 
         public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
         {
-            var result = (Swe1rGroup5066)base.Export(modelExporter);
+            var result = (Swe1rLodSelectorNode)base.Export(modelExporter);
             result.Floats = floats;
             result.Ints = ints;
             return result;

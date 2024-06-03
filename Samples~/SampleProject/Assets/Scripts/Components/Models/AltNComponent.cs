@@ -3,7 +3,7 @@
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using System.Collections.Generic;
 using UnityEngine;
-using Swe1rFlaggedNodeOrGroup5066ChildReference = SWE1R.Assets.Blocks.ModelBlock.FlaggedNodeOrGroup5066ChildReference;
+using Swe1rFlaggedNodeOrLodSelectorNodeChildReference = SWE1R.Assets.Blocks.ModelBlock.FlaggedNodeOrLodSelectorNodeChildReference;
 using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;
 using Swer1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
 
@@ -11,32 +11,34 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
 {
     public class AltNComponent : MonoBehaviour
     {
-        public void Import(List<Swe1rFlaggedNodeOrGroup5066ChildReference> source, ModelImporter importer)
+        public void Import(List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference> source, ModelImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.AltN);
 
-            foreach (Swe1rFlaggedNodeOrGroup5066ChildReference item in source)
+            foreach (Swe1rFlaggedNodeOrLodSelectorNodeChildReference item in source)
             {
                 if (item.FlaggedNode != null)
                     importer.CreateFlaggedNodeGameObject(item.FlaggedNode, gameObject);
                 else
-                    gameObject.AddChild().AddComponent<Group5066ChildReferenceComponent>().Import(item.Group5066ChildReference, importer);
+                    gameObject.AddChild().AddComponent<LodSelectorNodeChildReferenceComponent>()
+                        .Import(item.LodSelectorNodeChildReference, importer);
             }
         }
 
-        public List<Swe1rFlaggedNodeOrGroup5066ChildReference> Export(ModelExporter exporter)
+        public List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference> Export(ModelExporter exporter)
         {
-            var result = new List<Swe1rFlaggedNodeOrGroup5066ChildReference>();
+            var result = new List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference>();
             foreach (GameObject go in gameObject.GetChildren())
             {
-                var item = new Swe1rFlaggedNodeOrGroup5066ChildReference();
+                var item = new Swe1rFlaggedNodeOrLodSelectorNodeChildReference();
 
                 Swer1rFlaggedNode flaggedNode = exporter.GetFlaggedNode(go);
                 if (flaggedNode != null)
                     item.FlaggedNode = flaggedNode;
                 else
-                    item.Group5066ChildReference =
-                            go.GetComponent<Group5066ChildReferenceComponent>().Export(exporter);
+                    item.LodSelectorNodeChildReference =
+                            go.GetComponent<LodSelectorNodeChildReferenceComponent>()
+                            .Export(exporter);
 
                 result.Add(item);
             }
