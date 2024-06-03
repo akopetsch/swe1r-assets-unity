@@ -9,12 +9,12 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using Swe1rIndicesChunks = SWE1R.Assets.Blocks.ModelBlock.Meshes.VertexIndices.IndicesChunks;
 using Swe1rMaterialExporter = SWE1R.Assets.Blocks.ModelBlock.Materials.Export.MaterialExporter;
 using Swe1rMaterialTexture = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture;
 using Swe1rMaterialTextureChild = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTextureChild;
 using Swe1rMesh = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh;
 using Swe1rModelImporter = SWE1R.Assets.Blocks.Unity.ModelImporter;
+using Swe1rN64GspCommandList = SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64GspCommandList;
 using Swe1rPrimitiveType = SWE1R.Assets.Blocks.ModelBlock.Meshes.PrimitiveType;
 using UnityMaterial = UnityEngine.Material;
 using UnityMesh = UnityEngine.Mesh;
@@ -40,7 +40,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Meshes
         [SerializeReference] public List<int> facesVertexCounts;
         public MeshGroupOrShortsObject meshGroupOrShorts;
         [SerializeReference] public CollisionVerticesObject collisionVertices;
-        [SerializeReference] public List<IndicesChunkObject> indicesChunks;
+        [SerializeReference] public List<N64GspCommandObject> commandList;
         public List<VertexObject> vertices;
         public short unk_Count;
 
@@ -65,10 +65,10 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Meshes
             meshGroupOrShorts = new MeshGroupOrShortsObject(source.MeshGroupOrShorts, importer);
             if (source.CollisionVertices != null)
                 collisionVertices = new CollisionVerticesObject(source.CollisionVertices);
-            if (source.VisibleIndicesChunks != null)
-                indicesChunks = source.VisibleIndicesChunks.Select(ic => importer.GetIndicesChunkObject(ic)).ToList();
-            if (source.VisibleVertices != null)
-                vertices = source.VisibleVertices.Select(x => new VertexObject(x)).ToList();
+            if (source.CommandList != null)
+                commandList = source.CommandList.Select(x => importer.GetN64GspCommandObject(x)).ToList();
+            if (source.Vertices != null)
+                vertices = source.Vertices.Select(x => new VertexObject(x)).ToList();
             unk_Count = source.Unk_Count;
 
             AddLabelsToName(source);
@@ -93,9 +93,9 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Meshes
             }
             if (source.CollisionVertices != null)
                 labels.Add("Cv");
-            if (source.VisibleIndicesChunks != null)
+            if (source.CommandList != null)
                 labels.Add("Ic");
-            if (source.VisibleVertices != null)
+            if (source.Vertices != null)
                 labels.Add("Vv");
             labels.Add($"A{source.Material.Properties.AlphaBpp}");
 
@@ -119,10 +119,10 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Meshes
             if (collisionVertices?.Count > 0) // TODO: nullable necessary? ([SerializeReference])
                 result.CollisionVertices = collisionVertices.Export();
             if (vertices.Count > 0)
-                result.VisibleVertices = vertices.Select(v => modelExporter.GetVertex(v)).ToList();
-            if (indicesChunks.Count > 0)
-                result.VisibleIndicesChunks = 
-                    new Swe1rIndicesChunks(indicesChunks.Select(ic => ic.Export(modelExporter, result)).ToList());
+                result.Vertices = vertices.Select(v => modelExporter.GetVertex(v)).ToList();
+            if (commandList.Count > 0)
+                result.CommandList = 
+                    new Swe1rN64GspCommandList(commandList.Select(ic => ic.Export(modelExporter, result)).ToList());
             result.Unk_Count = unk_Count;
 
             result.UpdateCounts();
@@ -145,12 +145,12 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Meshes
         private UnityMesh GetUnityVisibleMesh(Swe1rMesh source, Swe1rMaterialTextureChild swe1rMaterialTextureChild)
         {
             UnityMesh unityMesh = null;
-            List<Triangle> triangles = source.VisibleIndicesChunks?.GetTriangles();
+            List<Triangle> triangles = source.CommandList?.GetTriangles();
             if (triangles != null)
             {
-                List<UnityVector3> unityVertices = source.VisibleVertices
+                List<UnityVector3> unityVertices = source.Vertices
                     .Select(v => v.Position.ToUnityVector3()).ToList();
-                List<UnityVector2> unityUvs = source.VisibleVertices
+                List<UnityVector2> unityUvs = source.Vertices
                     .Select(v => v.GetEffectiveUV(swe1rMaterialTextureChild).ToUnityVector2()).ToList();
                 unityMesh = new UnityMesh() {
                     vertices = unityVertices.ToArray(),

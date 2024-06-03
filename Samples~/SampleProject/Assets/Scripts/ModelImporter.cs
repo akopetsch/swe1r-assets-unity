@@ -17,7 +17,6 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using Swe1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
-using Swe1rIndicesChunk = SWE1R.Assets.Blocks.ModelBlock.Meshes.VertexIndices.IndicesChunk;
 using Swe1rMapping = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mapping;
 using Swe1rMappingChild = SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild;
 using Swe1rMappingSub = SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingSub;
@@ -28,6 +27,7 @@ using Swe1rMaterialTexture = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTe
 using Swe1rMaterialTextureChild = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTextureChild;
 using Swe1rMesh = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh;
 using Swe1rModelBlockItem = SWE1R.Assets.Blocks.ModelBlock.ModelBlockItem;
+using Swe1rN64GspCommand = SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64GspCommand;
 using Swe1rTextureBlockItem = SWE1R.Assets.Blocks.TextureBlock.TextureBlockItem;
 using Swe1rVertex = SWE1R.Assets.Blocks.ModelBlock.Meshes.Vertex;
 
@@ -60,8 +60,8 @@ namespace SWE1R.Assets.Blocks.Unity
         
         private Dictionary<Swe1rVertex, VertexObject> vertexObjects = 
             new Dictionary<Swe1rVertex, VertexObject>();
-        private Dictionary<Swe1rIndicesChunk, IndicesChunkObject> indicesChunkObjects = 
-            new Dictionary<Swe1rIndicesChunk, IndicesChunkObject>();
+        private Dictionary<Swe1rN64GspCommand, N64GspCommandObject> n64gspCommandObjects = 
+            new Dictionary<Swe1rN64GspCommand, N64GspCommandObject>();
 
         private Dictionary<Swe1rMaterialReference, MaterialReferenceObject> materialReferenceObjects =
             new Dictionary<Swe1rMaterialReference, MaterialReferenceObject>();
@@ -202,8 +202,8 @@ namespace SWE1R.Assets.Blocks.Unity
         public MaterialPropertiesObject GetMaterialPropertiesObject(Swe1rMaterialProperties source) =>
             materialPropertiesObjects.GetOrCreate(source, x => new MaterialPropertiesObject(x, this));
 
-        public IndicesChunkObject GetIndicesChunkObject(Swe1rIndicesChunk source) =>
-            indicesChunkObjects.GetOrCreate(source, ic => IndicesChunkObjectFactory.Instance.CreateIndicesChunkObject(ic, this));
+        public N64GspCommandObject GetN64GspCommandObject(Swe1rN64GspCommand source) =>
+            n64gspCommandObjects.GetOrCreate(source, x => N64GspCommandObjectFactory.Instance.CreateN64GspCommandObject(x, this));
 
         public VertexObject GetVertexObject(Swe1rVertex source) =>
             vertexObjects.GetOrCreate(source, x => new VertexObject(source));
