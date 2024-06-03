@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>SWE1R.Assets.Blocks</id>
-    <version>0.0.1-alpha.2</version>
+    <version>0.0.1-alpha.3</version>
     <authors>Alexander Kopetsch</authors>
     <license type="expression">MIT</license>
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/akopetsch/swe1r-assets</projectUrl>
     <description>A library for handling game assets of Star Wars Episode 1 Racer.</description>
     <tags>swe1r swe1r-assets 3D Games Gamedev Game Engine</tags>
-    <repository type="git" url="https://github.com/akopetsch/swe1r-assets" commit="afb156c9b351c90ce2e14f72c093b229604c5614" />
+    <repository type="git" url="https://github.com/akopetsch/swe1r-assets" commit="a0f3389e0fe00fd62adc6b1602a034c86e5b6fcd" />
     <dependencies>
       <group targetFramework=".NETStandard2.1">
         <dependency id="ByteSerialization" version="0.0.1-alpha.2" exclude="Build,Analyzers" />

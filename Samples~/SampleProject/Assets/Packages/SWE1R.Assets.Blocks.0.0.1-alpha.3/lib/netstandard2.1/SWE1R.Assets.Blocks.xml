@@ -305,9 +305,9 @@
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.MeshGroupOrShorts">
             <summary>
-            Gets or sets a referenced <see cref="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroup3064"/> or <see langword="short"/><c>[]</c>. 
+            Gets or sets a referenced <see cref="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroupNode"/> or <see langword="short"/><c>[]</c>. 
             <list type="bullet">
-              <item><description>If <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Unk_Count">Unk_Count</see> is greater than 0 (only in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.ModelType.Scen">Scen</see> or <see cref="F:SWE1R.Assets.Blocks.ModelBlock.ModelType.Pupp">Pupp</see> models), has a <see cref="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroup3064"/> value.</description></item>
+              <item><description>If <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Unk_Count">Unk_Count</see> is greater than 0 (only in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.ModelType.Scen">Scen</see> or <see cref="F:SWE1R.Assets.Blocks.ModelBlock.ModelType.Pupp">Pupp</see> models), has a <see cref="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroupNode"/> value.</description></item>
               <item><description>If it is 0, has a <see langword="short"/><c>[]</c> value (only once in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.ModelType.Trak">Trak</see> model 1) or is <see langword="null"/>.</description></item>
             </list>
             <para>Offset: 0x28</para>
@@ -533,6 +533,11 @@
             that does not automatically make the vertex to have a normal instead of a color in the game. 
             </summary>
         </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.BasicNode">
+            <summary>
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L85">SWR_AltN_Header</see>
+            </summary>
+        </member>
         <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode">
             <summary>
             <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L85">SWR_AltN_Header</see>
@@ -543,27 +548,12 @@
             Always is 0, 3, 11 19, 27, 35 or 43 and thus seems to be a bit field.
             </summary>
         </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5064">
-            <summary>
-            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L85">SWR_AltN_Header</see>
-            </summary>
-        </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5065">
-            <summary>
-            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L104">SWR_AltN_0x5065</see>
-            </summary>
-        </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5065.Int">
-            <summary>
-            Always 0 or -1.
-            </summary>
-        </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5066">
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.LodSelectorNode">
             <summary>
             <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L111">SWR_AltN_0x5066</see>
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.Group5066.Ints">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.LodSelectorNode.Ints">
             <summary>
             Always <c>{0, 0x80000000, 0}</c>.
             <para>
@@ -571,22 +561,32 @@
             </para>
             </summary>
         </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroup3064">
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroupNode">
             <summary>
             <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L188">SWR_AltN_0x3064</see>
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.UnknownD066.Word1">
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.SelectorNode">
             <summary>
-            Always 1 if <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.UnknownD066.Word2">Word2</see> is 0, otherwise 0.
+            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L104">SWR_AltN_0x5065</see>
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.UnknownD066.Word2">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.SelectorNode.Int">
             <summary>
-            Always 1 if <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.UnknownD066.Word1">Word1</see> is 0, otherwise 0.
+            Always 0 or -1.
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.UnknownD066.Vector">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.TransformedComputedNode.Word1">
+            <summary>
+            Always 1 if <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.TransformedComputedNode.Word2">Word2</see> is 0, otherwise 0.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.TransformedComputedNode.Word2">
+            <summary>
+            Always 1 if <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.TransformedComputedNode.Word1">Word1</see> is 0, otherwise 0.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.TransformedComputedNode.Vector">
             <summary>
             Always (0.0, 0.0, 1.0).
             <para>
