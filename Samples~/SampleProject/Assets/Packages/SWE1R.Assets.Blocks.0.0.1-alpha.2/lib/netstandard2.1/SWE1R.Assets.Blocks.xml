@@ -320,30 +320,30 @@
             <para>Offset: 0x2C</para>
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleIndicesChunks">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.CommandList">
             <summary>
-            Gets or sets the list of index chunks for the visible vertices. 
-            Has a value if <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVerticesCount">VisibleVerticesCount</see> is greater than 0, otherwise is <see langword="null"/>.
+            Gets or sets the command list for the visible vertices. 
+            Has a value if <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VerticesCount">VerticesCount</see> is greater than 0, otherwise is <see langword="null"/>.
             <para>Offset: 0x30</para>
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVertices">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Vertices">
             <summary>
             Gets or sets the list of visible vertices. 
-            The list's length is <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVerticesCount">VisibleVerticesCount</see>. Is <see langword="null"/> if that value is 0.
+            The list's length is <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VerticesCount">VerticesCount</see>. Is <see langword="null"/> if that value is 0.
             <para>Offset: 0x34</para>
             </summary>
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.CollisionVerticesCount">
             <summary>
             Gets or sets the count of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.CollisionVertices">CollisionVertices</see>. 
-            If 0, <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVerticesCount">VisibleVerticesCount</see> is greater than 0.
+            If 0, <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VerticesCount">VerticesCount</see> is greater than 0.
             <para>Offset: 0x38</para>
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVerticesCount">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VerticesCount">
             <summary>
-            Gets or sets the count of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVertices">VisibleVertices</see>. 
+            Gets or sets the count of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Vertices">Vertices</see>. 
             If 0, <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.CollisionVerticesCount">CollisionVerticesCount</see> is greater than 0.
             <para>Offset: 0x3A</para>
             </summary>
@@ -355,11 +355,64 @@
               If greater than 0, the following applies:
               <list type="bullet">
                 <item><description><see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.PrimitiveType">PrimitiveType</see> == <see cref="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.PrimitiveType.Triangles"/></description></item>
-                <item><description><see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VisibleVerticesCount">VisibleVerticesCount</see> > 0</description></item>
+                <item><description><see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.VerticesCount">VerticesCount</see> > 0</description></item>
                 <item><description><see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.CollisionVerticesCount">CollisionVerticesCount</see> >= 0</description></item>
               </list>
             </para>
             <para>Offset: 0x3E</para>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64Gsp1TriangleCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gsp/gSP1Triangle.htm">
+                  n64devkit.square7.ch - 'gSP1Triangle'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64Gsp2TrianglesCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gsp/gSP2Triangles.htm">
+                  n64devkit.square7.ch - 'gSP2Triangles'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64GspCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Graphics%20Commands">
+                  n64devkit.square7.ch - 'gbi.h' - 'Graphics Commands'</see></item>
+              <item>
+                <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L515">
+                  github.com - akopetsch/Sw_Racer - 'SWR_MODEL_Section48'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64GspCullDisplayListCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gsp/gSPCullDisplayList.htm">
+                  n64devkit.square7.ch - 'gSPCullDisplayList'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64GspVertexCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gsp/gSPVertex.htm">
+                  n64devkit.square7.ch - 'gSPVertex'</see></item>
+            </list>
             </summary>
         </member>
         <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.ZOn">
@@ -478,11 +531,6 @@
             But that is just an indicator. A value somewhere else in the binary structures determines whether 
             the game interprets it as a normal or a color, which means that if you change this value to 255 
             that does not automatically make the vertex to have a normal instead of a color in the game. 
-            </summary>
-        </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.VertexIndices.IndicesChunk">
-            <summary>
-            <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L515">SWR_MODEL_Section48</see>
             </summary>
         </member>
         <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode">
