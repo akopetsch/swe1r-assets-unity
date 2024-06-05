@@ -7,21 +7,21 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
     public class LodSelectorNodeComponent : FlaggedNodeComponent<Swe1rLodSelectorNode>
     {
-        public float[] floats;
-        public int[] ints;
+        public float[] lodDistances;
+        public int[] unk;
 
         public override void Import(Swe1rLodSelectorNode source)
         {
             base.Import(source);
-            floats = source.Floats;
-            ints = source.Ints;
+            lodDistances = source.LodDistances;
+            unk = source.Unk;
         }
 
         public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
         {
             var result = (Swe1rLodSelectorNode)base.Export(modelExporter);
-            result.Floats = floats;
-            result.Ints = ints;
+            result.LodDistances = lodDistances;
+            result.Unk = unk;
             return result;
         }
     }

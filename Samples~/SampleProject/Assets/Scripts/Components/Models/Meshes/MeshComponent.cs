@@ -62,7 +62,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Meshes
             primitiveType = source.PrimitiveType;
             if (source.FacesVertexCounts != null)
                 facesVertexCounts = source.FacesVertexCounts;
-            meshGroupOrShorts = new MeshGroupNodeOrShortsObject(source.MeshGroupOrShorts, importer);
+            meshGroupOrShorts = new MeshGroupNodeOrShortsObject(source.MeshGroupNodeOrShorts, importer);
             if (source.CollisionVertices != null)
                 collisionVertices = new CollisionVerticesObject(source.CollisionVertices);
             if (source.CommandList != null)
@@ -115,7 +115,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Meshes
             result.PrimitiveType = primitiveType;
             if (facesVertexCounts.Count > 0)
                 result.FacesVertexCounts = facesVertexCounts;
-            result.MeshGroupOrShorts = meshGroupOrShorts.Export(modelExporter);
+            result.MeshGroupNodeOrShorts = meshGroupOrShorts.Export(modelExporter);
             if (collisionVertices?.Count > 0) // TODO: nullable necessary? ([SerializeReference])
                 result.CollisionVertices = collisionVertices.Export();
             if (vertices.Count > 0)

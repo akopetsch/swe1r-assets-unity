@@ -12,11 +12,11 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
     {
         #region Fields
 
-        public int bitfield1;
-        public int bitfield2;
-        public short number;
-        public short padding1;
-        public int padding2;
+        public int flags1;
+        public int flags2;
+        public short flags3;
+        public short lightIndex;
+        public int flags5;
 
         #endregion
 
@@ -37,22 +37,22 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 
         public virtual void Import(T source)
         {
-            bitfield1 = source.Bitfield1;
-            bitfield2 = source.Bitfield2;
-            number = source.Number;
-            padding1 = source.Padding1;
-            padding2 = source.Padding2;
+            flags1 = source.Flags1;
+            flags2 = source.Flags2;
+            flags3 = source.Flags3;
+            lightIndex = source.LightIndex;
+            flags5 = source.Flags5;
         }
 
         public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
         {
             var result = new T();
 
-            result.Bitfield1 = bitfield1;
-            result.Bitfield2 = bitfield2;
-            result.Number = number;
-            result.Padding1 = padding1;
-            result.Padding2 = padding2;
+            result.Flags1 = flags1;
+            result.Flags2 = flags2;
+            result.Flags3 = flags3;
+            result.LightIndex = lightIndex;
+            result.Flags5 = flags5;
 
             return result;
         }

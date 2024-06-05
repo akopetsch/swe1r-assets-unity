@@ -10,22 +10,22 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
     public class TransformedWithPivotNodeComponent : FlaggedNodeComponent<Swe1rTransformedWithPivotNode>
     {
-        public UnityMatrix4x4 matrix;
-        public UnityVector3 vector;
+        public UnityMatrix4x4 swe1rTransform;
+        public UnityVector3 pivot;
 
         public override void Import(Swe1rTransformedWithPivotNode source)
         {
             base.Import(source);
-            matrix = source.Matrix.ToUnity();
-            vector = source.Vector.ToUnityVector3();
-            ApplyMatrix(matrix);
+            swe1rTransform = source.Transform.ToUnity();
+            pivot = source.Pivot.ToUnityVector3();
+            ApplyMatrix(swe1rTransform);
         }
 
         public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
         {
             var result = (Swe1rTransformedWithPivotNode)base.Export(modelExporter);
-            result.Matrix = matrix.ToSwe1r();
-            result.Vector = vector.ToSwe1rVector3Single();
+            result.Transform = swe1rTransform.ToSwe1r();
+            result.Pivot = pivot.ToSwe1rVector3Single();
             return result;
         }
     }

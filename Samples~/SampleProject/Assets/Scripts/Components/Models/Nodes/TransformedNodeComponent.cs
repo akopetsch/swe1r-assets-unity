@@ -9,19 +9,19 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
     public class TransformedNodeComponent : FlaggedNodeComponent<Swe1rTransformedNode>
     {
-        public UnityMatrix4x4 matrix;
+        public UnityMatrix4x4 swe1rTransform;
 
         public override void Import(Swe1rTransformedNode source)
         {
             base.Import(source);
-            matrix = source.Matrix.ToUnity();
-            ApplyMatrix(matrix);
+            swe1rTransform = source.Transform.ToUnity();
+            ApplyMatrix(swe1rTransform);
         }
 
         public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
         {
             var result = (Swe1rTransformedNode)base.Export(modelExporter);
-            result.Matrix = matrix.ToSwe1r();
+            result.Transform = swe1rTransform.ToSwe1r();
             return result;
         }
     }

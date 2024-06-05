@@ -10,22 +10,22 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
     public class MeshGroupNodeComponent : FlaggedNodeComponent<Swe1rMeshGroupNode>
     {
-        public UnityVector3 boundsMin;
-        public UnityVector3 boundsMax;
+        public UnityVector3 aabbMin;
+        public UnityVector3 aabbMax;
 
         public override void Import(Swe1rMeshGroupNode source)
         {
             base.Import(source);
-            boundsMin = source.Bounds.Min.ToUnityVector3();
-            boundsMax = source.Bounds.Max.ToUnityVector3();
+            aabbMin = source.Aabb.Min.ToUnityVector3();
+            aabbMax = source.Aabb.Max.ToUnityVector3();
         }
 
         public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
         {
             var result = (Swe1rMeshGroupNode)base.Export(modelExporter);
-            result.Bounds = new Swe1rBounds3Single() {
-                Min = boundsMin.ToSwe1rVector3Single(),
-                Max = boundsMax.ToSwe1rVector3Single(),
+            result.Aabb = new Swe1rBounds3Single() {
+                Min = aabbMin.ToSwe1rVector3Single(),
+                Max = aabbMax.ToSwe1rVector3Single(),
             };
             return result;
         }

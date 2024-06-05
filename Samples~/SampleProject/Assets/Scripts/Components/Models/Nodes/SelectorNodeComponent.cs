@@ -7,18 +7,18 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
     public class SelectorNodeComponent : FlaggedNodeComponent<Swe1rSelectorNode>
     {
-        public int integer;
+        public int selectionValue;
 
         public override void Import(Swe1rSelectorNode source)
         {
             base.Import(source);
-            integer = source.Int;
+            selectionValue = source.SelectionValue;
         }
 
         public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
         {
             var result = (Swe1rSelectorNode)base.Export(modelExporter);
-            result.Int = integer;
+            result.SelectionValue = selectionValue;
             return result;
         }
     }
