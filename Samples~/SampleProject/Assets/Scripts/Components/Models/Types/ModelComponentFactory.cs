@@ -9,12 +9,9 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Types
 {
     public class ModelComponentFactory
     {
-        public static ModelComponentFactory Instance { get; } = new ModelComponentFactory();
-        private ModelComponentFactory() { }
+        #region Fields
 
-        private readonly
-            Dictionary<ModelType, Type> componentTypeByModelType =
-            new Dictionary<ModelType, Type>()
+        private static readonly Dictionary<ModelType, Type> componentTypeByModelType = new()
         {
             { ModelType.MAlt, typeof(MAltModelComponent) },
             { ModelType.Modl, typeof(ModlModelComponent) },
@@ -25,7 +22,20 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Types
             { ModelType.Trak, typeof(TrakModelComponent) },
         };
 
+        #endregion
+
+        #region Members (singleton)
+
+        public static ModelComponentFactory Instance { get; } = new ModelComponentFactory();
+        private ModelComponentFactory() { }
+
+        #endregion
+
+        #region Methods
+
         public Type GetComponentType(Swe1rModel model) =>
             componentTypeByModelType[model.Type];
+
+        #endregion
     }
 }

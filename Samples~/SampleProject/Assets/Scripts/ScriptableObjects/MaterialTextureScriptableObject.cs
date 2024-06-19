@@ -11,12 +11,14 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
 {
     public class MaterialTextureScriptableObject : AbstractScriptableObject<Swe1rMaterialTexture>
     {
+        #region Fields (serialized)
+
         public int mask_Unk;
         public short width4;
         public short height4;
         public short always0_08;
         public short always0_0a;
-        public Swe1rTextureFormat textureFormat;
+        public Swe1rTextureFormat format;
         public byte byte_0c;
         public byte byte_0d;
         public short word_0e;
@@ -29,6 +31,10 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
         [SerializeReference] public MaterialTextureChildObject[] children;
         public int textureIndex;
 
+        #endregion
+
+        #region Methods (import/export)
+
         public override void Import(Swe1rMaterialTexture source, ModelImporter importer)
         {
             mask_Unk = source.Mask_Unk;
@@ -36,7 +42,7 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
             height4 = source.Height4;
             always0_08 = source.Always0_08;
             always0_0a = source.Always0_0a;
-            textureFormat = source.Format;
+            format = source.Format;
             word_0e = source.Word_0e;
             width = source.Width;
             height = source.Height;
@@ -56,7 +62,7 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
             result.Height4 = height4;
             result.Always0_08 = always0_08;
             result.Always0_0a = always0_0a;
-            result.Format = textureFormat;
+            result.Format = format;
             result.Word_0e = word_0e;
             result.Width = width;
             result.Height = height;
@@ -68,5 +74,7 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
             result.TextureIndex = textureIndex;
             return result;
         }
+
+        #endregion
     }
 }

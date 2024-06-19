@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 
+using ByteSerialization.IO;
 using SWE1R.Assets.Blocks.Unity.Components.Models;
 using System.Collections;
 using System.IO;
@@ -374,7 +375,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         private Block<TBlockItem> LoadBlock<TBlockItem>(string filename) where TBlockItem : BlockItem, new()
         {
-            var block = new Block<TBlockItem>();
+            var block = new Block<TBlockItem>(Endianness.BigEndian);
             block.Load(Path.Combine(blocksPath, filename));
             return block;
         }

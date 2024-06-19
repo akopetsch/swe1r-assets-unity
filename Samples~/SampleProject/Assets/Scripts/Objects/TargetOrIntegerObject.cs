@@ -13,48 +13,60 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
     [Serializable]
     public class TargetOrIntegerObject
     {
-        [SerializeReference] public MaterialReferenceObject doubleMaterial;
-        [SerializeReference] public MaterialScriptableObject material;
+        #region Fields (serialized)
+
+        [SerializeReference] public MeshMaterialReferenceObject meshMaterialReference;
+        [SerializeReference] public MeshMaterialScriptableObject meshMaterial;
         [SerializeReference] public TransformedWithPivotNodeComponent transformedWithPivotNode;
         public int? integer;
 
-        public TargetOrIntegerObject(Swe1rTargetOrInteger source, ModelImporter modelImporter)
+        #endregion
+
+        #region Constructor
+
+        public TargetOrIntegerObject(Swe1rTargetOrInteger source, ModelImporter importer)
         {
             if (source.Integer.HasValue)
                 integer = source.Integer.Value;
             else if (source.Target != null)
             {
-                if (source.Target.MaterialReference != null)
-                    doubleMaterial = modelImporter.GetMaterialReferenceObject(
-                        source.Target.MaterialReference);
-                else if (source.Target.Material != null)
-                    material = modelImporter.GetMaterialScriptableObject(
-                        source.Target.Material);
+                if (source.Target.MeshMaterialReference != null)
+                    meshMaterialReference = 
+                        importer.GetMeshMaterialReferenceObject(source.Target.MeshMaterialReference);
+                else if (source.Target.MeshMaterial != null)
+                    meshMaterial = 
+                        importer.GetMeshMaterialScriptableObject(source.Target.MeshMaterial);
                 else if (source.Target.TransformedWithPivotNode != null)
                     transformedWithPivotNode = 
-                        modelImporter.GetFlaggedNodeComponent<TransformedWithPivotNodeComponent>(
-                            source.Target.TransformedWithPivotNode);
+                        importer.GetFlaggedNodeComponent<TransformedWithPivotNodeComponent>(source.Target.TransformedWithPivotNode);
             }
         }
 
-        public Swe1rTargetOrInteger Export(ModelExporter modelExporter)
+        #endregion
+
+        #region Methods (export)
+
+        public Swe1rTargetOrInteger Export(ModelExporter exporter)
         {
-            var swe1rTargetOrInteger = new Swe1rTargetOrInteger();
+            var result = new Swe1rTargetOrInteger();
             if (integer.HasValue)
-                swe1rTargetOrInteger.Integer = integer.Value;
+                result.Integer = integer.Value;
             else
             {
-                var target = swe1rTargetOrInteger.Target = new Swe1rTarget();
-                if (doubleMaterial != null)
-                    target.MaterialReference = modelExporter.GetMaterialReference(doubleMaterial);
-                else if (material != null)
-                    target.Material = modelExporter.GetMaterial(material);
+                result.Target = new Swe1rTarget();
+                if (meshMaterialReference != null)
+                    result.Target.MeshMaterialReference =
+                        exporter.GetMeshMaterialReference(meshMaterialReference);
+                else if (meshMaterial != null)
+                    result.Target.MeshMaterial =
+                        exporter.GetMeshMaterial(meshMaterial);
                 else if (transformedWithPivotNode != null)
-                    target.TransformedWithPivotNode = 
-                        (Swe1rTransformedWithPivotNode)modelExporter.GetFlaggedNode(
-                            transformedWithPivotNode.gameObject);
+                    result.Target.TransformedWithPivotNode = 
+                        (Swe1rTransformedWithPivotNode)exporter.GetFlaggedNode(transformedWithPivotNode.gameObject);
             }
-            return swe1rTargetOrInteger;
+            return result;
         }
+
+        #endregion
     }
 }

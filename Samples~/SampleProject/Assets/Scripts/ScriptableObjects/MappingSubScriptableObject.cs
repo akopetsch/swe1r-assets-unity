@@ -1,14 +1,20 @@
 ﻿// SPDX-License-Identifier: MIT
 
-using Swe1rMappingSub = SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingSub;
+using Swe1rMappingSub = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingSub;
 
 namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
 {
     public class MappingSubScriptableObject : AbstractScriptableObject<Swe1rMappingSub>
     {
+        #region Fields (serialized)
+
         public int int_0;
         public int int_1;
         public MappingChildScriptableObject child;
+
+        #endregion
+
+        #region Methods (import/export)
 
         public override void Import(Swe1rMappingSub source, ModelImporter importer)
         {
@@ -27,5 +33,7 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
                 result.Child = exporter.GetMappingChild(child);
             return result;
         }
+
+        #endregion
     }
 }

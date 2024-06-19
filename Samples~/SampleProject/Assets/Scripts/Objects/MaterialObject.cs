@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 
 using System;
-using Swe1rMaterialProperties = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties;
+using Swe1rMaterial = SWE1R.Assets.Blocks.ModelBlock.Materials.Material;
 
 namespace SWE1R.Assets.Blocks.Unity.Objects
 {
     [Serializable]
-    public class MaterialPropertiesObject
+    public class MaterialObject
     {
         #region Fields (serialized)
 
@@ -43,33 +43,39 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
 
         #endregion
 
-        public MaterialPropertiesObject(Swe1rMaterialProperties materialProperties, ModelImporter modelImporter)
+        #region Constructor
+
+        public MaterialObject(Swe1rMaterial source, ModelImporter importer)
         {
-            alphaBpp = materialProperties.AlphaBpp;
-            word_4 = materialProperties.Word_4;
-            ints_6 = materialProperties.Ints_6;
-            ints_e = materialProperties.Ints_e;
-            unk_16 = materialProperties.Unk_16;
-            bitmask1 = materialProperties.Bitmask1;
-            bitmask2 = materialProperties.Bitmask2;
-            unk_20 = materialProperties.Unk_20;
-            byte_22 = materialProperties.Byte_22;
-            byte_23 = materialProperties.Byte_23;
-            byte_24 = materialProperties.Byte_24;
-            byte_25 = materialProperties.Byte_25;
-            unk_26 = materialProperties.Unk_26;
-            unk_28 = materialProperties.Unk_28;
-            unk_2a = materialProperties.Unk_2a;
-            unk_2c = materialProperties.Unk_2c;
-            byte_2e = materialProperties.Byte_2e;
-            byte_2f = materialProperties.Byte_2f;
-            byte_30 = materialProperties.Byte_30;
-            byte_31 = materialProperties.Byte_31;
-            unk_32 = materialProperties.Unk_32;
+            alphaBpp = source.AlphaBpp;
+            word_4 = source.Word_4;
+            ints_6 = source.Ints_6;
+            ints_e = source.Ints_e;
+            unk_16 = source.Unk_16;
+            bitmask1 = source.Bitmask1;
+            bitmask2 = source.Bitmask2;
+            unk_20 = source.Unk_20;
+            byte_22 = source.Byte_22;
+            byte_23 = source.Byte_23;
+            byte_24 = source.Byte_24;
+            byte_25 = source.Byte_25;
+            unk_26 = source.Unk_26;
+            unk_28 = source.Unk_28;
+            unk_2a = source.Unk_2a;
+            unk_2c = source.Unk_2c;
+            byte_2e = source.Byte_2e;
+            byte_2f = source.Byte_2f;
+            byte_30 = source.Byte_30;
+            byte_31 = source.Byte_31;
+            unk_32 = source.Unk_32;
         }
 
-        public Swe1rMaterialProperties Export() =>
-            new Swe1rMaterialProperties() {
+        #endregion
+
+        #region Methods (export)
+
+        public Swe1rMaterial Export() =>
+            new() {
                 AlphaBpp = alphaBpp,
                 Word_4 = word_4,
                 Ints_6 = ints_6,
@@ -92,5 +98,7 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
                 Byte_31 = byte_31,
                 Unk_32 = unk_32,
             };
+
+        #endregion
     }
 }

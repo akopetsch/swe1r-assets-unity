@@ -11,25 +11,37 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
     [Serializable]
     public class MeshGroupNodeOrShortsObject
     {
+        #region Fields (serialized)
+
         [SerializeReference] public MeshGroupNodeComponent meshGroupNode;
         [SerializeReference] public short[] shorts;
 
-        public MeshGroupNodeOrShortsObject(Swe1rMeshGroupNodeOrShorts source, ModelImporter modelImporter)
+        #endregion
+
+        #region Constructor
+
+        public MeshGroupNodeOrShortsObject(Swe1rMeshGroupNodeOrShorts source, ModelImporter importer)
         {
             if (source.MeshGroupNode != null)
-                meshGroupNode = modelImporter.GetFlaggedNodeComponent<MeshGroupNodeComponent>(source.MeshGroupNode);
+                meshGroupNode = importer.GetFlaggedNodeComponent<MeshGroupNodeComponent>(source.MeshGroupNode);
             else if (source.Shorts != null)
                 shorts = source.Shorts;
         }
 
-        public Swe1rMeshGroupNodeOrShorts Export(ModelExporter modelExporter)
+        #endregion
+
+        #region Methods (export)
+
+        public Swe1rMeshGroupNodeOrShorts Export(ModelExporter exporter)
         {
             var result = new Swe1rMeshGroupNodeOrShorts();
             if (meshGroupNode != null)
-                result.MeshGroupNode = (Swe1rMeshGroupNode)modelExporter.GetFlaggedNode(meshGroupNode.gameObject);
+                result.MeshGroupNode = (Swe1rMeshGroupNode)exporter.GetFlaggedNode(meshGroupNode.gameObject);
             else if (shorts.Length > 0)
                 result.Shorts = shorts;
             return result;
         }
+
+        #endregion
     }
 }

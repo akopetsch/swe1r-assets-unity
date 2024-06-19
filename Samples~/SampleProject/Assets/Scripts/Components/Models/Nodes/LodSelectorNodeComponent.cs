@@ -7,8 +7,14 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
     public class LodSelectorNodeComponent : FlaggedNodeComponent<Swe1rLodSelectorNode>
     {
+        #region Fields (serialized)
+
         public float[] lodDistances;
         public int[] unk;
+
+        #endregion
+
+        #region Methods (import/export)
 
         public override void Import(Swe1rLodSelectorNode source)
         {
@@ -17,12 +23,14 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
             unk = source.Unk;
         }
 
-        public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
+        public override Swe1rFlaggedNode Export(ModelExporter exporter)
         {
-            var result = (Swe1rLodSelectorNode)base.Export(modelExporter);
+            var result = (Swe1rLodSelectorNode)base.Export(exporter);
             result.LodDistances = lodDistances;
             result.Unk = unk;
             return result;
         }
+
+        #endregion
     }
 }

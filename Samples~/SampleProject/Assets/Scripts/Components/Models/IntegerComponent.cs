@@ -6,7 +6,13 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
 {
     public class IntegerComponent : MonoBehaviour
     {
+        #region Fields
+
         public int integer;
+
+        #endregion
+
+        #region Methods (import/export)
 
         public void Import(int integer)
         {
@@ -16,5 +22,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
 
         public int Export() =>
             integer;
+
+        #endregion
     }
 }

@@ -9,9 +9,15 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
     public class TransformedComputedNodeComponent : FlaggedNodeComponent<Swe1rTransformedComputedNode>
     {
+        #region Fields (serialized)
+
         public short followModelPosition;
         public short orientationOption;
         public UnityVector3 vector;
+
+        #endregion
+
+        #region Methods (import/export)
 
         public override void Import(Swe1rTransformedComputedNode source)
         {
@@ -21,13 +27,15 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
             vector = source.UpVector.ToUnityVector3();
         }
 
-        public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
+        public override Swe1rFlaggedNode Export(ModelExporter exporter)
         {
-            var result = (Swe1rTransformedComputedNode)base.Export(modelExporter);
+            var result = (Swe1rTransformedComputedNode)base.Export(exporter);
             result.FollowModelPosition = followModelPosition;
             result.OrientationOption = orientationOption;
             result.UpVector = vector.ToSwe1rVector3Single();
             return result;
         }
+
+        #endregion
     }
 }
