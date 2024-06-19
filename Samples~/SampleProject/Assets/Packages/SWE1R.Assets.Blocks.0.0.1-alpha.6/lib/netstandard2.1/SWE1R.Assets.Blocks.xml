@@ -63,42 +63,311 @@
             The original values of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Animations.Animation.Int_128">Int_128</see>.
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Animations.MaterialReference.Material">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Animations.MeshMaterialReference.MeshMaterial">
             <summary>
             Never null.
             </summary>
         </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Materials.Material">
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.AlphaCombinerConstants">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Alpha%20combiner%20constants">
+                  n64devkit.square7.ch - gbi.h - 'Alpha combiner constants'</see></item>
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gdp/gDPSetCombineLERP.htm">
+                  n64devkit.square7.ch - 'gDPSetCombineLERP'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.AlphaCombinerConstants.G_ACMUX_COMBINED">
+            <summary>
+            Combined alpha from 1 Cycle mode
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.AlphaCombinerConstants.G_ACMUX_TEXEL0">
+            <summary>
+            Texture alpha
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.AlphaCombinerConstants.G_ACMUX_TEXEL1">
+            <summary>
+            Texture alpha from tile+1
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.AlphaCombinerConstants.G_ACMUX_PRIMITIVE">
+            <summary>
+            Primitive alpha
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.AlphaCombinerConstants.G_ACMUX_SHADE">
+            <summary>
+            Shading alpha
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.AlphaCombinerConstants.G_ACMUX_ENVIRONMENT">
+            <summary>
+            Environment alpha
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.AlphaCombinerConstants.G_ACMUX_LOD_FRACTION">
+            <summary>
+            LOD coefficient
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.AlphaCombinerConstants.G_ACMUX_PRIM_LOD_FRAC">
+            <summary>
+            PRIM_LOD_FRAC
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.AlphaCombinerConstants.G_ACMUX_1">
+            <summary>
+            1.0
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.AlphaCombinerConstants.G_ACMUX_0">
+            <summary>
+            0.0
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Color%20combiner%20constants">
+                  n64devkit.square7.ch - gbi.h - 'Color combiner constants'</see></item>
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gdp/gDPSetCombineLERP.htm">
+                  n64devkit.square7.ch - 'gDPSetCombineLERP'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_COMBINED">
+            <summary>
+            Color combined from 1st cycle
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_TEXEL0">
+            <summary>
+            Texture color
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_TEXEL1">
+            <summary>
+            Texture color from tile+1
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_PRIMITIVE">
+            <summary>
+            Primitive color
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_SHADE">
+            <summary>
+            Shading color
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_ENVIRONMENT">
+            <summary>
+            Environment color
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_CENTER">
+            <summary>
+            Chroma key center value
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_SCALE">
+            <summary>
+            Chroma key scale value
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_COMBINED_ALPHA">
+            <summary>
+            Combined alpha from 1st cycle
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_TEXEL0_ALPHA">
+            <summary>
+            Texture alpha
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_TEXEL1_ALPHA">
+            <summary>
+            Texture alpha from tile+1
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_PRIMITIVE_ALPHA">
+            <summary>
+            Primitive alpha
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_SHADE_ALPHA">
+            <summary>
+            Shading alpha
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_ENV_ALPHA">
+            <summary>
+            Environment alpha
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_LOD_FRACTION">
+            <summary>
+            LOD coefficient
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_PRIM_LOD_FRAC">
+            <summary>
+            Primitive LOD coefficient
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_NOISE">
+            <summary>
+            Random noise
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_K4">
+            <summary>
+            Color conversion constant K4
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_K5">
+            <summary>
+            Color conversion constant K5
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_1">
+            <summary>
+            1.0
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.ColorCombinerConstant.G_CCMUX_0">
+            <summary>
+            0.0
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GdpSetCombineLerpCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gdp/gDPSetCombineLERP.htm">
+                  n64devkit.square7.ch - 'gDPSetCombineLERP'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GdpSetRenderModeCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gdp/gDPSetRenderMode.htm">
+                  n64devkit.square7.ch - 'gDPSetRenderMode'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Graphics%20Commands">
+                  n64devkit.square7.ch - gbi.h - 'Graphics Commands'</see></item>
+              <item>
+                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Gfx%3B">
+                  n64devkit.square7.ch - gbi.h - 'Gfx'</see></item>
+              <item>
+                <see href="https://github.com/akopetsch/SW_RACER_RE/blob/d2d15c27d81e51e91996563795643c91439147aa/src/types.h#L1365">
+                  github.com - akopetsch/SW_RACER_RE - types.h - Gfx</see></item>
+              <item>
+                <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L515">
+                  github.com - akopetsch/Sw_Racer - Swr_Model.h - SWR_MODEL_Section48</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Gsp1TriangleCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gsp/gSP1Triangle.htm">
+                  n64devkit.square7.ch - 'gSP1Triangle'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Gsp2TrianglesCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gsp/gSP2Triangles.htm">
+                  n64devkit.square7.ch - 'gSP2Triangles'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GspCullDisplayListCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gsp/gSPCullDisplayList.htm">
+                  n64devkit.square7.ch - 'gSPCullDisplayList'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GspVertexCommand">
+            <summary>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="http://n64devkit.square7.ch/n64man/gsp/gSPVertex.htm">
+                  n64devkit.square7.ch - 'gSPVertex'</see></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Vtx">
             <summary>
             <para>
             See also:
             <list type="bullet">
               <item>
-                <see href="https://github.com/akopetsch/SW_RACER_RE/blob/d2d15c27d81e51e91996563795643c91439147aa/src/types.h#L1414">
-                  github.com - akopetsch/SW_RACER_RE - types.h - swrModel_MeshMaterial</see></item>
+                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Vtx%3B">
+                  n64devkit.square7.ch - gbi.h - 'Vtx'</see></item>
               <item>
-                <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L230">
-                  github.com - akopetsch/Sw_Racer - Swr_Model.h - SWR_MODEL_Section4</see></item>
+                <see href="http://n64devkit.square7.ch/n64man/gsp/gSPVertex.htm#:~:text=Vtx%3B">
+                  n64devkit.square7.ch - 'gSPVertex' - 'Vtx'</see></item>
+              <item>
+                <see href="https://github.com/akopetsch/SW_RACER_RE/blob/d2d15c27d81e51e91996563795643c91439147aa/src/types.h#L1535">
+                  github.com - akopetsch/SW_RACER_RE - types.h - Vtx</see></item>
+              <item>
+                <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L530">
+                  github.com - akopetsch/Sw_Racer - Swr_Model.h - SWR_MODEL_Section52</see></item>
             </list>
             </para>
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Texture">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Vtx.U">
             <summary>
-            Sometimes null.
+            Offset: 0x08
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Properties">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Vtx.V">
             <summary>
-            Always has a value.
+            Offset: 0x0A
             </summary>
         </member>
-        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.OriginalBitmaskValues">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Vtx.Byte_F">
             <summary>
-            The original values of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Bitmask">Bitmask</see>.
+            In the original asset files, if the vertex has a normal and not a color, the value is always 255. 
+            But that is just an indicator. A value somewhere else in the binary structures determines whether 
+            the game interprets it as a normal or a color, which means that if you change this value to 255 
+            that does not automatically make the vertex to have a normal instead of a color in the game. 
             </summary>
         </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties">
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Materials.Material">
             <summary>
             <para>
             See also:
@@ -113,42 +382,90 @@
             </para>
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.AlphaBpp">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.AlphaBpp">
             <summary>
+            <para>SW_RACER_RE: unk1</para>
             Always one of these values: 0, 1, 8, 9
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_16">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Word_4">
+            <summary>
+            <para>SW_RACER_RE: unk2</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Ints_6">
+            <summary>
+            <para>SW_RACER_RE: color_combine_mode_cycle1, alpha_combine_mode_cycle1</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Ints_e">
+            <summary>
+            <para>SW_RACER_RE: color_combine_mode_cycle2, alpha_combine_mode_cycle2</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Unk_16">
+            <summary>
+            <para>SW_RACER_RE: unk5</para>
+            Always 0, except in model 3001. Seems like float16.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Bitmask1">
+            <summary>
+            <para>SW_RACER_RE: render_mode_1</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Bitmask2">
+            <summary>
+            <para>SW_RACER_RE: render_mode_2</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Unk_20">
+            <summary>
+            <para>SW_RACER_RE: unk8</para>
+            Always 0, except in model 3001. Seems like float16.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Byte_22">
+            <summary>
+            <para>SW_RACER_RE: primitive_color[0]</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Byte_23">
+            <summary>
+            <para>SW_RACER_RE: primitive_color[1]</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Byte_24">
+            <summary>
+            <para>SW_RACER_RE: primitive_color[2]</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Byte_25">
+            <summary>
+            <para>SW_RACER_RE: primitive_color[3]</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Unk_26">
             <summary>
             Always 0, except in model 3001. Seems like float16.
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_20">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Unk_28">
             <summary>
             Always 0, except in model 3001. Seems like float16.
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_26">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Unk_2a">
             <summary>
             Always 0, except in model 3001. Seems like float16.
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_28">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Unk_2c">
             <summary>
             Always 0, except in model 3001. Seems like float16.
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_2a">
-            <summary>
-            Always 0, except in model 3001. Seems like float16.
-            </summary>
-        </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_2c">
-            <summary>
-            Always 0, except in model 3001. Seems like float16.
-            </summary>
-        </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties.Unk_32">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.Material.Unk_32">
             <summary>
             Always 0, except in model 3001. Seems like float16.
             </summary>
@@ -170,61 +487,95 @@
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Mask_Unk">
             <summary>
+            <para>SW_RACER_RE: unk0</para>
             Always 0, 1, 0x41 (0100 0001) or 0x49 (0100 1001). 
             Strong positive correllation with <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Word_0e">Word_0e</see>.
-            Strong positive correlation with the number of elements in <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Children">Children</see> 
-            that are not null.
+            Strong positive correlation with the number of elements in <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Children">Children</see> that are not null.
             </summary>
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Width4">
             <summary>
+            <para>SW_RACER_RE: res[0]</para>
             Always four times <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Width">Width</see>.
             </summary>
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Height4">
             <summary>
+            <para>SW_RACER_RE: res[1]</para>
             Always four times <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Height">Height</see>.
             </summary>
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Always0_08">
             <summary>
+            <para>SW_RACER_RE: unk1[0]</para>
             Always zero.
             </summary>
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Always0_0a">
             <summary>
+            <para>SW_RACER_RE: unk1[1]</para>
             Always zero.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Format">
+            <summary>
+            <para>SW_RACER_RE: type</para>
             </summary>
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Word_0e">
             <summary>
+            <para>SW_RACER_RE: num_children</para>
             Most of the time 0 (6383 times). Sometimes 4 (28 times). 
             Strong positive correlation with <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Mask_Unk">Mask_Unk</see>. 
             Very strong positive correlation with the number of elements in <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Children">Children</see> that are not null.
             </summary>
         </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Width">
+            <summary>
+            <para>SW_RACER_RE: width</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Height">
+            <summary>
+            <para>SW_RACER_RE: height</para>
+            </summary>
+        </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Width_Unk">
             <summary>
+            <para>SW_RACER_RE: unk2</para>
             Always 128, 256 or 512 times <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Width">Width</see>.
             </summary>
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Height_Unk">
             <summary>
+            <para>SW_RACER_RE: unk3</para>
             Always 128, 256 or 512 times <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Height">Height</see>.
             </summary>
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Flags">
             <summary>
+            <para>SW_RACER_RE: unk4</para>
             Original values are in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.OriginalFlagsValues">OriginalFlagsValues</see>.
             </summary>
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Mask">
             <summary>
+            <para>SW_RACER_RE: unk5</para>
             Strong negative correlation with 
             <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Mask_Unk">Mask_Unk</see> and 
-            <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Word_0e">Word_0e</see>.
+            <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Word_0e">Word_0e</see>. 
             Significant negative correlation with the number of elements in <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Children">Children</see> that are not null.
             Original values are in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.OriginalMaskValues">OriginalMaskValues</see>.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.Children">
+            <summary>
+            <para>SW_RACER_RE: specs</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.TextureIndex">
+            <summary>
+            <para>SW_RACER_RE: texture_index</para>
             </summary>
         </member>
         <member name="F:SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture.OriginalFlagsValues">
@@ -252,12 +603,47 @@
             </para>
             </summary>
         </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.Geometry.Triangle">
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Materials.MeshMaterial">
             <summary>
-            Represents a triangle defined by the indices of its vertices which are arranged counter-clockwise.
+            <para>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="https://github.com/akopetsch/SW_RACER_RE/blob/d2d15c27d81e51e91996563795643c91439147aa/src/types.h#L1414">
+                  github.com - akopetsch/SW_RACER_RE - types.h - swrModel_MeshMaterial</see></item>
+              <item>
+                <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L230">
+                  github.com - akopetsch/Sw_Racer - Swr_Model.h - SWR_MODEL_Section4</see></item>
+            </list>
+            </para>
             </summary>
         </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mapping">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MeshMaterial.Flags">
+            <summary>
+            <list type="bullet">
+              <item>0x80: If texture offset is set.</item>
+              <item>0x08: Front-facing one-sided geometry. Otherwise mirrored geometry or double-sided geometry.</item>
+              <item>0x40: Mirrored one-sided geometry (implies ~0x8)</item>
+              <item>0x01 or 0x10: Vertex format is Vtx_tn (vertices with normals) instead of Vtx_t (vertices with baked lighting).</item>
+            </list>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MeshMaterial.MaterialTexture">
+            <summary>
+            Sometimes null.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MeshMaterial.Material">
+            <summary>
+            Always has a value.
+            </summary>
+        </member>
+        <member name="F:SWE1R.Assets.Blocks.ModelBlock.Materials.MeshMaterial.OriginalFlagsValues">
+            <summary>
+            The original values of <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Materials.MeshMaterial.Flags">Flags</see>.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.Mapping">
             <summary>
             <para>
             See also:
@@ -272,11 +658,14 @@
             </para>
             </summary>
         </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild">
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild">
             <summary>
             <para>
             See also:
             <list type="bullet">
+              <item>
+                <see href="https://github.com/tly000/SW_RACER_RE/blob/3d3a45a44ce7043389d2a6686af1b72732fb9d41/src/types.h#L1483">
+                  github.com - tly000/SW_RACER_RE - types.h - swrModel_TriggerDescription</see></item>
               <item>
                 <see href="https://github.com/akopetsch/SW_RACER_RE/blob/d2d15c27d81e51e91996563795643c91439147aa/src/types.h#L1504">
                   github.com - akopetsch/SW_RACER_RE - types.h - swrModel_MappingChild</see></item>
@@ -287,41 +676,46 @@
             </para>
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Vector_00">
-            <summary>
-            Seems to be a position vector.
-            </summary>
-        </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Vector_0c">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild.Direction">
             <summary>
             X: -1.0 - 1.0,  two decimal places
             Y: -1.0 - 1.0,  two decimal places
             Z: -0.3 - 0.11, two decimal places
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Byte_1e">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild.Byte_1e">
             <summary>
             53 different values, 59 times 163
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Byte_1f">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild.Byte_1f">
             <summary>
             25 different values, 59 times 31, 59 times 215
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.FlaggedNode_20">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild.AffectedNode">
             <summary>
             Nullable.
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Word_26">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild.Word_24">
+            <summary>
+            Number defining different trigger types.
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild.Word_26">
             <summary>
             Padding. (always 0)
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild.Next">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild.Next">
             <summary>
             Null if this is the last one.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.Geometry.Triangle">
+            <summary>
+            Represents a triangle defined by the indices of its vertices which are arranged counter-clockwise.
             </summary>
         </member>
         <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh">
@@ -339,7 +733,7 @@
             </para>
             </summary>
         </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Material">
+        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.MeshMaterial">
             <summary>
             Must have a value.
             <para>Offset: 0x00</para>
@@ -385,7 +779,7 @@
         </member>
         <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.MeshGroupNodeOrShorts">
             <summary>
-            Gets or sets a referenced <see cref="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroupNode"/> or <see langword="short"/><c>[]</c>. 
+            Gets or sets a referenced <see cref="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroupNode">MeshGroupNode</see> or <see langword="short"/><c>[]</c>. 
             <list type="bullet">
               <item><description>If <see cref="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh.Unk_Count">Unk_Count</see> is greater than 0 (only in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.ModelType.Scen">Scen</see> or <see cref="F:SWE1R.Assets.Blocks.ModelBlock.ModelType.Pupp">Pupp</see> models), has a <see cref="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroupNode"/> value.</description></item>
               <item><description>If it is 0, has a <see langword="short"/><c>[]</c> value (only once in <see cref="F:SWE1R.Assets.Blocks.ModelBlock.ModelType.Trak">Trak</see> model 1) or is <see langword="null"/>.</description></item>
@@ -440,62 +834,6 @@
               </list>
             </para>
             <para>Offset: 0x3E</para>
-            </summary>
-        </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64Gsp1TriangleCommand">
-            <summary>
-            See also:
-            <list type="bullet">
-              <item>
-                <see href="http://n64devkit.square7.ch/n64man/gsp/gSP1Triangle.htm">
-                  n64devkit.square7.ch - 'gSP1Triangle'</see></item>
-            </list>
-            </summary>
-        </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64Gsp2TrianglesCommand">
-            <summary>
-            See also:
-            <list type="bullet">
-              <item>
-                <see href="http://n64devkit.square7.ch/n64man/gsp/gSP2Triangles.htm">
-                  n64devkit.square7.ch - 'gSP2Triangles'</see></item>
-            </list>
-            </summary>
-        </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64GspCommand">
-            <summary>
-            See also:
-            <list type="bullet">
-              <item>
-                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Graphics%20Commands">
-                  n64devkit.square7.ch - gbi.h - 'Graphics Commands'</see></item>
-              <item>
-                <see href="https://github.com/akopetsch/SW_RACER_RE/blob/d2d15c27d81e51e91996563795643c91439147aa/src/types.h#L1365">
-                  github.com - akopetsch/SW_RACER_RE - types.h - Gfx</see></item>
-              <item>
-                <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L515">
-                  github.com - akopetsch/Sw_Racer - Swr_Model.h - SWR_MODEL_Section48</see></item>
-            </list>
-            </summary>
-        </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64GspCullDisplayListCommand">
-            <summary>
-            See also:
-            <list type="bullet">
-              <item>
-                <see href="http://n64devkit.square7.ch/n64man/gsp/gSPCullDisplayList.htm">
-                  n64devkit.square7.ch - 'gSPCullDisplayList'</see></item>
-            </list>
-            </summary>
-        </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64GspVertexCommand">
-            <summary>
-            See also:
-            <list type="bullet">
-              <item>
-                <see href="http://n64devkit.square7.ch/n64man/gsp/gSPVertex.htm">
-                  n64devkit.square7.ch - 'gSPVertex'</see></item>
-            </list>
             </summary>
         </member>
         <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.ZOn">
@@ -591,39 +929,6 @@
         <member name="F:SWE1R.Assets.Blocks.ModelBlock.Meshes.VehicleReaction.Side">
             <summary>
             ? (Tatooine, Ord Ibanna)
-            </summary>
-        </member>
-        <member name="T:SWE1R.Assets.Blocks.ModelBlock.Meshes.Vertex">
-            <summary>
-            <para>
-            See also:
-            <list type="bullet">
-              <item>
-                <see href="https://github.com/akopetsch/SW_RACER_RE/blob/d2d15c27d81e51e91996563795643c91439147aa/src/types.h#L1535">
-                  github.com - akopetsch/SW_RACER_RE - types.h - Vtx</see></item>
-              <item>
-                <see href="https://github.com/akopetsch/Sw_Racer/blob/76c8ad9cea549ea18457846a135a7f25d48b3813/include/Swr_Model.h#L530">
-                  github.com - akopetsch/Sw_Racer - Swr_Model.h - SWR_MODEL_Section52</see></item>
-            </list>
-            </para>
-            </summary>
-        </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Vertex.U">
-            <summary>
-            Offset: 0x08
-            </summary>
-        </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Vertex.V">
-            <summary>
-            Offset: 0x0A
-            </summary>
-        </member>
-        <member name="P:SWE1R.Assets.Blocks.ModelBlock.Meshes.Vertex.Byte_F">
-            <summary>
-            In the original asset files, if the vertex has a normal and not a color, the value is always 255. 
-            But that is just an indicator. A value somewhere else in the binary structures determines whether 
-            the game interprets it as a normal or a color, which means that if you change this value to 255 
-            that does not automatically make the vertex to have a normal instead of a color in the game. 
             </summary>
         </member>
         <member name="T:SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode">
