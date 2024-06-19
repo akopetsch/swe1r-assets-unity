@@ -17,19 +17,19 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using Swe1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
-using Swe1rMapping = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mapping;
-using Swe1rMappingChild = SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild;
-using Swe1rMappingSub = SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingSub;
+using Swe1rGraphicsCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommand;
+using Swe1rMapping = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.Mapping;
+using Swe1rMappingChild = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild;
+using Swe1rMappingSub = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingSub;
 using Swe1rMaterial = SWE1R.Assets.Blocks.ModelBlock.Materials.Material;
-using Swe1rMaterialProperties = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialProperties;
-using Swe1rMaterialReference = SWE1R.Assets.Blocks.ModelBlock.Animations.MaterialReference;
 using Swe1rMaterialTexture = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture;
 using Swe1rMaterialTextureChild = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTextureChild;
 using Swe1rMesh = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh;
+using Swe1rMeshMaterial = SWE1R.Assets.Blocks.ModelBlock.Materials.MeshMaterial;
+using Swe1rMeshMaterialReference = SWE1R.Assets.Blocks.ModelBlock.Animations.MeshMaterialReference;
 using Swe1rModelBlockItem = SWE1R.Assets.Blocks.ModelBlock.ModelBlockItem;
-using Swe1rN64GspCommand = SWE1R.Assets.Blocks.ModelBlock.Meshes.N64GspCommands.N64GspCommand;
 using Swe1rTextureBlockItem = SWE1R.Assets.Blocks.TextureBlock.TextureBlockItem;
-using Swe1rVertex = SWE1R.Assets.Blocks.ModelBlock.Meshes.Vertex;
+using Swe1rVtx = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Vtx;
 
 namespace SWE1R.Assets.Blocks.Unity
 {
@@ -55,16 +55,16 @@ namespace SWE1R.Assets.Blocks.Unity
 
         private Dictionary<Swe1rMaterialTextureChild, MaterialTextureChildObject> materialTextureChildObjects =
             new Dictionary<Swe1rMaterialTextureChild, MaterialTextureChildObject>();
-        private Dictionary<Swe1rMaterialProperties, MaterialPropertiesObject> materialPropertiesObjects = 
-            new Dictionary<Swe1rMaterialProperties, MaterialPropertiesObject>();
+        private Dictionary<Swe1rMaterial, MaterialObject> materialObjects = 
+            new Dictionary<Swe1rMaterial, MaterialObject>();
         
-        private Dictionary<Swe1rVertex, VertexObject> vertexObjects = 
-            new Dictionary<Swe1rVertex, VertexObject>();
-        private Dictionary<Swe1rN64GspCommand, N64GspCommandObject> n64gspCommandObjects = 
-            new Dictionary<Swe1rN64GspCommand, N64GspCommandObject>();
+        private Dictionary<Swe1rVtx, VtxObject> vtxObjects = 
+            new Dictionary<Swe1rVtx, VtxObject>();
+        private Dictionary<Swe1rGraphicsCommand, GraphicsCommandObject> graphicsCommandObjects = 
+            new Dictionary<Swe1rGraphicsCommand, GraphicsCommandObject>();
 
-        private Dictionary<Swe1rMaterialReference, MaterialReferenceObject> materialReferenceObjects =
-            new Dictionary<Swe1rMaterialReference, MaterialReferenceObject>();
+        private Dictionary<Swe1rMeshMaterialReference, MeshMaterialReferenceObject> meshMaterialReferenceObjects =
+            new Dictionary<Swe1rMeshMaterialReference, MeshMaterialReferenceObject>();
 
         #endregion
 
@@ -174,8 +174,8 @@ namespace SWE1R.Assets.Blocks.Unity
                 return new List<T>();
         }
 
-        public MaterialScriptableObject GetMaterialScriptableObject(Swe1rMaterial source) =>
-            GetScriptableObject<MaterialScriptableObject, Swe1rMaterial>(source);
+        public MeshMaterialScriptableObject GetMeshMaterialScriptableObject(Swe1rMeshMaterial source) =>
+            GetScriptableObject<MeshMaterialScriptableObject, Swe1rMeshMaterial>(source);
 
         public MaterialTextureScriptableObject GetMaterialTextureScriptableObject(Swe1rMaterialTexture source) =>
             GetScriptableObject<MaterialTextureScriptableObject, Swe1rMaterialTexture>(source);
@@ -199,17 +199,17 @@ namespace SWE1R.Assets.Blocks.Unity
         public MaterialTextureChildObject GetMaterialTextureChildObject(Swe1rMaterialTextureChild source) =>
             materialTextureChildObjects.GetOrCreate(source, x => new MaterialTextureChildObject(x, this));
 
-        public MaterialPropertiesObject GetMaterialPropertiesObject(Swe1rMaterialProperties source) =>
-            materialPropertiesObjects.GetOrCreate(source, x => new MaterialPropertiesObject(x, this));
+        public MaterialObject GetMaterialPropertiesObject(Swe1rMaterial source) =>
+            materialObjects.GetOrCreate(source, x => new MaterialObject(x, this));
 
-        public N64GspCommandObject GetN64GspCommandObject(Swe1rN64GspCommand source) =>
-            n64gspCommandObjects.GetOrCreate(source, x => N64GspCommandObjectFactory.Instance.CreateN64GspCommandObject(x, this));
+        public GraphicsCommandObject GetGraphicsCommandObject(Swe1rGraphicsCommand source) =>
+            graphicsCommandObjects.GetOrCreate(source, x => GraphicsCommandObjectFactory.Instance.CreateGraphicsCommandObject(x, this));
 
-        public VertexObject GetVertexObject(Swe1rVertex source) =>
-            vertexObjects.GetOrCreate(source, x => new VertexObject(source));
+        public VtxObject GetVertexObject(Swe1rVtx source) =>
+            vtxObjects.GetOrCreate(source, x => new VtxObject(source));
 
-        public MaterialReferenceObject GetMaterialReferenceObject(Swe1rMaterialReference source) =>
-            materialReferenceObjects.GetOrCreate(source, x => new MaterialReferenceObject(x, this));
+        public MeshMaterialReferenceObject GetMeshMaterialReferenceObject(Swe1rMeshMaterialReference source) =>
+            meshMaterialReferenceObjects.GetOrCreate(source, x => new MeshMaterialReferenceObject(x, this));
 
         #endregion
 

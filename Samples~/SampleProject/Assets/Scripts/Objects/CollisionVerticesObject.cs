@@ -12,11 +12,21 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
     [Serializable]
     public class CollisionVerticesObject
     {
+        #region Fields
+
         public List<UnityVector3> shortVectors;
         public List<UnityVector3> floatVectors;
         public byte[] paddingGarbage;
 
+        #endregion
+
+        #region Properties
+
         public int Count => shortVectors.Count + floatVectors.Count;
+
+        #endregion
+
+        #region Constructor
 
         public CollisionVerticesObject(Swe1rCollisionVertices source)
         {
@@ -24,6 +34,10 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
             floatVectors = source.FloatVectors?.Select(v => v.ToUnityVector3()).ToList();
             paddingGarbage = source.PaddingGarbage;
         }
+
+        #endregion
+
+        #region Methods (export)
 
         public Swe1rCollisionVertices Export()
         {
@@ -35,5 +49,7 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
             result.PaddingGarbage = paddingGarbage;
             return result;
         }
+
+        #endregion
     }
 }

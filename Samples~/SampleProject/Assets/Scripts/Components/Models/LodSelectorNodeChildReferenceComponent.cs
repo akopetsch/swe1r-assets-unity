@@ -9,8 +9,14 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
 {
     public class LodSelectorNodeChildReferenceComponent : MonoBehaviour
     {
+        #region Fields (serialized)
+
         public LodSelectorNodeComponent lodSelectorNode;
         public int index;
+
+        #endregion
+
+        #region Methods (import/export)
 
         public void Import(Swe1rLodSelectorNodeChildReference source, ModelImporter importer)
         {
@@ -20,14 +26,13 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
             gameObject.name = $"{lodSelectorNode.gameObject.name} [{index}]";
         }
 
-        public Swe1rLodSelectorNodeChildReference Export(ModelExporter exporter)
-        {
-            var result = new Swe1rLodSelectorNodeChildReference();
+        public Swe1rLodSelectorNodeChildReference Export(ModelExporter exporter) =>
+            new()
+            {
+                LodSelectorNode = (Swe1rLodSelectorNode)exporter.GetFlaggedNode(lodSelectorNode.gameObject),
+                Index = index
+            };
 
-            result.LodSelectorNode = (Swe1rLodSelectorNode)exporter.GetFlaggedNode(lodSelectorNode.gameObject);
-            result.Index = index;
-            
-            return result;
-        }
+        #endregion
     }
 }

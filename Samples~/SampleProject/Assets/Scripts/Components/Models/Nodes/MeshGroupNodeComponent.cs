@@ -10,8 +10,14 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
     public class MeshGroupNodeComponent : FlaggedNodeComponent<Swe1rMeshGroupNode>
     {
+        #region Fields
+
         public UnityVector3 aabbMin;
         public UnityVector3 aabbMax;
+
+        #endregion
+
+        #region Methods (import/export)
 
         public override void Import(Swe1rMeshGroupNode source)
         {
@@ -20,14 +26,16 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
             aabbMax = source.Aabb.Max.ToUnityVector3();
         }
 
-        public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
+        public override Swe1rFlaggedNode Export(ModelExporter exporter)
         {
-            var result = (Swe1rMeshGroupNode)base.Export(modelExporter);
+            var result = (Swe1rMeshGroupNode)base.Export(exporter);
             result.Aabb = new Swe1rBounds3Single() {
                 Min = aabbMin.ToSwe1rVector3Single(),
                 Max = aabbMax.ToSwe1rVector3Single(),
             };
             return result;
         }
+
+        #endregion
     }
 }

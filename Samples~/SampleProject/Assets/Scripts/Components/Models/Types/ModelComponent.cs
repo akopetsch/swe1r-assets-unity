@@ -3,7 +3,7 @@
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using SWE1R.Assets.Blocks.Unity.ScriptableObjects;
 using UnityEngine;
-using Swe1rMappingChild = SWE1R.Assets.Blocks.ModelBlock.Meshes.MappingChild;
+using Swe1rMappingChild = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild;
 using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;
 
 namespace SWE1R.Assets.Blocks.Unity.Components.Models.Types
@@ -69,19 +69,16 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Types
 
         #region Methods (export)
 
-        public virtual Swe1rModel Export(ModelExporter exporter)
-        {
-            var result = new T();
+        public virtual Swe1rModel Export(ModelExporter exporter) =>
+            new T
+            {
+                Nodes = nodesComponent.Export(exporter),
+                Data = dataComponent?.Export(exporter),
+                Animations = animationsComponent?.Export(exporter),
+                AltN = altNComponent?.Export(exporter),
 
-            result.Nodes = nodesComponent.Export(exporter);
-            result.Data = dataComponent?.Export(exporter);
-            result.Animations = animationsComponent?.Export(exporter);
-            result.AltN = altNComponent?.Export(exporter);
-
-            result.BlockItem = exporter.ModelBlockItem;
-
-            return result;
-        }
+                BlockItem = exporter.ModelBlockItem
+            };
 
         #endregion
     }

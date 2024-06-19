@@ -54,7 +54,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor.Inspectors
                 if (Mesh?.vertices != null)
                 {
                     Transform t = Mesh.transform;
-                    foreach (VertexObject vertex in Mesh.vertices)
+                    foreach (VtxObject vertex in Mesh.vertices)
                     {
                         if (vertex.byte_F != 255)
                         {

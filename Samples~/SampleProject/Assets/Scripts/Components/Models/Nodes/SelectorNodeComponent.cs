@@ -7,7 +7,13 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
     public class SelectorNodeComponent : FlaggedNodeComponent<Swe1rSelectorNode>
     {
+        #region Fields
+
         public int selectionValue;
+
+        #endregion
+
+        #region Methods (import/export)
 
         public override void Import(Swe1rSelectorNode source)
         {
@@ -15,11 +21,13 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
             selectionValue = source.SelectionValue;
         }
 
-        public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
+        public override Swe1rFlaggedNode Export(ModelExporter exporter)
         {
-            var result = (Swe1rSelectorNode)base.Export(modelExporter);
+            var result = (Swe1rSelectorNode)base.Export(exporter);
             result.SelectionValue = selectionValue;
             return result;
         }
+
+        #endregion
     }
 }

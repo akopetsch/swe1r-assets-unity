@@ -10,7 +10,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Animations
 {
     public class AnimationComponent : MonoBehaviour
     {
-        #region Fields
+        #region Fields (serialized)
 
         public float float_0f4;
         public float float_0f8;
@@ -27,6 +27,8 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Animations
         public int int_128;
 
         #endregion
+
+        #region Methods (import/export)
 
         public void Import(Swe1rAnimation source, Swe1rModelImporter importer)
         {
@@ -67,5 +69,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Animations
 
             return result;
         }
+
+        #endregion
     }
 }

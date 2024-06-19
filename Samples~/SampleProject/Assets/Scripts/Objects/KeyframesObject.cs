@@ -12,8 +12,14 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
     [Serializable]
     public class KeyframesObject
     {
+        #region Fields (serialized)
+
         public List<MaterialTextureScriptableObject> materialTextures;
         public List<float> floats;
+
+        #endregion
+
+        #region Constructor
 
         public KeyframesObject(Swe1rKeyframes source, ModelImporter importer)
         {
@@ -21,6 +27,10 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
                         .Select(mt => importer.GetMaterialTextureScriptableObject(mt)).ToList();
             floats = source.Floats;
         }
+
+        #endregion
+
+        #region Methods (export)
 
         public Swe1rKeyframes Export(ModelExporter exporter)
         {
@@ -31,5 +41,7 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
                 result.Floats = floats;
             return result;
         }
+
+        #endregion
     }
 }

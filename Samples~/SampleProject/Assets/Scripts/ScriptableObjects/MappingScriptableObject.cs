@@ -4,7 +4,7 @@ using SWE1R.Assets.Blocks.ModelBlock.Meshes;
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using System.Collections.Generic;
 using System.Linq;
-using Swe1rMapping = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mapping;
+using Swe1rMapping = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.Mapping;
 using UnityVector3 = UnityEngine.Vector3;
 using UnityVector3Int = UnityEngine.Vector3Int;
 
@@ -12,6 +12,8 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
 {
     public class MappingScriptableObject : AbstractScriptableObject<Swe1rMapping>
     {
+        #region Fields (serialized)
+
         public short word_00;
         public byte fogFlags;
         public UnityVector3Int fogColor;
@@ -29,6 +31,10 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
         public short word_30;
         public short word_32;
         public List<MappingSubScriptableObject> subs;
+
+        #endregion
+
+        #region Methods (import/export)
 
         public override void Import(Swe1rMapping source, ModelImporter importer)
         {
@@ -52,7 +58,7 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
         }
 
         public override Swe1rMapping Export(ModelExporter exporter) =>
-            new Swe1rMapping() {
+            new() {
                 Word_00 = word_00,
                 FogFlags = fogFlags,
                 FogColor = fogColor.ToSwe1rVector3Byte(),
@@ -71,5 +77,7 @@ namespace SWE1R.Assets.Blocks.Unity.ScriptableObjects
                 Word_32 = word_32,
                 Subs = subs.Select(s => s.Export(exporter)).ToList(),
             };
+
+        #endregion
     }
 }

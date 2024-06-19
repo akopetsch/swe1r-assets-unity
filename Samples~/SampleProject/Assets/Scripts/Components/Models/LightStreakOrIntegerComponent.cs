@@ -9,7 +9,13 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
 {
     public class LightStreakOrIntegerComponent : MonoBehaviour
     {
+        #region Fields
+
         public SerializableNullable<int> integer;
+
+        #endregion
+
+        #region Methods (import/export)
 
         public void Import(Swe1rLightStreakOrInteger source, ModelImporter importer)
         {
@@ -30,5 +36,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
                 result.LightStreak = new Swe1rLightStreak(transform.localPosition.ToSwe1rVector3Single());
             return result;
         }
+
+        #endregion
     }
 }

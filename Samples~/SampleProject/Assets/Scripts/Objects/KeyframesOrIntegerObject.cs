@@ -8,8 +8,14 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
     [Serializable]
     public class KeyframesOrIntegerObject
     {
+        #region Fields (serialized)
+
         public KeyframesObject keyframes;
         public SerializableNullable<int> integer;
+
+        #endregion
+
+        #region Constructor
 
         public KeyframesOrIntegerObject(Swe1rKeyframesOrInteger source, ModelImporter importer)
         {
@@ -18,6 +24,10 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
             else
                 integer = source.Integer.Value;
         }
+
+        #endregion
+
+        #region Methods (export)
 
         public Swe1rKeyframesOrInteger Export(ModelExporter exporter)
         {
@@ -28,5 +38,7 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
                 result.Keyframes = keyframes.Export(exporter);
             return result;
         }
+
+        #endregion
     }
 }

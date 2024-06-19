@@ -2,15 +2,17 @@
 
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using System;
-using Swe1rVertex = SWE1R.Assets.Blocks.ModelBlock.Meshes.Vertex;
-using UnityVectorInt = UnityEngine.Vector3Int;
+using Swe1rVtx = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Vtx;
 using UnityColor32 = UnityEngine.Color32;
+using UnityVectorInt = UnityEngine.Vector3Int;
 
 namespace SWE1R.Assets.Blocks.Unity.Objects
 {
     [Serializable]
-    public class VertexObject
+    public class VtxObject
     {
+        #region Fields (serialized)
+
         public UnityVectorInt position;
         public short u;
         public short v;
@@ -21,7 +23,11 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
 
         public UnityColor32 color;
 
-        public VertexObject(Swe1rVertex source)
+        #endregion
+
+        #region Constructor
+
+        public VtxObject(Swe1rVtx source)
         {
             position = source.Position.ToUnityVector3Int();
             u = source.U;
@@ -34,17 +40,22 @@ namespace SWE1R.Assets.Blocks.Unity.Objects
             color = source.Color.ToUnityColor32();
         }
 
-        public Swe1rVertex Export()
-        {
-            var result = new Swe1rVertex();
-            result.Position = position.ToSwe1rVector3Int16();
-            result.U = u;
-            result.V = v;
-            result.Byte_C = byte_C;
-            result.Byte_D = byte_D;
-            result.Byte_E = byte_E;
-            result.Byte_F = byte_F;
-            return result;
-        }
+        #endregion
+
+        #region Methods (export)
+
+        public Swe1rVtx Export() =>
+            new()
+            {
+                Position = position.ToSwe1rVector3Int16(),
+                U = u,
+                V = v,
+                Byte_C = byte_C,
+                Byte_D = byte_D,
+                Byte_E = byte_E,
+                Byte_F = byte_F
+            };
+
+        #endregion
     }
 }

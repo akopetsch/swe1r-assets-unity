@@ -11,6 +11,8 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
 {
     public class AltNComponent : MonoBehaviour
     {
+        #region Methods (import/export)
+
         public void Import(List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference> source, ModelImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.AltN);
@@ -44,5 +46,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
             }
             return result;
         }
+
+        #endregion
     }
 }

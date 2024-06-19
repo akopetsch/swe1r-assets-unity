@@ -9,11 +9,13 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
 {
     public class ModelComponent : MonoBehaviour
     {
-        public void Import(Swe1rModelBlockItem modelBlockItem, ModelImporter importer)
+        #region Methods (import)
+
+        public void Import(Swe1rModelBlockItem sourc, ModelImporter importer)
         {
             // modelComponent
-            Type modelComponentType = ModelComponentFactory.Instance.GetComponentType(modelBlockItem.Model);
-            ((IModelComponent)gameObject.AddComponent(modelComponentType)).Import(modelBlockItem.Model, importer);
+            Type modelComponentType = ModelComponentFactory.Instance.GetComponentType(sourc.Model);
+            ((IModelComponent)gameObject.AddComponent(modelComponentType)).Import(sourc.Model, importer);
 
             FixTransform();
         }
@@ -25,11 +27,16 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
             gameObject.transform.localScale = new Vector3(-scale, scale, scale);
         }
 
-        public Swe1rModelBlockItem Export(ModelExporter exporter)
-        {
-            var result = new Swe1rModelBlockItem();
-            result.Model = GetComponent<IModelComponent>().Export(exporter);
-            return result;
-        }
+        #endregion
+
+        #region Methods (export)
+
+        public Swe1rModelBlockItem Export(ModelExporter exporter) =>
+            new()
+            {
+                Model = GetComponent<IModelComponent>().Export(exporter)
+            };
+
+        #endregion
     }
 }

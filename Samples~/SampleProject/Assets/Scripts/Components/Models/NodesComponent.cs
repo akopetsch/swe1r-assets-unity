@@ -11,6 +11,8 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
 {
     public class NodesComponent : MonoBehaviour
     {
+        #region Methods (import/export)
+
         public void Import(List<Swe1rFlaggedNodeOrInteger> source, ModelImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.Nodes);
@@ -48,5 +50,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
             }
             return result;
         }
+
+        #endregion
     }
 }

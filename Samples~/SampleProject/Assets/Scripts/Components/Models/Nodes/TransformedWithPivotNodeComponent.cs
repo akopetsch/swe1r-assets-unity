@@ -10,8 +10,14 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
     public class TransformedWithPivotNodeComponent : FlaggedNodeComponent<Swe1rTransformedWithPivotNode>
     {
+        #region Fields (serialized)
+
         public UnityMatrix4x4 swe1rTransform;
         public UnityVector3 pivot;
+
+        #endregion
+
+        #region Methods (import/export)
 
         public override void Import(Swe1rTransformedWithPivotNode source)
         {
@@ -21,12 +27,14 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
             ApplyMatrix(swe1rTransform);
         }
 
-        public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
+        public override Swe1rFlaggedNode Export(ModelExporter exporter)
         {
-            var result = (Swe1rTransformedWithPivotNode)base.Export(modelExporter);
+            var result = (Swe1rTransformedWithPivotNode)base.Export(exporter);
             result.Transform = swe1rTransform.ToSwe1r();
             result.Pivot = pivot.ToSwe1rVector3Single();
             return result;
         }
+
+        #endregion
     }
 }

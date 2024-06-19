@@ -12,6 +12,8 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
 {
     public class AnimationsComponent : MonoBehaviour
     {
+        #region Methods (import/export)
+
         public void Import(List<Swe1rAnimation> source, ModelImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.Animations);
@@ -23,5 +25,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models
         public List<Swe1rAnimation> Export(ModelExporter exporter) =>
             gameObject.GetComponentsInChildren<AnimationComponent>()
                 .Select(ac => ac.Export(exporter)).ToList();
+
+        #endregion
     }
 }

@@ -7,9 +7,17 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Types
 {
     public interface IModelComponent
     {
+        #region Properties
+
         GameObject gameObject { get; }
 
-        void Import(Swe1rModel model, ModelImporter modelImporter);
-        Swe1rModel Export(ModelExporter modelExporter);
+        #endregion
+
+        #region Methods (import/export)
+
+        void Import(Swe1rModel model, ModelImporter importer);
+        Swe1rModel Export(ModelExporter exporter);
+
+        #endregion
     }
 }

@@ -2,7 +2,6 @@
 
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using UnityEngine;
-
 using Swe1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
 using UnityMatrix4x4 = UnityEngine.Matrix4x4;
 
@@ -10,7 +9,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 {
     public abstract class FlaggedNodeComponent : MonoBehaviour
     {
-        #region Fields
+        #region Fields (serialized)
 
         public int flags1;
         public int flags2;
@@ -20,7 +19,7 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
 
         #endregion
 
-        #region Methods
+        #region Methods (import/export)
 
         public abstract void Import(Swe1rFlaggedNode source);
 
@@ -32,6 +31,8 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
     public abstract class FlaggedNodeComponent<T> : FlaggedNodeComponent 
         where T : Swe1rFlaggedNode, new()
     {
+        #region Methods (import)
+
         public override void Import(Swe1rFlaggedNode source) =>
             Import((T)source);
 
@@ -43,6 +44,22 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
             lightIndex = source.LightIndex;
             flags5 = source.Flags5;
         }
+
+        protected void ApplyMatrix(UnityMatrix4x4 matrix)
+        {
+            if (!matrix.ValidTRS())
+                Debug.LogWarning("invalid RTS");
+            else
+            {
+                //transform.localPosition = matrix.MultiplyPoint3x4(Vector3.one); // MultiplyVector?
+                // TODO: Matrix application
+                transform.FromMatrix(matrix);
+            }
+        }
+
+        #endregion
+
+        #region Methods (export)
 
         public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
         {
@@ -57,16 +74,6 @@ namespace SWE1R.Assets.Blocks.Unity.Components.Models.Nodes
             return result;
         }
 
-        protected void ApplyMatrix(UnityMatrix4x4 matrix)
-        {
-            if (!matrix.ValidTRS())
-                Debug.LogWarning("invalid RTS");
-            else
-            {
-                //transform.localPosition = matrix.MultiplyPoint3x4(Vector3.one); // MultiplyVector?
-                // TODO: Matrix application
-                transform.FromMatrix(matrix);
-            }
-        }
+        #endregion
     }
 }
