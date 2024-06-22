@@ -194,9 +194,9 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             ModelImporter importer = GetModelImporter(modelIndex);
             int i = importer.ModelIndex;
 
-            LogImport(i); yield return null;
+            BlockEditorLogHelper.LogImport(i); yield return null;
             ImportAndSelect(importer);
-            LogImported(i); yield return null;
+            BlockEditorLogHelper.LogImported(i); yield return null;
         }
 
         private ModelImporter GetModelImporter(int modelIndex)
@@ -218,10 +218,10 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
         private IEnumerator Export(int modelIndex)
         {
             ModelExporter exporter = GetModelExporter(modelIndex);
-            
-            LogExport(modelIndex); yield return null;
+
+            BlockEditorLogHelper.LogExport(modelIndex); yield return null;
             exporter.Export();
-            LogExported(modelIndex); yield return null;
+            BlockEditorLogHelper.LogExported(modelIndex); yield return null;
         }
 
         private IEnumerator ExportToBlock(int modelIndex)
@@ -229,17 +229,17 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             ModelExporter exporter = GetModelExporter(modelIndex);
             if (exporter != null)
             {
-                LogExport(modelIndex); yield return null;
+                BlockEditorLogHelper.LogExport(modelIndex); yield return null;
                 exporter.Export();
-                LogExported(modelIndex); yield return null;
+                BlockEditorLogHelper.LogExported(modelIndex); yield return null;
 
                 if (exporter.ModelBlockItem != null)
                 {
-                    LogExportToModelBlock(modelIndex); yield return null;
+                    BlockEditorLogHelper.LogExportToModelBlock(modelIndex); yield return null;
                     LoadBlocks(); // TODO: only load modelblock
                     modelBlock[modelIndex] = exporter.ModelBlockItem;
                     SaveBlocks(); // TODO: only save modelblock
-                    LogExportedToModelBlock(modelIndex); yield return null;
+                    BlockEditorLogHelper.LogExportedToModelBlock(modelIndex); yield return null;
                 }
             }
         }
@@ -278,20 +278,20 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
         private IEnumerator TestReExport(int modelIndex)
         {
             ModelImporter importer = GetModelImporter(modelIndex);
-            
-            LogTestReExport(modelIndex); yield return null;
 
-            LogImport(modelIndex); yield return null;
+            BlockEditorLogHelper.LogTestReExport(modelIndex); yield return null;
+
+            BlockEditorLogHelper.LogImport(modelIndex); yield return null;
             ImportAndSelect(importer);
-            LogImported(modelIndex); yield return null;
+            BlockEditorLogHelper.LogImported(modelIndex); yield return null;
 
             ModelExporter exporter = GetModelExporter(modelIndex);
             bool successful = false;
             if (exporter != null)
             {
-                LogExport(modelIndex); yield return null;
+                BlockEditorLogHelper.LogExport(modelIndex); yield return null;
                 exporter.Export();
-                LogExported(modelIndex); yield return null;
+                BlockEditorLogHelper.LogExported(modelIndex); yield return null;
 
                 if (exporter.ModelBlockItem != null)
                 {
@@ -300,66 +300,29 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
                     {
                         importer.AssetsHelper.DeleteAssets();
                         DestroyImmediate(Selection.objects.SingleOrDefault() as GameObject);
-                        LogTestReExportSuccessful(modelIndex); yield return null;
+                        BlockEditorLogHelper.LogTestReExportSuccessful(modelIndex); yield return null;
                     }
                 }
             }
             if (!successful)
             {
-                LogTestReExportFailed(modelIndex);
+                BlockEditorLogHelper.LogTestReExportFailed(modelIndex);
                 yield return null;
             }
         }
 
         private IEnumerator TestReExportAll()
         {
-            LogTestReExportAll(); yield return null;
+            BlockEditorLogHelper.LogTestReExportAll(); yield return null;
 
             LoadBlocks();
             for (int i = 0; i < modelBlock.Count; i++)
                 yield return EditorCoroutineUtility.StartCoroutine(TestReExport(i), this);
 
-            LogTestedReExportAllFinished(); yield return null;
+            BlockEditorLogHelper.LogTestedReExportAllFinished(); yield return null;
 
             importAllCoroutine = null;
         }
-
-        #endregion
-
-        #region Methods (log)
-
-        private void LogImport(int modelIndex) =>
-            Debug.Log($"Import model {modelIndex}...");
-
-        private void LogImported(int modelIndex) =>
-            Debug.Log($"Imported model {modelIndex}.");
-
-        private void LogExport(int modelIndex) =>
-            Debug.Log($"Export model {modelIndex}...");
-
-        private void LogExported(int modelIndex) =>
-            Debug.Log($"Exported model {modelIndex}.");
-
-        private void LogExportToModelBlock(int modelIndex) =>
-            Debug.Log($"Export model {modelIndex} to block...");
-
-        private void LogExportedToModelBlock(int modelIndex) =>
-            Debug.Log($"Exported model {modelIndex} to block.");
-
-        private void LogTestReExport(int modelIndex) =>
-            Debug.Log($"Test re-export of model {modelIndex}...");
-
-        private void LogTestReExportSuccessful(int modelIndex) =>
-            Debug.Log($"Test re-export of model {modelIndex} successful.");
-
-        private void LogTestReExportFailed(int modelIndex) =>
-            Debug.LogError($"Test re-export of model {modelIndex} failed.");
-
-        private void LogTestReExportAll() =>
-            Debug.Log($"Test re-export all.");
-
-        private void LogTestedReExportAllFinished() =>
-            Debug.Log($"Test re-export all finished.");
 
         #endregion
 
