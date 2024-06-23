@@ -99,13 +99,13 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             EditorGUILayout.BeginHorizontal();
             modelIndex = GuiIntField("Index", modelIndex, 3);
             if (GuiButton("Import"))
-                EditorCoroutineUtility.StartCoroutine(Import(modelIndex), this);
+                EditorCoroutineUtility.StartCoroutine(ImportCoroutine(modelIndex), this);
             if (GuiButton("Export"))
-                EditorCoroutineUtility.StartCoroutine(Export(modelIndex), this);
+                EditorCoroutineUtility.StartCoroutine(ExportCoroutine(modelIndex), this);
             if (GuiButton("Export (Block)"))
-                EditorCoroutineUtility.StartCoroutine(ExportToBlock(modelIndex), this);
+                EditorCoroutineUtility.StartCoroutine(ExportToBlockCoroutine(modelIndex), this);
             if (GuiButton("Test Re-Export"))
-                EditorCoroutineUtility.StartCoroutine(TestReExport(modelIndex), this);
+                EditorCoroutineUtility.StartCoroutine(TestReExportCoroutine(modelIndex), this);
 
             EditorGUILayout.EndHorizontal();
 
@@ -115,7 +115,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             if (importAllCoroutine == null)
             {
                 if (GuiButton("Start"))
-                    importAllCoroutine = EditorCoroutineUtility.StartCoroutine(TestReExportAll(), this);
+                    importAllCoroutine = EditorCoroutineUtility.StartCoroutine(TestReExportAllCoroutine(), this);
             }
             else if (importAllCoroutine != null)
             {
@@ -189,7 +189,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         #region Methods (import)
 
-        private IEnumerator Import(int modelIndex)
+        private IEnumerator ImportCoroutine(int modelIndex)
         {
             ModelImporter importer = GetModelImporter(modelIndex);
             int i = importer.ModelIndex;
@@ -215,7 +215,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         #region Methods (export)
 
-        private IEnumerator Export(int modelIndex)
+        private IEnumerator ExportCoroutine(int modelIndex)
         {
             ModelExporter exporter = GetModelExporter(modelIndex);
 
@@ -224,7 +224,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             BlockEditorLogHelper.LogExported(modelIndex); yield return null;
         }
 
-        private IEnumerator ExportToBlock(int modelIndex)
+        private IEnumerator ExportToBlockCoroutine(int modelIndex)
         {
             ModelExporter exporter = GetModelExporter(modelIndex);
             if (exporter != null)
@@ -275,7 +275,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         #region Methods (re-export)
 
-        private IEnumerator TestReExport(int modelIndex)
+        private IEnumerator TestReExportCoroutine(int modelIndex)
         {
             ModelImporter importer = GetModelImporter(modelIndex);
 
@@ -311,15 +311,13 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             }
         }
 
-        private IEnumerator TestReExportAll()
+        private IEnumerator TestReExportAllCoroutine()
         {
-            BlockEditorLogHelper.LogTestReExportAll(); yield return null;
-
+            BlockEditorLogHelper.LogTestReExportAll();
             LoadBlocks();
             for (int i = 0; i < modelBlock.Count; i++)
-                yield return EditorCoroutineUtility.StartCoroutine(TestReExport(i), this);
-
-            BlockEditorLogHelper.LogTestedReExportAllFinished(); yield return null;
+                yield return EditorCoroutineUtility.StartCoroutine(TestReExportCoroutine(i), this);
+            BlockEditorLogHelper.LogTestedReExportAllFinished();
 
             importAllCoroutine = null;
         }
@@ -336,7 +334,8 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             spriteBlock = LoadBlock<Swe1rSpriteBlockItem>(spriteBlockFilename);
         }
 
-        private Block<TBlockItem> LoadBlock<TBlockItem>(string filename) where TBlockItem : BlockItem, new()
+        private Block<TBlockItem> LoadBlock<TBlockItem>(string filename) 
+            where TBlockItem : BlockItem, new()
         {
             var block = new Block<TBlockItem>(Endianness.BigEndian);
             block.Load(Path.Combine(blocksPath, filename));
