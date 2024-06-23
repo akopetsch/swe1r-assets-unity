@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
 
-using ByteSerialization.IO;
 using SWE1R.Assets.Blocks.Unity.Components.Models;
 using System.Collections;
 using System.IO;
@@ -236,24 +235,6 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             }
         }
 
-        private ModelComponent GetSelectedGameObjectModelComponent()
-        {
-            var gameObject = Selection.objects.SingleOrDefault() as GameObject;
-            if (gameObject == null)
-            {
-                Debug.LogError("Selection is not a single GameObject to export.");
-                return null;
-            }
-
-            var modelComponent = gameObject.GetComponent<ModelComponent>();
-            if (modelComponent == null)
-            {
-                Debug.LogError("Selection is not an imported SWE1R model.");
-                return null;
-            }
-            return modelComponent;
-        }
-
         #endregion
 
         #region Methods (re-export)
@@ -301,7 +282,6 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             for (int i = 0; i < modelBlock.Count; i++)
                 yield return EditorCoroutineUtility.StartCoroutine(TestReExportCoroutine(i), this);
             BlockEditorLogHelper.LogTestedReExportAllFinished();
-
             importAllCoroutine = null;
         }
 
@@ -317,7 +297,8 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         private ModelExporter GetModelExporter(int modelIndex)
         {
-            ModelComponent modelComponent = GetSelectedGameObjectModelComponent();
+            ModelComponent modelComponent = 
+                SelectionHelper.GetSelectedGameObjectComponent<ModelComponent>();
             if (modelComponent == null)
                 return null;
             else
