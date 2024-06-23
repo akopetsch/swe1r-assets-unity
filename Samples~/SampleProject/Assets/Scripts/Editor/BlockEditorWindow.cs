@@ -197,12 +197,6 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             BlockEditorLogHelper.LogImported(importer.ModelIndex); yield return null;
         }
 
-        private ModelImporter GetModelImporter(int modelIndex)
-        {
-            LoadBlocks();
-            return new ModelImporter(modelBlock, modelIndex, textureBlock);
-        }
-
         private void ImportAndSelect(ModelImporter importer)
         {
             importer.Import();
@@ -240,15 +234,6 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
                     BlockEditorLogHelper.LogExportedToModelBlock(modelIndex); yield return null;
                 }
             }
-        }
-
-        private ModelExporter GetModelExporter(int modelIndex)
-        {
-            ModelComponent modelComponent = GetSelectedGameObjectModelComponent();
-            if (modelComponent == null)
-                return null;
-            else
-                return new ModelExporter(modelComponent, modelIndex);
         }
 
         private ModelComponent GetSelectedGameObjectModelComponent()
@@ -318,6 +303,25 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             BlockEditorLogHelper.LogTestedReExportAllFinished();
 
             importAllCoroutine = null;
+        }
+
+        #endregion
+
+        #region Methods (get importer/exporter)
+
+        private ModelImporter GetModelImporter(int modelIndex)
+        {
+            LoadBlocks();
+            return new ModelImporter(modelBlock, modelIndex, textureBlock);
+        }
+
+        private ModelExporter GetModelExporter(int modelIndex)
+        {
+            ModelComponent modelComponent = GetSelectedGameObjectModelComponent();
+            if (modelComponent == null)
+                return null;
+            else
+                return new ModelExporter(modelComponent, modelIndex);
         }
 
         #endregion
