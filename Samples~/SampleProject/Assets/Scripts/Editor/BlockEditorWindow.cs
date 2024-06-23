@@ -192,11 +192,9 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
         private IEnumerator ImportCoroutine(int modelIndex)
         {
             ModelImporter importer = GetModelImporter(modelIndex);
-            int i = importer.ModelIndex;
-
-            BlockEditorLogHelper.LogImport(i); yield return null;
+            BlockEditorLogHelper.LogImport(importer.ModelIndex); yield return null;
             ImportAndSelect(importer);
-            BlockEditorLogHelper.LogImported(i); yield return null;
+            BlockEditorLogHelper.LogImported(importer.ModelIndex); yield return null;
         }
 
         private ModelImporter GetModelImporter(int modelIndex)
@@ -324,22 +322,14 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         #endregion
 
-        #region Methods (blocks helper)
+        #region Methods (LoadBlocks() / SaveBlocks())
 
         private void LoadBlocks()
         {
-            modelBlock = LoadBlock<Swe1rModelBlockItem>(modelBlockFilename);
-            textureBlock = LoadBlock<Swe1rTextureBlockItem>(textureBlockFilename);
-            splineBlock = LoadBlock<Swe1rSplineBlockItem>(splineBlockFilename);
-            spriteBlock = LoadBlock<Swe1rSpriteBlockItem>(spriteBlockFilename);
-        }
-
-        private Block<TBlockItem> LoadBlock<TBlockItem>(string filename) 
-            where TBlockItem : BlockItem, new()
-        {
-            var block = new Block<TBlockItem>(Endianness.BigEndian);
-            block.Load(Path.Combine(blocksPath, filename));
-            return block;
+            modelBlock = BlockLoader.Load<Swe1rModelBlockItem>(modelBlockFilename);
+            textureBlock = BlockLoader.Load<Swe1rTextureBlockItem>(textureBlockFilename);
+            splineBlock = BlockLoader.Load<Swe1rSplineBlockItem>(splineBlockFilename);
+            spriteBlock = BlockLoader.Load<Swe1rSpriteBlockItem>(spriteBlockFilename);
         }
 
         private void SaveBlocks()
