@@ -311,10 +311,10 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         private void LoadBlocks()
         {
-            modelBlock = BlockLoader.Load<Swe1rModelBlockItem>(modelBlockFilename);
-            textureBlock = BlockLoader.Load<Swe1rTextureBlockItem>(textureBlockFilename);
-            splineBlock = BlockLoader.Load<Swe1rSplineBlockItem>(splineBlockFilename);
-            spriteBlock = BlockLoader.Load<Swe1rSpriteBlockItem>(spriteBlockFilename);
+            modelBlock = BlockLoader.Load<Swe1rModelBlockItem>(Path.Combine(blocksPath, modelBlockFilename));
+            textureBlock = BlockLoader.Load<Swe1rTextureBlockItem>(Path.Combine(blocksPath, textureBlockFilename));
+            splineBlock = BlockLoader.Load<Swe1rSplineBlockItem>(Path.Combine(blocksPath, splineBlockFilename));
+            spriteBlock = BlockLoader.Load<Swe1rSpriteBlockItem>(Path.Combine(blocksPath, spriteBlockFilename));
         }
 
         private void SaveBlocks()
