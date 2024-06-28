@@ -15,8 +15,8 @@ namespace SWE1R.Assets.Blocks.Unity
     {
         #region Fields
 
-        private static string rootPath { get; } =
-            Path.Combine("Assets", "SWE1R");
+        private static string rootPath =
+            Path.Combine("Assets", "Generated");
 
         #endregion
 
