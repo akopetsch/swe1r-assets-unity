@@ -1,13 +1,12 @@
 ﻿// SPDX-License-Identifier: MIT
 
 using SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2;
-using SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes.Editor
+namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Editor
 {
     [CustomEditor(typeof(MeshWrapper))]
     public  class MeshInspector : UnityEditor.Editor
