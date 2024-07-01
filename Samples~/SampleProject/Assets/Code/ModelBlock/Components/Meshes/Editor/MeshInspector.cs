@@ -8,10 +8,10 @@ using UnityEngine;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes.Editor
 {
-    [CustomEditor(typeof(MeshComponent))]
+    [CustomEditor(typeof(MeshWrapper))]
     public  class MeshInspector : UnityEditor.Editor
     {
-        private MeshComponent Mesh { get; set; }
+        private MeshWrapper Mesh { get; set; }
         private GUIStyle Style { get; set; }
         private LabeledVectors LabeledVertices { get; set; }
         private LabeledVectors LabeledCollision { get; set; }
@@ -20,7 +20,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes.Editor
         {
             base.OnInspectorGUI();
 
-            Mesh = (MeshComponent)target;
+            Mesh = (MeshWrapper)target;
             Style = new GUIStyle();
             LabeledVertices = GetLabeledVectors(Mesh.vertices.Select(v => (Vector3)v.position).ToList(), Color.red, Color.magenta);
             if (Mesh.collisionVertices != null)
@@ -53,7 +53,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes.Editor
                 if (Mesh?.vertices != null)
                 {
                     Transform t = Mesh.transform;
-                    foreach (VtxObject vertex in Mesh.vertices)
+                    foreach (VtxWrapper vertex in Mesh.vertices)
                     {
                         if (vertex.byte_F != 255)
                         {

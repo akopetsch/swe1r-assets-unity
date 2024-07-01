@@ -84,7 +84,7 @@ namespace SWE1R.Assets.Blocks.Unity
             AssetDatabase.CreateAsset(scriptableObject, fileName);
         }
 
-        public GameObject SaveAsPrefabAssetAndConnect(IFlaggedNodeComponent flaggedNodeComponent)
+        public GameObject SaveAsPrefabAssetAndConnect(IFlaggedNodeWrapper flaggedNodeComponent)
         {
             GameObject gameObject = flaggedNodeComponent.gameObject;
 

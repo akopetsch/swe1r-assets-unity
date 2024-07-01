@@ -52,13 +52,13 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         private Dictionary<Type, Dictionary<object, ScriptableObject>> scriptableObjectsBySourceBySourceType = new();
 
-        private Dictionary<Swe1rMaterialTextureChild, MaterialTextureChildObject> materialTextureChildObjects = new();
-        private Dictionary<Swe1rMaterial, MaterialObject> materialObjects = new();
+        private Dictionary<Swe1rMaterialTextureChild, MaterialTextureChildWrapper> materialTextureChildObjects = new();
+        private Dictionary<Swe1rMaterial, MaterialWrapper> materialObjects = new();
         
-        private Dictionary<Swe1rVtx, VtxObject> vtxObjects = new();
-        private Dictionary<Swe1rGraphicsCommand, IGraphicsCommandObject> graphicsCommandObjects = new();
+        private Dictionary<Swe1rVtx, VtxWrapper> vtxObjects = new();
+        private Dictionary<Swe1rGraphicsCommand, IGraphicsCommandWrapper> graphicsCommandObjects = new();
 
-        private Dictionary<Swe1rMeshMaterialReference, MeshMaterialReferenceObject> meshMaterialReferenceObjects = new();
+        private Dictionary<Swe1rMeshMaterialReference, MeshMaterialReferenceWrapper> meshMaterialReferenceObjects = new();
 
         #endregion
 
@@ -113,7 +113,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
             // import
             GameObject = new GameObject(Name);
-            GameObject.AddComponent<ModelComponent>().Import(ModelBlockItem, this);
+            GameObject.AddComponent<ModelWrapper>().Import(ModelBlockItem, this);
             AssetDatabase.SaveAssets();
         }
 
@@ -168,47 +168,47 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
                 return new List<T>();
         }
 
-        public MeshMaterialScriptableObject GetMeshMaterialScriptableObject(Swe1rMeshMaterial source) =>
-            GetScriptableObject<MeshMaterialScriptableObject, Swe1rMeshMaterial>(source);
+        public MeshMaterialWrapper GetMeshMaterialScriptableObject(Swe1rMeshMaterial source) =>
+            GetScriptableObject<MeshMaterialWrapper, Swe1rMeshMaterial>(source);
 
-        public MaterialTextureScriptableObject GetMaterialTextureScriptableObject(Swe1rMaterialTexture source) =>
-            GetScriptableObject<MaterialTextureScriptableObject, Swe1rMaterialTexture>(source);
+        public MaterialTextureWrapper GetMaterialTextureScriptableObject(Swe1rMaterialTexture source) =>
+            GetScriptableObject<MaterialTextureWrapper, Swe1rMaterialTexture>(source);
 
-        public MappingScriptableObject GetMappingScriptableObject(Swe1rMapping source) =>
-            GetScriptableObject<MappingScriptableObject, Swe1rMapping>(source);
+        public MappingWrapper GetMappingScriptableObject(Swe1rMapping source) =>
+            GetScriptableObject<MappingWrapper, Swe1rMapping>(source);
 
-        public MappingSubScriptableObject GetMappingSubScriptableObject(Swe1rMappingSub source) =>
-            GetScriptableObject<MappingSubScriptableObject, Swe1rMappingSub>(source);
+        public MappingSubWrapper GetMappingSubScriptableObject(Swe1rMappingSub source) =>
+            GetScriptableObject<MappingSubWrapper, Swe1rMappingSub>(source);
 
-        public MappingChildScriptableObject GetMappingChildScriptableObject(Swe1rMappingChild source) =>
-            GetScriptableObject<MappingChildScriptableObject, Swe1rMappingChild>(source);
+        public MappingChildWrapper GetMappingChildScriptableObject(Swe1rMappingChild source) =>
+            GetScriptableObject<MappingChildWrapper, Swe1rMappingChild>(source);
 
         #endregion
 
         #region Methods (mapping)
 
-        public T GetFlaggedNodeComponent<T>(Swe1rFlaggedNode source) where T : IFlaggedNodeComponent =>
+        public T GetFlaggedNodeComponent<T>(Swe1rFlaggedNode source) where T : IFlaggedNodeWrapper =>
             prefabByFlaggedNode[source].GetComponent<T>();
 
-        public MaterialTextureChildObject GetMaterialTextureChildObject(Swe1rMaterialTextureChild source) =>
+        public MaterialTextureChildWrapper GetMaterialTextureChildObject(Swe1rMaterialTextureChild source) =>
             materialTextureChildObjects.GetOrCreate(source,
-                x => CreateAndImport<MaterialTextureChildObject, Swe1rMaterialTextureChild>(source, this));
+                x => CreateAndImport<MaterialTextureChildWrapper, Swe1rMaterialTextureChild>(source, this));
 
-        public MaterialObject GetMaterialPropertiesObject(Swe1rMaterial source) =>
+        public MaterialWrapper GetMaterialPropertiesObject(Swe1rMaterial source) =>
             materialObjects.GetOrCreate(source,
-                x => CreateAndImport<MaterialObject, Swe1rMaterial>(source, this));
+                x => CreateAndImport<MaterialWrapper, Swe1rMaterial>(source, this));
 
-        public IGraphicsCommandObject GetGraphicsCommandObject(Swe1rGraphicsCommand source) =>
+        public IGraphicsCommandWrapper GetGraphicsCommandObject(Swe1rGraphicsCommand source) =>
             graphicsCommandObjects.GetOrCreate(source, 
-                x => GraphicsCommandObjectFactory.Instance.CreateGraphicsCommandObject(x, this));
+                x => GraphicsCommandWrapperFactory.Instance.CreateGraphicsCommandObject(x, this));
 
-        public VtxObject GetVertexObject(Swe1rVtx source) =>
+        public VtxWrapper GetVertexObject(Swe1rVtx source) =>
             vtxObjects.GetOrCreate(source, 
-                x => CreateAndImport<VtxObject, Swe1rVtx>(source, this));
+                x => CreateAndImport<VtxWrapper, Swe1rVtx>(source, this));
 
-        public MeshMaterialReferenceObject GetMeshMaterialReferenceObject(Swe1rMeshMaterialReference source) =>
+        public MeshMaterialReferenceWrapper GetMeshMaterialReferenceObject(Swe1rMeshMaterialReference source) =>
             meshMaterialReferenceObjects.GetOrCreate(source, 
-                x => CreateAndImport<MeshMaterialReferenceObject, MeshMaterialReference>(source, this));
+                x => CreateAndImport<MeshMaterialReferenceWrapper, MeshMaterialReference>(source, this));
 
         private static TResult CreateAndImport<TResult, TSource>(TSource source, ModelBlockItemImporter importer)
             where TResult : AbstractModelObject<TSource>, new()
@@ -222,15 +222,15 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         #region Methods
 
-        public IFlaggedNodeComponent CreateFlaggedNodeGameObject(Swe1rFlaggedNode swe1rFlaggedNode, GameObject parentGameObject)
+        public IFlaggedNodeWrapper CreateFlaggedNodeGameObject(Swe1rFlaggedNode swe1rFlaggedNode, GameObject parentGameObject)
         {
             GameObject prefab;
             GameObject prefabInstance;
-            IFlaggedNodeComponent flaggedNodeComponent;
+            IFlaggedNodeWrapper flaggedNodeComponent;
 
             if (swe1rFlaggedNode == null)
             {
-                parentGameObject.AddChild().AddComponent<NullComponent>().Import();
+                parentGameObject.AddChild().AddComponent<NullWrapper>().Import();
                 flaggedNodeComponent = null;
             }
             else if (prefabByFlaggedNode.TryGetValue(swe1rFlaggedNode, out prefab))
@@ -238,7 +238,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
                 prefabInstance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
                 prefabInstance.SetParent(parentGameObject);
                 prefabInstance.SetActive(false);
-                flaggedNodeComponent = prefabInstance.GetComponent<IFlaggedNodeComponent>();
+                flaggedNodeComponent = prefabInstance.GetComponent<IFlaggedNodeWrapper>();
             }
             else
             {
@@ -246,8 +246,8 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
                 prefabInstance = parentGameObject.AddChild(GetName(swe1rFlaggedNode));
 
                 // component
-                Type componentType = FlaggedNodeComponentFactory.Instance.GetComponentType(swe1rFlaggedNode);
-                var instanceflaggedNodeComponent = (IFlaggedNodeComponent)prefabInstance.AddComponent(componentType);
+                Type componentType = FlaggedNodeWrapperFactory.Instance.GetComponentType(swe1rFlaggedNode);
+                var instanceflaggedNodeComponent = (IFlaggedNodeWrapper)prefabInstance.AddComponent(componentType);
                 instanceflaggedNodeComponent.Import(swe1rFlaggedNode, this);
 
                 // get or create children recursively
@@ -260,13 +260,13 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
                         if (childNode is Swe1rFlaggedNode childFlaggedNode)
                             CreateFlaggedNodeGameObject(childFlaggedNode, prefabInstance);
                         else if (childNode is Swe1rMesh childMesh)
-                            prefabInstance.AddChild().AddComponent<MeshComponent>().Import(childMesh, this);
+                            prefabInstance.AddChild().AddComponent<MeshWrapper>().Import(childMesh, this);
                     }
                 }
 
                 // save as asset and replace
                 prefab = prefabByFlaggedNode[swe1rFlaggedNode] = AssetsHelper.SaveAsPrefabAssetAndConnect(instanceflaggedNodeComponent);
-                flaggedNodeComponent = prefab.GetComponent<IFlaggedNodeComponent>();
+                flaggedNodeComponent = prefab.GetComponent<IFlaggedNodeWrapper>();
             }
             return flaggedNodeComponent;
         }

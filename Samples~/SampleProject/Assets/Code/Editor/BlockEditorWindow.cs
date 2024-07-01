@@ -298,8 +298,8 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         private ModelBlockItemExporter GetModelExporter(int modelIndex)
         {
-            ModelComponent modelComponent = 
-                SelectionHelper.GetSelectedGameObjectComponent<ModelComponent>();
+            ModelWrapper modelComponent = 
+                SelectionHelper.GetSelectedGameObjectComponent<ModelWrapper>();
             if (modelComponent == null)
                 return null;
             else

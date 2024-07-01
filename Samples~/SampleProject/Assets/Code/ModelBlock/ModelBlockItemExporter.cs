@@ -39,22 +39,22 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
         #region Fields (mapping)
 
         private Dictionary<GameObject, Swe1rFlaggedNode> _flaggedNodeByPrefab = new();
-        private Dictionary<MeshMaterialScriptableObject, Swe1rMeshMaterial> _meshMaterials = new();
-        private Dictionary<MaterialTextureScriptableObject, Swe1rMaterialTexture> _materialTextures = new();
-        private Dictionary<MaterialTextureChildObject, Swe1rMaterialTextureChild> _materialTextureChildren = new();
-        private Dictionary<MaterialObject, Swe1rMaterial> _materials = new();
-        private Dictionary<MappingScriptableObject, Swe1rMapping> _mappings = new();
-        private Dictionary<MappingChildScriptableObject, Swe1rMappingChild> _mappingChildren = new();
-        private Dictionary<VtxObject, Swe1rVtx> _vtxs = new();
-        private Dictionary<MeshMaterialReferenceObject, Swe1rMeshMaterialReference> _meshMaterialReferences = new();
-        private Dictionary<KeyframesOrIntegerObject, Swe1rKeyframesOrInteger> _keyframesOrIntegers = new();
-        private Dictionary<TargetOrIntegerObject, Swe1rTargetOrInteger> _targetOrIntegers = new();
+        private Dictionary<MeshMaterialWrapper, Swe1rMeshMaterial> _meshMaterials = new();
+        private Dictionary<MaterialTextureWrapper, Swe1rMaterialTexture> _materialTextures = new();
+        private Dictionary<MaterialTextureChildWrapper, Swe1rMaterialTextureChild> _materialTextureChildren = new();
+        private Dictionary<MaterialWrapper, Swe1rMaterial> _materials = new();
+        private Dictionary<MappingWrapper, Swe1rMapping> _mappings = new();
+        private Dictionary<MappingChildWrapper, Swe1rMappingChild> _mappingChildren = new();
+        private Dictionary<VtxWrapper, Swe1rVtx> _vtxs = new();
+        private Dictionary<MeshMaterialReferenceWrapper, Swe1rMeshMaterialReference> _meshMaterialReferences = new();
+        private Dictionary<KeyframesOrIntegerWrapper, Swe1rKeyframesOrInteger> _keyframesOrIntegers = new();
+        private Dictionary<TargetOrIntegerWrapper, Swe1rTargetOrInteger> _targetOrIntegers = new();
 
         #endregion
 
         #region Properties (constructor)
 
-        public ModelComponent ModelComponent { get; }
+        public ModelWrapper ModelComponent { get; }
         public int ModelIndex { get; private set; }
 
         #endregion
@@ -67,7 +67,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         #region Constructor
 
-        public ModelBlockItemExporter(ModelComponent modelComponent, int modelIndex)
+        public ModelBlockItemExporter(ModelWrapper modelComponent, int modelIndex)
         {
             ModelComponent = modelComponent;
             ModelIndex = modelIndex;
@@ -102,31 +102,31 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
                 return CreateFlaggedNode(prefab);
         }
 
-        public Swe1rMeshMaterial GetMeshMaterial(MeshMaterialScriptableObject meshMaterialObject) =>
+        public Swe1rMeshMaterial GetMeshMaterial(MeshMaterialWrapper meshMaterialObject) =>
             meshMaterialObject == null ? null : _meshMaterials.GetOrCreate(meshMaterialObject, x => x.Export(this));
 
-        public Swe1rMaterialTexture GetMaterialTexture(MaterialTextureScriptableObject materialTexureObject) =>
+        public Swe1rMaterialTexture GetMaterialTexture(MaterialTextureWrapper materialTexureObject) =>
             _materialTextures.GetOrCreate(materialTexureObject, x => x.Export(this));
 
-        public Swe1rMaterialTextureChild GetMaterialTextureChild(MaterialTextureChildObject materialTexureChildObject) =>
+        public Swe1rMaterialTextureChild GetMaterialTextureChild(MaterialTextureChildWrapper materialTexureChildObject) =>
             _materialTextureChildren.GetOrCreate(materialTexureChildObject, x => x.Export(this));
 
-        public Swe1rMaterial GetMaterial(MaterialObject materialObject) =>
+        public Swe1rMaterial GetMaterial(MaterialWrapper materialObject) =>
             _materials.GetOrCreate(materialObject, x => x.Export(this));
 
-        public Swe1rMapping GetMapping(MappingScriptableObject mappingObject) =>
+        public Swe1rMapping GetMapping(MappingWrapper mappingObject) =>
             _mappings.GetOrCreate(mappingObject, x => x.Export(this));
 
-        public Swe1rMappingChild GetMappingChild(MappingChildScriptableObject mappingChildObject) =>
+        public Swe1rMappingChild GetMappingChild(MappingChildWrapper mappingChildObject) =>
             _mappingChildren.GetOrCreate(mappingChildObject, x => x.Export(this));
 
-        public Swe1rVtx GetVertex(VtxObject vertexObject) =>
+        public Swe1rVtx GetVertex(VtxWrapper vertexObject) =>
             _vtxs.GetOrCreate(vertexObject, x => x.Export(this));
 
-        public Swe1rMeshMaterialReference GetMeshMaterialReference(MeshMaterialReferenceObject materialReferenceObject) =>
+        public Swe1rMeshMaterialReference GetMeshMaterialReference(MeshMaterialReferenceWrapper materialReferenceObject) =>
             _meshMaterialReferences.GetOrCreate(materialReferenceObject, x => x.Export(this));
 
-        public Swe1rTargetOrInteger GetTargetOrInteger(TargetOrIntegerObject targetOrInteger) =>
+        public Swe1rTargetOrInteger GetTargetOrInteger(TargetOrIntegerWrapper targetOrInteger) =>
             _targetOrIntegers.GetOrCreate(targetOrInteger, x => x.Export(this));
 
         #endregion
@@ -135,7 +135,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         private Swe1rFlaggedNode CreateFlaggedNode(GameObject prefab)
         {
-            var flaggedNodeComponent = prefab.GetComponent<IFlaggedNodeComponent>();
+            var flaggedNodeComponent = prefab.GetComponent<IFlaggedNodeWrapper>();
             if (flaggedNodeComponent == null)
                 return null;
             Swe1rFlaggedNode swe1rFlaggedNode = flaggedNodeComponent.Export(this);
@@ -149,7 +149,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
                 {
                     GameObject childPrefab = PrefabUtility.GetCorrespondingObjectFromOriginalSource(childGameObject);
 
-                    Swe1rMesh swe1rMesh = childPrefab.GetComponent<MeshComponent>()?.Export(this);
+                    Swe1rMesh swe1rMesh = childPrefab.GetComponent<MeshWrapper>()?.Export(this);
                     if (swe1rMesh != null)
                         swe1rFlaggedNode.Children.Add(swe1rMesh);
                     else
