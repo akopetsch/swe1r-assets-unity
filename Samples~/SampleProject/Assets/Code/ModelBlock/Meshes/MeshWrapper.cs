@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
 
-using SWE1R.Assets.Blocks.ModelBlock.F3DEX2;
 using SWE1R.Assets.Blocks.ModelBlock.Meshes;
 using SWE1R.Assets.Blocks.ModelBlock.Meshes.Geometry;
 using SWE1R.Assets.Blocks.Unity.Extensions;
@@ -11,9 +10,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using Swe1rGraphicsCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommand;
-using Swe1rGraphicsCommandList = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommandList;
-using Swe1rGspVertexCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GspVertexCommand;
 using Swe1rMaterialTexture = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture;
 using Swe1rMaterialTextureChild = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTextureChild;
 using Swe1rMesh = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh;
@@ -44,7 +40,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes
         [SerializeReference] public List<int> facesVertexCounts;
         public MeshGroupNodeOrShortsWrapper meshGroupOrShorts;
         [SerializeReference] public CollisionVerticesWrapper collisionVertices;
-        [SerializeReference] public List<IGraphicsCommandWrapper> commandList;
+        [SerializeReference] public GraphicsCommandListWrapper commandList;
         public List<VtxWrapper> vertices;
         public short unk_Count;
 
@@ -56,27 +52,35 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes
         {
             gameObject.name = importer.GetName(source);
 
-            // fields
             meshMaterial = importer.GetMeshMaterialScriptableObject(source.MeshMaterial);
+            
             if (source.Mapping != null)
                 mapping = importer.GetMappingScriptableObject(source.Mapping);
+            
             bounds0 = source.Bounds0.ToUnityVector3();
             bounds1 = source.Bounds1.ToUnityVector3();
             facesCount = source.FacesCount;
             primitiveType = source.PrimitiveType;
+            
             if (source.FacesVertexCounts != null)
                 facesVertexCounts = source.FacesVertexCounts;
+            
             meshGroupOrShorts = new MeshGroupNodeOrShortsWrapper();
             meshGroupOrShorts.Import(source.MeshGroupNodeOrShorts, importer);
+
             if (source.CollisionVertices != null)
             {
                 collisionVertices = new CollisionVerticesWrapper();
                 collisionVertices.Import(source.CollisionVertices, importer);
             }
             if (source.CommandList != null)
-                commandList = source.CommandList.Select(x => importer.GetGraphicsCommandObject(x)).ToList();
+            {
+                commandList = new GraphicsCommandListWrapper();
+                commandList.Import(source.CommandList, importer);
+            }
             if (source.Vertices != null)
                 vertices = source.Vertices.Select(x => importer.GetVertexObject(x)).ToList();
+            
             unk_Count = source.Unk_Count;
 
             AddLabelsToName(source);
@@ -105,23 +109,11 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes
                 result.CollisionVertices = collisionVertices.Export(exporter);
             if (vertices.Count > 0)
                 result.Vertices = vertices.Select(v => exporter.GetVertex(v)).ToList();
-            if (commandList.Count > 0)
-                result.CommandList = 
-                    new Swe1rGraphicsCommandList(
-                        commandList.Select(x => ExportGraphicsCommand(x, exporter, result.Vertices)).ToList());
+            result.CommandList = commandList.Export(exporter, result.Vertices);
             result.Unk_Count = unk_Count;
 
             result.UpdateCounts();
 
-            return result;
-        }
-
-        private Swe1rGraphicsCommand ExportGraphicsCommand(
-            IGraphicsCommandWrapper graphicsCommandObject, ModelBlockItemExporter exporter, List<Vtx> vertices)
-        {
-            var result = graphicsCommandObject.Export(exporter);
-            if (result is Swe1rGspVertexCommand gspVertexCommand)
-                gspVertexCommand.Vertices = vertices;
             return result;
         }
 
