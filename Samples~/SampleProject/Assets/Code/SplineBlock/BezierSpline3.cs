@@ -3,7 +3,7 @@
 using System;
 using UnityEngine;
 
-namespace SWE1R.Assets.Blocks.Unity
+namespace SWE1R.Assets.Blocks.Unity.SplineBlock
 {
     public class BezierSpline3 : MonoBehaviour
     {

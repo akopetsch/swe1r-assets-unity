@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace SWE1R.Assets.Blocks.Unity
+namespace SWE1R.Assets.Blocks.Unity.SplineBlock
 {
     /// <summary>
     /// Computation helper class for BezierSpline.

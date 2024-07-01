@@ -3,7 +3,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes.Editor
+namespace SWE1R.Assets.Blocks.Unity.SplineBlock.Editor
 {
     [CustomEditor(typeof(BezierSpline3))]
     public class BezierSplineInspector : UnityEditor.Editor
