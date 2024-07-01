@@ -9,11 +9,11 @@ using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class DataComponent : MonoBehaviour
+    public class DataComponent : AbstractComponent<Swe1rHeaderData>
     {
-        #region Methods (import/export)
+        #region Methods
 
-        public void Import(Swe1rHeaderData source, ModelImporter importer)
+        public override void Import(Swe1rHeaderData source, ModelImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.Data);
 
@@ -21,7 +21,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
                 gameObject.AddChild().AddComponent<LightStreakOrIntegerComponent>().Import(lightStreakOrInteger, importer);
         }
 
-        public Swe1rHeaderData Export(ModelExporter exporter)
+        public override Swe1rHeaderData Export(ModelExporter exporter)
         {
             var headerData = new Swe1rHeaderData();
 

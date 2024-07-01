@@ -2,15 +2,14 @@
 
 using SWE1R.Assets.Blocks.Unity.ModelBlock.Objects;
 using System.Collections.Generic;
-using UnityEngine;
 using Swe1rAnimation = SWE1R.Assets.Blocks.ModelBlock.Animations.Animation;
 using Swe1rModelImporter = SWE1R.Assets.Blocks.Unity.ModelBlock.ModelImporter;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Animations
 {
-    public class AnimationComponent : MonoBehaviour
+    public class AnimationComponent : AbstractComponent<Swe1rAnimation>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public float float_0f4;
         public float float_0f8;
@@ -30,7 +29,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Animations
 
         #region Methods
 
-        public void Import(Swe1rAnimation source, Swe1rModelImporter importer)
+        public override void Import(Swe1rAnimation source, Swe1rModelImporter importer)
         {
             gameObject.name = importer.GetName(source);
 
@@ -51,7 +50,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Animations
             int_128 = source.Int_128;
         }
 
-        public Swe1rAnimation Export(ModelExporter exporter)
+        public override Swe1rAnimation Export(ModelExporter exporter)
         {
             var result = new Swe1rAnimation();
             

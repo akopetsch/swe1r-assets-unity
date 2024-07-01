@@ -1,18 +1,22 @@
 // SPDX-License-Identifier: MIT
 
-using UnityEngine;
-
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class NullComponent : MonoBehaviour
+    public class NullComponent : AbstractComponent<object> // TODO: <object>?
     {
-        #region Methods (import)
+        #region Methods
 
-        public void Import()
+        public void Import() =>
+            Import(null, null);
+
+        public override void Import(object source, ModelImporter importer)
         {
             gameObject.name = "null";
             gameObject.SetActive(false);
         }
+
+        public override object Export(ModelExporter exporter) => 
+            null;
 
         #endregion
     }

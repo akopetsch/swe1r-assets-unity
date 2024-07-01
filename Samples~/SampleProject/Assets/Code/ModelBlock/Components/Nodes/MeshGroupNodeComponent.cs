@@ -2,7 +2,6 @@
 
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using Swe1rBounds3Single = SWE1R.Assets.Blocks.Vectors.Bounds3Single;
-using Swe1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
 using Swe1rMeshGroupNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.MeshGroupNode;
 using UnityVector3 = UnityEngine.Vector3;
 
@@ -17,18 +16,18 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
-        public override void Import(Swe1rMeshGroupNode source)
+        public override void Import(Swe1rMeshGroupNode source, ModelImporter importer)
         {
-            base.Import(source);
+            base.Import(source, importer);
             aabbMin = source.Aabb.Min.ToUnityVector3();
             aabbMax = source.Aabb.Max.ToUnityVector3();
         }
 
-        public override Swe1rFlaggedNode Export(ModelExporter exporter)
+        public override Swe1rMeshGroupNode Export(ModelExporter exporter)
         {
-            var result = (Swe1rMeshGroupNode)base.Export(exporter);
+            var result = base.Export(exporter);
             result.Aabb = new Swe1rBounds3Single() {
                 Min = aabbMin.ToSwe1rVector3Single(),
                 Max = aabbMax.ToSwe1rVector3Single(),

@@ -1,10 +1,8 @@
 // SPDX-License-Identifier: MIT
 
-using UnityEngine;
-
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class IntegerComponent : MonoBehaviour
+    public class IntegerComponent : AbstractComponent<int>
     {
         #region Fields
 
@@ -12,15 +10,15 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
-        public void Import(int integer)
+        public override void Import(int integer, ModelImporter importer)
         {
             gameObject.name = integer.ToString("x8");
             this.integer = integer;
         }
 
-        public int Export() =>
+        public override int Export(ModelExporter exporter) =>
             integer;
 
         #endregion

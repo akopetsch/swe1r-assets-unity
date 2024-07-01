@@ -1,31 +1,30 @@
 // SPDX-License-Identifier: MIT
 
-using Swe1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
 using Swe1rLodSelectorNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.LodSelectorNode;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 {
     public class LodSelectorNodeComponent : FlaggedNodeComponent<Swe1rLodSelectorNode>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public float[] lodDistances;
         public int[] unk;
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
-        public override void Import(Swe1rLodSelectorNode source)
+        public override void Import(Swe1rLodSelectorNode source, ModelImporter importer)
         {
-            base.Import(source);
+            base.Import(source, importer);
             lodDistances = source.LodDistances;
             unk = source.Unk;
         }
 
-        public override Swe1rFlaggedNode Export(ModelExporter exporter)
+        public override Swe1rLodSelectorNode Export(ModelExporter exporter)
         {
-            var result = (Swe1rLodSelectorNode)base.Export(exporter);
+            var result = base.Export(exporter);
             result.LodDistances = lodDistances;
             result.Unk = unk;
             return result;

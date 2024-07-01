@@ -2,9 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using Swe1rMesh = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh;
 using Swe1rGsp1TriangleCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Gsp1TriangleCommand;
-using Swe1rGraphicsCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommand;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {

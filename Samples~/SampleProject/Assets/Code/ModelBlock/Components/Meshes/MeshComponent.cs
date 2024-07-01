@@ -30,7 +30,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes
     [RequireComponent(typeof(MeshFilter))]
     [RequireComponent(typeof(MeshRenderer))]
     [RequireComponent(typeof(MeshCollider))]
-    public class MeshComponent : MonoBehaviour
+    public class MeshComponent : AbstractComponent<Swe1rMesh>
     {
         #region Fields (serialized)
 
@@ -51,7 +51,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes
 
         #region Methods (import)
 
-        public void Import(Swe1rMesh source, Swe1rModelImporter importer)
+        public override void Import(Swe1rMesh source, Swe1rModelImporter importer)
         {
             gameObject.name = importer.GetName(source);
 
@@ -86,7 +86,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes
 
         #region Methods (export)
 
-        public Swe1rMesh Export(ModelExporter exporter)
+        public override Swe1rMesh Export(ModelExporter exporter)
         {
             var result = new Swe1rMesh();
 

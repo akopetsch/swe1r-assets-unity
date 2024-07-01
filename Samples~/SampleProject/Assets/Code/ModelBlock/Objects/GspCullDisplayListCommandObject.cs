@@ -2,9 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using Swe1rGraphicsCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommand;
 using Swe1rGspCullDisplayListCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GspCullDisplayListCommand;
-using Swe1rMesh = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {

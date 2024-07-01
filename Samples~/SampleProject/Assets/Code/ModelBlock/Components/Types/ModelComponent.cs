@@ -2,14 +2,13 @@
 
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects;
-using UnityEngine;
 using Swe1rMappingChild = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild;
 using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
 {
     public abstract class ModelComponent<T> : 
-        MonoBehaviour, IModelComponent where T : Swe1rModel, new()
+        AbstractComponent<T>, IModelComponent where T : Swe1rModel, new()
     {
         #region Fields
 
@@ -22,10 +21,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
 
         #region Methods (import)
 
-        public void Import(Swe1rModel model, ModelImporter importer) =>
-            Import((T)model, importer);
-
-        public virtual void Import(T source, ModelImporter importer)
+        public override void Import(T source, ModelImporter importer)
         {
             // Nodes
             nodesComponent = gameObject.AddChild().AddComponent<NodesComponent>();
@@ -65,12 +61,15 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
             }
         }
 
+        void IModelComponent.Import(Swe1rModel model, ModelImporter importer) =>
+            Import((T)model, importer);
+
         #endregion
 
         #region Methods (export)
 
-        public virtual Swe1rModel Export(ModelExporter exporter) =>
-            new T
+        public override T Export(ModelExporter exporter) =>
+            new()
             {
                 Nodes = nodesComponent.Export(exporter),
                 Data = dataComponent?.Export(exporter),
@@ -79,6 +78,9 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
 
                 BlockItem = exporter.ModelBlockItem
             };
+
+        Swe1rModel IModelComponent.Export(ModelExporter exporter) =>
+            Export(exporter);
 
         #endregion
     }

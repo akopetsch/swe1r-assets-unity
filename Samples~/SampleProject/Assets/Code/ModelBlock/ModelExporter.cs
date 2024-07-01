@@ -156,7 +156,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         private Swe1rFlaggedNode CreateFlaggedNode(GameObject prefab)
         {
-            var flaggedNodeComponent = prefab.GetComponent<FlaggedNodeComponent>();
+            var flaggedNodeComponent = prefab.GetComponent<IFlaggedNodeComponent>();
             if (flaggedNodeComponent == null)
                 return null;
             Swe1rFlaggedNode swe1rFlaggedNode = flaggedNodeComponent.Export(this);

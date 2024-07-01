@@ -19,7 +19,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
         public short word_1c;
         public byte byte_1e;
         public byte byte_1f;
-        public FlaggedNodeComponent affectedNode;
+        public IFlaggedNodeComponent affectedNode;
         public short word_24;
         public short word_26;
         public MappingChildScriptableObject next;
@@ -47,7 +47,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
         public void ImportFlaggedNode(Swe1rMappingChild source, ModelImporter importer)
         {
             if (source.AffectedNode != null)
-                affectedNode = importer.GetFlaggedNodeComponent<FlaggedNodeComponent>(
+                affectedNode = importer.GetFlaggedNodeComponent<IFlaggedNodeComponent>(
                     source.AffectedNode);
         }
 

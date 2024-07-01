@@ -194,7 +194,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         #region Methods (mapping)
 
-        public T GetFlaggedNodeComponent<T>(Swe1rFlaggedNode source) where T : FlaggedNodeComponent =>
+        public T GetFlaggedNodeComponent<T>(Swe1rFlaggedNode source) where T : IFlaggedNodeComponent =>
             prefabByFlaggedNode[source].GetComponent<T>();
 
         public MaterialTextureChildObject GetMaterialTextureChildObject(Swe1rMaterialTextureChild source) =>
@@ -229,11 +229,11 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         #region Methods
 
-        public FlaggedNodeComponent CreateFlaggedNodeGameObject(Swe1rFlaggedNode swe1rFlaggedNode, GameObject parentGameObject)
+        public IFlaggedNodeComponent CreateFlaggedNodeGameObject(Swe1rFlaggedNode swe1rFlaggedNode, GameObject parentGameObject)
         {
             GameObject prefab;
             GameObject prefabInstance;
-            FlaggedNodeComponent flaggedNodeComponent;
+            IFlaggedNodeComponent flaggedNodeComponent;
 
             if (swe1rFlaggedNode == null)
             {
@@ -245,7 +245,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
                 prefabInstance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
                 prefabInstance.SetParent(parentGameObject);
                 prefabInstance.SetActive(false);
-                flaggedNodeComponent = prefabInstance.GetComponent<FlaggedNodeComponent>();
+                flaggedNodeComponent = prefabInstance.GetComponent<IFlaggedNodeComponent>();
             }
             else
             {
@@ -254,8 +254,8 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
                 // component
                 Type componentType = FlaggedNodeComponentFactory.Instance.GetComponentType(swe1rFlaggedNode);
-                var instanceflaggedNodeComponent = (FlaggedNodeComponent)prefabInstance.AddComponent(componentType);
-                instanceflaggedNodeComponent.Import(swe1rFlaggedNode);
+                var instanceflaggedNodeComponent = (IFlaggedNodeComponent)prefabInstance.AddComponent(componentType);
+                instanceflaggedNodeComponent.Import(swe1rFlaggedNode, this);
 
                 // get or create children recursively
                 if (swe1rFlaggedNode.Children != null)
@@ -273,7 +273,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
                 // save as asset and replace
                 prefab = prefabByFlaggedNode[swe1rFlaggedNode] = AssetsHelper.SaveAsPrefabAssetAndConnect(instanceflaggedNodeComponent);
-                flaggedNodeComponent = prefab.GetComponent<FlaggedNodeComponent>();
+                flaggedNodeComponent = prefab.GetComponent<IFlaggedNodeComponent>();
             }
             return flaggedNodeComponent;
         }

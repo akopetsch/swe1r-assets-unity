@@ -9,11 +9,11 @@ using Swer1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class AltNComponent : MonoBehaviour
+    public class AltNComponent : AbstractComponent<List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference>>
     {
-        #region Methods (import/export)
+        #region Methods
 
-        public void Import(List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference> source, ModelImporter importer)
+        public override void Import(List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference> source, ModelImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.AltN);
 
@@ -27,7 +27,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
             }
         }
 
-        public List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference> Export(ModelExporter exporter)
+        public override List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference> Export(ModelExporter exporter)
         {
             var result = new List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference>();
             foreach (GameObject go in gameObject.GetChildren())

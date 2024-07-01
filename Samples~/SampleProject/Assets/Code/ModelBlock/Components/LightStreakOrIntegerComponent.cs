@@ -1,13 +1,12 @@
 // SPDX-License-Identifier: MIT
 
 using SWE1R.Assets.Blocks.Unity.Extensions;
-using UnityEngine;
 using Swe1rLightStreak = SWE1R.Assets.Blocks.ModelBlock.LightStreak;
 using Swe1rLightStreakOrInteger = SWE1R.Assets.Blocks.ModelBlock.LightStreakOrInteger;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class LightStreakOrIntegerComponent : MonoBehaviour
+    public class LightStreakOrIntegerComponent : AbstractComponent<Swe1rLightStreakOrInteger>
     {
         #region Fields
 
@@ -15,9 +14,9 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
-        public void Import(Swe1rLightStreakOrInteger source, ModelImporter importer)
+        public override void Import(Swe1rLightStreakOrInteger source, ModelImporter importer)
         {
             gameObject.name = importer.GetName(source);
 
@@ -27,7 +26,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
                 integer = source.Integer.Value;
         }
 
-        public Swe1rLightStreakOrInteger Export(ModelExporter exporter)
+        public override Swe1rLightStreakOrInteger Export(ModelExporter exporter)
         {
             var result = new Swe1rLightStreakOrInteger();
             if (integer.HasValue)

@@ -9,11 +9,11 @@ using Swer1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class NodesComponent : MonoBehaviour
+    public class NodesComponent : AbstractComponent<List<Swe1rFlaggedNodeOrInteger>>
     {
-        #region Methods (import/export)
+        #region Methods
 
-        public void Import(List<Swe1rFlaggedNodeOrInteger> source, ModelImporter importer)
+        public override void Import(List<Swe1rFlaggedNodeOrInteger> source, ModelImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.Nodes);
 
@@ -28,17 +28,17 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
                 else if (flaggedNode != null)
                     importer.CreateFlaggedNodeGameObject(flaggedNode, gameObject);
                 else if (integer.HasValue)
-                    gameObject.AddChild().AddComponent<IntegerComponent>().Import(integer.Value);
+                    gameObject.AddChild().AddComponent<IntegerComponent>().Import(integer.Value, importer);
             }
         }
 
-        public List<Swe1rFlaggedNodeOrInteger> Export(ModelExporter exporter)
+        public override List<Swe1rFlaggedNodeOrInteger> Export(ModelExporter exporter)
         {
             var result = new List<Swe1rFlaggedNodeOrInteger>();
             foreach (GameObject go in gameObject.GetChildren())
             {
                 Swer1rFlaggedNode flaggedNode = exporter.GetFlaggedNode(go);
-                int? integer = go.GetComponent<IntegerComponent>()?.Export();
+                int? integer = go.GetComponent<IntegerComponent>()?.Export(exporter);
 
                 var item = new Swe1rFlaggedNodeOrInteger();
                 if (flaggedNode != null)

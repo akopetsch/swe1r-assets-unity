@@ -7,9 +7,26 @@ using UnityMatrix4x4 = UnityEngine.Matrix4x4;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 {
-    public abstract class FlaggedNodeComponent : MonoBehaviour
+    public interface IFlaggedNodeComponent
     {
-        #region Fields (serialized)
+        #region Properties
+
+        GameObject gameObject { get; }
+
+        #endregion
+
+        #region Methods
+
+        void Import(Swe1rFlaggedNode source, ModelImporter importer);
+        Swe1rFlaggedNode Export(ModelExporter exporter);
+
+        #endregion
+    }
+
+    public abstract class FlaggedNodeComponent<T> : AbstractComponent<T>, IFlaggedNodeComponent 
+        where T : Swe1rFlaggedNode, new()
+    {
+        #region Fields
 
         public int flags1;
         public int flags2;
@@ -19,24 +36,9 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
-        public abstract void Import(Swe1rFlaggedNode source);
-
-        public abstract Swe1rFlaggedNode Export(ModelExporter modelExporter);
-
-        #endregion
-    }
-
-    public abstract class FlaggedNodeComponent<T> : FlaggedNodeComponent 
-        where T : Swe1rFlaggedNode, new()
-    {
-        #region Methods (import)
-
-        public override void Import(Swe1rFlaggedNode source) =>
-            Import((T)source);
-
-        public virtual void Import(T source)
+        public override void Import(T source, ModelImporter importer)
         {
             flags1 = source.Flags1;
             flags2 = source.Flags2;
@@ -57,22 +59,21 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
             }
         }
 
-        #endregion
+        public override T Export(ModelExporter exporter) =>
+            new()
+            {
+                Flags1 = flags1,
+                Flags2 = flags2,
+                Flags3 = flags3,
+                LightIndex = lightIndex,
+                Flags5 = flags5
+            };
 
-        #region Methods (export)
+        void IFlaggedNodeComponent.Import(Swe1rFlaggedNode source, ModelImporter importer) =>
+            Import((T)source, importer);
 
-        public override Swe1rFlaggedNode Export(ModelExporter modelExporter)
-        {
-            var result = new T();
-
-            result.Flags1 = flags1;
-            result.Flags2 = flags2;
-            result.Flags3 = flags3;
-            result.LightIndex = lightIndex;
-            result.Flags5 = flags5;
-
-            return result;
-        }
+        Swe1rFlaggedNode IFlaggedNodeComponent.Export(ModelExporter exporter) =>
+            Export(exporter);
 
         #endregion
     }

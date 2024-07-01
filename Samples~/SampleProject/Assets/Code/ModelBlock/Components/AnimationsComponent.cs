@@ -1,20 +1,19 @@
 ﻿// SPDX-License-Identifier: MIT
 
-using SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Animations;
 using SWE1R.Assets.Blocks.Unity.Extensions;
+using SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Animations;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using Swe1rAnimation = SWE1R.Assets.Blocks.ModelBlock.Animations.Animation;
 using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class AnimationsComponent : MonoBehaviour
+    public class AnimationsComponent : AbstractComponent<List<Swe1rAnimation>>
     {
-        #region Methods (import/export)
+        #region Methods
 
-        public void Import(List<Swe1rAnimation> source, ModelImporter importer)
+        public override void Import(List<Swe1rAnimation> source, ModelImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.Animations);
 
@@ -22,7 +21,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
                 gameObject.AddChild().AddComponent<AnimationComponent>().Import(animation, importer);
         }
 
-        public List<Swe1rAnimation> Export(ModelExporter exporter) =>
+        public override List<Swe1rAnimation> Export(ModelExporter exporter) =>
             gameObject.GetComponentsInChildren<AnimationComponent>()
                 .Select(ac => ac.Export(exporter)).ToList();
 

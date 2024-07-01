@@ -7,15 +7,15 @@ using Swe1rModelBlockItem = SWE1R.Assets.Blocks.ModelBlock.ModelBlockItem;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class ModelComponent : MonoBehaviour
+    public class ModelComponent : AbstractComponent<Swe1rModelBlockItem>
     {
-        #region Methods (import)
+        #region Methods
 
-        public void Import(Swe1rModelBlockItem sourc, ModelImporter importer)
+        public override void Import(Swe1rModelBlockItem source, ModelImporter importer)
         {
             // modelComponent
-            Type modelComponentType = ModelComponentFactory.Instance.GetComponentType(sourc.Model);
-            ((IModelComponent)gameObject.AddComponent(modelComponentType)).Import(sourc.Model, importer);
+            Type modelComponentType = ModelComponentFactory.Instance.GetComponentType(source.Model);
+            ((IModelComponent)gameObject.AddComponent(modelComponentType)).Import(source.Model, importer);
 
             FixTransform();
         }
@@ -27,11 +27,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
             gameObject.transform.localScale = new Vector3(-scale, scale, scale);
         }
 
-        #endregion
-
-        #region Methods (export)
-
-        public Swe1rModelBlockItem Export(ModelExporter exporter) =>
+        public override Swe1rModelBlockItem Export(ModelExporter exporter) =>
             new()
             {
                 Model = GetComponent<IModelComponent>().Export(exporter)
