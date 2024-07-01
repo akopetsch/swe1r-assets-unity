@@ -1,7 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
 using System;
-using System.Collections.Generic;
 using Swe1rGspCullDisplayListCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GspCullDisplayListCommand;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
@@ -13,12 +12,6 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         public byte v0;
         public byte vN;
-
-        #endregion
-
-        #region Properties
-
-        public override IEnumerable<int> Indices { get { yield return vN; } }
 
         #endregion
 

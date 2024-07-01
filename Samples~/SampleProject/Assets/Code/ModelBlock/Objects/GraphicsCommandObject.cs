@@ -12,8 +12,6 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     {
         #region Properties
 
-        public abstract IEnumerable<int> Indices { get; }
-
         IEnumerable<int> IGraphicsCommandObject.Indices => throw new NotImplementedException();
 
         #endregion

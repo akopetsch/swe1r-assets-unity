@@ -1,7 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
 using System;
-using System.Collections.Generic;
 using Swe1rGsp2TrianglesCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Gsp2TrianglesCommand;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
@@ -18,24 +17,6 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
         public byte v10;
         public byte v11;
         public byte v12;
-
-        #endregion
-
-        #region Properties
-
-        public override IEnumerable<int> Indices
-        {
-            get
-            {
-                yield return v00;
-                yield return v01;
-                yield return v02;
-
-                yield return v10;
-                yield return v11;
-                yield return v12;
-            }
-        }
 
         #endregion
 

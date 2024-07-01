@@ -1,8 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Swe1rGspVertexCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GspVertexCommand;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
@@ -15,12 +13,6 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
         public int v;
         public byte n;
         public byte v0;
-
-        #endregion
-
-        #region Properties
-
-        public override IEnumerable<int> Indices => Enumerable.Empty<int>();
 
         #endregion
 
