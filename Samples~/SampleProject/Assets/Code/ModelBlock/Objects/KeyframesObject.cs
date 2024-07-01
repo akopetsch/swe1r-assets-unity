@@ -12,7 +12,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     [Serializable]
     public class KeyframesObject : AbstractModelObject<Swe1rKeyframes>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public List<MaterialTextureScriptableObject> materialTextures;
         public List<float> floats;

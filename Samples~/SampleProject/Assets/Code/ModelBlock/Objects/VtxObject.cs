@@ -11,7 +11,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     [Serializable]
     public class VtxObject : AbstractModelObject<Swe1rVtx>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public UnityVectorInt position;
         public short u;

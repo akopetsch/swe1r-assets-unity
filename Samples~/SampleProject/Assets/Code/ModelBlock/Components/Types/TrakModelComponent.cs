@@ -14,7 +14,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
         public override void Import(Swe1rTrakModel header, ModelImporter importer)
         {

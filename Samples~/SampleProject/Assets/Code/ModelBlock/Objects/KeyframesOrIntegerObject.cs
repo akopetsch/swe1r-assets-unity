@@ -8,7 +8,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     [Serializable]
     public class KeyframesOrIntegerObject : AbstractModelObject<Swe1rKeyframesOrInteger>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public KeyframesObject keyframes;
         public SerializableNullable<int> integer;

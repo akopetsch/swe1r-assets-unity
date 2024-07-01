@@ -9,7 +9,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     [Serializable]
     public class MaterialTextureChildObject : AbstractModelObject<Swe1rMaterialTextureChild>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public byte byte_0;
         public byte byte_1;

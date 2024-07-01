@@ -8,7 +8,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     [Serializable]
     public class Gsp2TrianglesCommandObject : GraphicsCommandObject<Swe1rGsp2TrianglesCommand>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public byte v00;
         public byte v01;
@@ -20,7 +20,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
         public override void Import(Swe1rGsp2TrianglesCommand source, ModelImporter importer)
         {

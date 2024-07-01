@@ -13,7 +13,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     [Serializable]
     public class TargetOrIntegerObject : AbstractModelObject<Swe1rTargetOrInteger>
     {
-        #region Fields (serialized)
+        #region Fields
 
         [SerializeReference] public MeshMaterialReferenceObject meshMaterialReference;
         [SerializeReference] public MeshMaterialScriptableObject meshMaterial;

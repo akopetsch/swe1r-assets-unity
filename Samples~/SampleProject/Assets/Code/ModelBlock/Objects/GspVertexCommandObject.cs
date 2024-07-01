@@ -8,7 +8,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     [Serializable]
     public class GspVertexCommandObject : GraphicsCommandObject<Swe1rGspVertexCommand>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public int v;
         public byte n;
@@ -16,7 +16,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
         public override void Import(Swe1rGspVertexCommand source, ModelImporter importer)
         {

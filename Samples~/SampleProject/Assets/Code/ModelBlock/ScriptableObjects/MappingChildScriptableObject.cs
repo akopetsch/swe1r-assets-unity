@@ -9,7 +9,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 {
     public class MappingChildScriptableObject : AbstractModelScriptableObject<Swe1rMappingChild>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public UnityVector3 center;
         public UnityVector3 direction;
@@ -26,7 +26,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 
         #endregion
 
-        #region Methods (import)
+        #region Methods
 
         public override void Import(Swe1rMappingChild source, ModelImporter importer)
         {
@@ -50,10 +50,6 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
                 affectedNode = importer.GetFlaggedNodeComponent<IFlaggedNodeComponent>(
                     source.AffectedNode);
         }
-
-        #endregion
-
-        #region Methods (export)
 
         public override Swe1rMappingChild Export(ModelExporter exporter)
         {

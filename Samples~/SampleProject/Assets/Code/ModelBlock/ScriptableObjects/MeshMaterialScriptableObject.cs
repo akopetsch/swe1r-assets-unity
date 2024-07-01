@@ -18,7 +18,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
         public override void Import(Swe1rMeshMaterial source, ModelImporter importer)
         {

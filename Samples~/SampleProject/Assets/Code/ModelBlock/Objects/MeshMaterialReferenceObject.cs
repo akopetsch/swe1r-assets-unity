@@ -10,7 +10,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     [Serializable]
     public class MeshMaterialReferenceObject : AbstractModelObject<Swe1rMeshMaterialReference>
     {
-        #region Fields (serialized)
+        #region Fields
 
         [SerializeReference] public MeshMaterialScriptableObject meshMaterial;
 

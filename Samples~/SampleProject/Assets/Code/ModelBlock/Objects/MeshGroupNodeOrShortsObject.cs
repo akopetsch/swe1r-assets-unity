@@ -11,7 +11,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     [Serializable]
     public class MeshGroupNodeOrShortsObject : AbstractModelObject<Swe1rMeshGroupNodeOrShorts>
     {
-        #region Fields (serialized)
+        #region Fields
 
         [SerializeReference] public MeshGroupNodeComponent meshGroupNode;
         [SerializeReference] public short[] shorts;

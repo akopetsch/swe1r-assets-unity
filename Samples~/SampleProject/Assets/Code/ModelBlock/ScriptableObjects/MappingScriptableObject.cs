@@ -12,7 +12,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 {
     public class MappingScriptableObject : AbstractModelScriptableObject<Swe1rMapping>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public short word_00;
         public byte fogFlags;
@@ -34,7 +34,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
         public override void Import(Swe1rMapping source, ModelImporter importer)
         {

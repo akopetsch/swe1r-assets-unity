@@ -11,7 +11,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 {
     public class MaterialTextureScriptableObject : AbstractModelScriptableObject<Swe1rMaterialTexture>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public int mask_Unk;
         public short width4;
@@ -33,7 +33,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
         public override void Import(Swe1rMaterialTexture source, ModelImporter importer)
         {

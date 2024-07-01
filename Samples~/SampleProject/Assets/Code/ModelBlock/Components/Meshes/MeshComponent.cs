@@ -32,7 +32,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes
     [RequireComponent(typeof(MeshCollider))]
     public class MeshComponent : AbstractModelComponent<Swe1rMesh>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public MeshMaterialScriptableObject meshMaterial;
         [SerializeReference] public MappingScriptableObject mapping;

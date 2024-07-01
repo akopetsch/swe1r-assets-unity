@@ -6,7 +6,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 {
     public class MappingSubScriptableObject : AbstractModelScriptableObject<Swe1rMappingSub>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public int int_0;
         public int int_1;
@@ -14,7 +14,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
         public override void Import(Swe1rMappingSub source, ModelImporter importer)
         {

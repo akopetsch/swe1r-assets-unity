@@ -8,14 +8,14 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     [Serializable]
     public class GspCullDisplayListCommandObject : GraphicsCommandObject<Swe1rGspCullDisplayListCommand>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public byte v0;
         public byte vN;
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
         public override void Import(Swe1rGspCullDisplayListCommand source, ModelImporter importer)
         {

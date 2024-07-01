@@ -22,7 +22,8 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Properties
 
-        public int Count => shortVectors.Count + floatVectors.Count;
+        public int Count => 
+            shortVectors.Count + floatVectors.Count;
 
         #endregion
 

@@ -8,7 +8,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     [Serializable]
     public class MaterialObject : AbstractModelObject<Swe1rMaterial>
     {
-        #region Fields (serialized)
+        #region Fields
 
         public int alphaBpp;
         public short word_4;
