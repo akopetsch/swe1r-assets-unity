@@ -3,7 +3,7 @@
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 {
     public abstract class AbstractModelScriptableObject<TSource> : 
-        AbstractScriptableObject<TSource, ModelImporter, ModelExporter>
+        AbstractScriptableObject<TSource, ModelBlockItemImporter, ModelBlockItemExporter>
     {
         
     }

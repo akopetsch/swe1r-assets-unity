@@ -9,13 +9,13 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
         public void Import() =>
             Import(null, null);
 
-        public override void Import(object source, ModelImporter importer)
+        public override void Import(object source, ModelBlockItemImporter importer)
         {
             gameObject.name = "null";
             gameObject.SetActive(false);
         }
 
-        public override object Export(ModelExporter exporter) => 
+        public override object Export(ModelBlockItemExporter exporter) => 
             null;
 
         #endregion

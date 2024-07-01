@@ -36,7 +36,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 
         #region Methods
 
-        public override void Import(Swe1rMapping source, ModelImporter importer)
+        public override void Import(Swe1rMapping source, ModelBlockItemImporter importer)
         {
             word_00 = source.Word_00;
             fogFlags = source.FogFlags;
@@ -57,7 +57,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
             subs = source.Subs.Select(x => importer.GetMappingSubScriptableObject(x)).ToList();
         }
 
-        public override Swe1rMapping Export(ModelExporter exporter) =>
+        public override Swe1rMapping Export(ModelBlockItemExporter exporter) =>
             new() {
                 Word_00 = word_00,
                 FogFlags = fogFlags,

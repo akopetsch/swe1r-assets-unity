@@ -13,7 +13,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
     {
         #region Methods
 
-        public override void Import(Swe1rHeaderData source, ModelImporter importer)
+        public override void Import(Swe1rHeaderData source, ModelBlockItemImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.Data);
 
@@ -21,7 +21,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
                 gameObject.AddChild().AddComponent<LightStreakOrIntegerComponent>().Import(lightStreakOrInteger, importer);
         }
 
-        public override Swe1rHeaderData Export(ModelExporter exporter)
+        public override Swe1rHeaderData Export(ModelBlockItemExporter exporter)
         {
             var headerData = new Swe1rHeaderData();
 

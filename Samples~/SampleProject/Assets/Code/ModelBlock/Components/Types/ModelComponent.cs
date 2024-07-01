@@ -21,7 +21,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
 
         #region Methods (import)
 
-        public override void Import(T source, ModelImporter importer)
+        public override void Import(T source, ModelBlockItemImporter importer)
         {
             // Nodes
             nodesComponent = gameObject.AddChild().AddComponent<NodesComponent>();
@@ -51,7 +51,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
             ImportMappingChildPostponedReferences(importer);
         }
 
-        private void ImportMappingChildPostponedReferences(ModelImporter importer)
+        private void ImportMappingChildPostponedReferences(ModelBlockItemImporter importer)
         {
             foreach (Swe1rMappingChild source in importer.GetSourceObjects<Swe1rMappingChild>())
             {
@@ -61,14 +61,14 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
             }
         }
 
-        void IModelComponent.Import(Swe1rModel model, ModelImporter importer) =>
+        void IModelComponent.Import(Swe1rModel model, ModelBlockItemImporter importer) =>
             Import((T)model, importer);
 
         #endregion
 
         #region Methods (export)
 
-        public override T Export(ModelExporter exporter) =>
+        public override T Export(ModelBlockItemExporter exporter) =>
             new()
             {
                 Nodes = nodesComponent.Export(exporter),
@@ -79,7 +79,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
                 BlockItem = exporter.ModelBlockItem
             };
 
-        Swe1rModel IModelComponent.Export(ModelExporter exporter) =>
+        Swe1rModel IModelComponent.Export(ModelBlockItemExporter exporter) =>
             Export(exporter);
 
         #endregion

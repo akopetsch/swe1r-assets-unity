@@ -20,7 +20,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 
         #region Methods
 
-        public override void Import(Swe1rMeshMaterial source, ModelImporter importer)
+        public override void Import(Swe1rMeshMaterial source, ModelBlockItemImporter importer)
         {
             flags = source.Flags;
             textureOffsetX = source.TextureOffsetX;
@@ -30,7 +30,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
             material = importer.GetMaterialPropertiesObject(source.Material);
         }
 
-        public override Swe1rMeshMaterial Export(ModelExporter exporter)
+        public override Swe1rMeshMaterial Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rMeshMaterial();
             result.Flags = flags;

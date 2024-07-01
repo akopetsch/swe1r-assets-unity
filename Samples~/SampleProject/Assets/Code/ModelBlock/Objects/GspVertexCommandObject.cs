@@ -18,14 +18,14 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rGspVertexCommand source, ModelImporter importer)
+        public override void Import(Swe1rGspVertexCommand source, ModelBlockItemImporter importer)
         {
             v = source.VerticesStartIndex;
             n = source.N;
             v0 = (byte)source.V0;
         }
 
-        public override Swe1rGspVertexCommand Export(ModelExporter exporter) =>
+        public override Swe1rGspVertexCommand Export(ModelBlockItemExporter exporter) =>
             new()
             {
                 VerticesStartIndex = v,

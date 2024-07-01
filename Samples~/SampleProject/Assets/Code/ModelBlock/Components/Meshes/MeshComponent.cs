@@ -17,7 +17,7 @@ using Swe1rMaterialTexture = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTe
 using Swe1rMaterialTextureChild = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTextureChild;
 using Swe1rMesh = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh;
 using Swe1rMeshMaterialExporter = SWE1R.Assets.Blocks.ModelBlock.Materials.Export.MeshMaterialExporter;
-using Swe1rModelImporter = SWE1R.Assets.Blocks.Unity.ModelBlock.ModelImporter;
+using Swe1rModelImporter = SWE1R.Assets.Blocks.Unity.ModelBlock.ModelBlockItemImporter;
 using Swe1rPrimitiveType = SWE1R.Assets.Blocks.ModelBlock.Meshes.PrimitiveType;
 using UnityMaterial = UnityEngine.Material;
 using UnityMesh = UnityEngine.Mesh;
@@ -86,7 +86,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes
 
         #region Methods (export)
 
-        public override Swe1rMesh Export(ModelExporter exporter)
+        public override Swe1rMesh Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rMesh();
 
@@ -116,7 +116,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes
         }
 
         private Swe1rGraphicsCommand ExportGraphicsCommand(
-            IGraphicsCommandObject graphicsCommandObject, ModelExporter exporter, List<Vtx> vertices)
+            IGraphicsCommandObject graphicsCommandObject, ModelBlockItemExporter exporter, List<Vtx> vertices)
         {
             var result = graphicsCommandObject.Export(exporter);
             if (result is Swe1rGspVertexCommand gspVertexCommand)

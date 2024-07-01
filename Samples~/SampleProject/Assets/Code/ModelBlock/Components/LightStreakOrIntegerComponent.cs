@@ -16,7 +16,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 
         #region Methods
 
-        public override void Import(Swe1rLightStreakOrInteger source, ModelImporter importer)
+        public override void Import(Swe1rLightStreakOrInteger source, ModelBlockItemImporter importer)
         {
             gameObject.name = importer.GetName(source);
 
@@ -26,7 +26,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
                 integer = source.Integer.Value;
         }
 
-        public override Swe1rLightStreakOrInteger Export(ModelExporter exporter)
+        public override Swe1rLightStreakOrInteger Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rLightStreakOrInteger();
             if (integer.HasValue)

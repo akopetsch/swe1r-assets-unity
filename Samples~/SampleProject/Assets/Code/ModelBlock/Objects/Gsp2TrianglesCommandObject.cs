@@ -22,7 +22,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rGsp2TrianglesCommand source, ModelImporter importer)
+        public override void Import(Swe1rGsp2TrianglesCommand source, ModelBlockItemImporter importer)
         {
             v00 = source.V00;
             v01 = source.V01;
@@ -33,7 +33,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
             v12 = source.V12;
         }
 
-        public override Swe1rGsp2TrianglesCommand Export(ModelExporter exporter) =>
+        public override Swe1rGsp2TrianglesCommand Export(ModelBlockItemExporter exporter) =>
             new() {
                 V00 = v00,
                 V01 = v01,

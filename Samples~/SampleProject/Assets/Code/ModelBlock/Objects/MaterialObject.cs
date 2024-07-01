@@ -45,7 +45,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rMaterial source, ModelImporter importer)
+        public override void Import(Swe1rMaterial source, ModelBlockItemImporter importer)
         {
             alphaBpp = source.AlphaBpp;
             word_4 = source.Word_4;
@@ -70,7 +70,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
             unk_32 = source.Unk_32;
         }
 
-        public override Swe1rMaterial Export(ModelExporter modelExporter) =>
+        public override Swe1rMaterial Export(ModelBlockItemExporter modelExporter) =>
             new() {
                 AlphaBpp = alphaBpp,
                 Word_4 = word_4,

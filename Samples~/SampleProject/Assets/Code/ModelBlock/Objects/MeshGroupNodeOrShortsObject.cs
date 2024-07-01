@@ -20,7 +20,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rMeshGroupNodeOrShorts source, ModelImporter importer)
+        public override void Import(Swe1rMeshGroupNodeOrShorts source, ModelBlockItemImporter importer)
         {
             if (source.MeshGroupNode != null)
                 meshGroupNode = importer.GetFlaggedNodeComponent<MeshGroupNodeComponent>(source.MeshGroupNode);
@@ -28,7 +28,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
                 shorts = source.Shorts;
         }
 
-        public override Swe1rMeshGroupNodeOrShorts Export(ModelExporter exporter)
+        public override Swe1rMeshGroupNodeOrShorts Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rMeshGroupNodeOrShorts();
             if (meshGroupNode != null)

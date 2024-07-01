@@ -18,7 +18,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 
         #region Methods
 
-        public override void Import(Swe1rTransformedComputedNode source, ModelImporter importer)
+        public override void Import(Swe1rTransformedComputedNode source, ModelBlockItemImporter importer)
         {
             base.Import(source, importer);
             followModelPosition = source.FollowModelPosition;
@@ -26,7 +26,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
             vector = source.UpVector.ToUnityVector3();
         }
 
-        public override Swe1rTransformedComputedNode Export(ModelExporter exporter)
+        public override Swe1rTransformedComputedNode Export(ModelBlockItemExporter exporter)
         {
             var result = base.Export(exporter);
             result.FollowModelPosition = followModelPosition;

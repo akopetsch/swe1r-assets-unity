@@ -6,7 +6,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     public interface IGraphicsCommandObject
     {
-        public abstract void Import(Swe1rGraphicsCommand source, ModelImporter importer);
-        public abstract Swe1rGraphicsCommand Export(ModelExporter exporter);
+        public abstract void Import(Swe1rGraphicsCommand source, ModelBlockItemImporter importer);
+        public abstract Swe1rGraphicsCommand Export(ModelBlockItemExporter exporter);
     }
 }

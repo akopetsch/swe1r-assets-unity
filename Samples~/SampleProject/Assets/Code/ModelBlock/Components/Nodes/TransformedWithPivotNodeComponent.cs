@@ -18,7 +18,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 
         #region Methods
 
-        public override void Import(Swe1rTransformedWithPivotNode source, ModelImporter importer)
+        public override void Import(Swe1rTransformedWithPivotNode source, ModelBlockItemImporter importer)
         {
             base.Import(source, importer);
             swe1rTransform = source.Transform.ToUnity();
@@ -26,7 +26,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
             ApplyMatrix(swe1rTransform);
         }
 
-        public override Swe1rTransformedWithPivotNode Export(ModelExporter exporter)
+        public override Swe1rTransformedWithPivotNode Export(ModelBlockItemExporter exporter)
         {
             var result = base.Export(exporter);
             result.Transform = swe1rTransform.ToSwe1r();

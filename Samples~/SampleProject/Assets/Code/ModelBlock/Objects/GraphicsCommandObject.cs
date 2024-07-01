@@ -11,10 +11,10 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     {
         #region Methods
 
-        void IGraphicsCommandObject.Import(Swe1rGraphicsCommand source, ModelImporter importer) =>
+        void IGraphicsCommandObject.Import(Swe1rGraphicsCommand source, ModelBlockItemImporter importer) =>
             Import((T)source, importer);
 
-        Swe1rGraphicsCommand IGraphicsCommandObject.Export(ModelExporter exporter) =>
+        Swe1rGraphicsCommand IGraphicsCommandObject.Export(ModelBlockItemExporter exporter) =>
             Export(exporter);
 
         #endregion

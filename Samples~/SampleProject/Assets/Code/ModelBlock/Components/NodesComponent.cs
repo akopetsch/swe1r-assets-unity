@@ -13,7 +13,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
     {
         #region Methods
 
-        public override void Import(List<Swe1rFlaggedNodeOrInteger> source, ModelImporter importer)
+        public override void Import(List<Swe1rFlaggedNodeOrInteger> source, ModelBlockItemImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.Nodes);
 
@@ -32,7 +32,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
             }
         }
 
-        public override List<Swe1rFlaggedNodeOrInteger> Export(ModelExporter exporter)
+        public override List<Swe1rFlaggedNodeOrInteger> Export(ModelBlockItemExporter exporter)
         {
             var result = new List<Swe1rFlaggedNodeOrInteger>();
             foreach (GameObject go in gameObject.GetChildren())

@@ -15,8 +15,8 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 
         #region Methods
 
-        void Import(Swe1rFlaggedNode source, ModelImporter importer);
-        Swe1rFlaggedNode Export(ModelExporter exporter);
+        void Import(Swe1rFlaggedNode source, ModelBlockItemImporter importer);
+        Swe1rFlaggedNode Export(ModelBlockItemExporter exporter);
 
         #endregion
     }

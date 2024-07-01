@@ -15,8 +15,8 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
 
         #region Methods
 
-        void Import(Swe1rModel model, ModelImporter importer);
-        Swe1rModel Export(ModelExporter exporter);
+        void Import(Swe1rModel model, ModelBlockItemImporter importer);
+        Swe1rModel Export(ModelBlockItemExporter exporter);
 
         #endregion
     }

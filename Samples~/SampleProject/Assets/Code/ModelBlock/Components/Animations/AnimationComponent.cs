@@ -3,7 +3,7 @@
 using SWE1R.Assets.Blocks.Unity.ModelBlock.Objects;
 using System.Collections.Generic;
 using Swe1rAnimation = SWE1R.Assets.Blocks.ModelBlock.Animations.Animation;
-using Swe1rModelImporter = SWE1R.Assets.Blocks.Unity.ModelBlock.ModelImporter;
+using Swe1rModelImporter = SWE1R.Assets.Blocks.Unity.ModelBlock.ModelBlockItemImporter;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Animations
 {
@@ -50,7 +50,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Animations
             int_128 = source.Int_128;
         }
 
-        public override Swe1rAnimation Export(ModelExporter exporter)
+        public override Swe1rAnimation Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rAnimation();
             

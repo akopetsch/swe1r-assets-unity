@@ -16,13 +16,13 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
 
         #region Methods
 
-        public override void Import(Swe1rTrakModel header, ModelImporter importer)
+        public override void Import(Swe1rTrakModel header, ModelBlockItemImporter importer)
         {
             base.Import(header, importer);
             node = (BasicNodeComponent)importer.CreateFlaggedNodeGameObject(header.Node, gameObject);
         }
 
-        public override Swe1rTrakModel Export(ModelExporter exporter)
+        public override Swe1rTrakModel Export(ModelBlockItemExporter exporter)
         {
             var model = base.Export(exporter);
             model.Node = (Swe1rBasicNode)exporter.GetFlaggedNode(node.gameObject);

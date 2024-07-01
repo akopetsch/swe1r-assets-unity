@@ -17,7 +17,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 
         #region Methods
 
-        public override void Import(Swe1rLodSelectorNodeChildReference source, ModelImporter importer)
+        public override void Import(Swe1rLodSelectorNodeChildReference source, ModelBlockItemImporter importer)
         {
             lodSelectorNode = importer.GetFlaggedNodeComponent<LodSelectorNodeComponent>(source.LodSelectorNode);
             index = source.Index;
@@ -25,7 +25,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
             gameObject.name = $"{lodSelectorNode.gameObject.name} [{index}]";
         }
 
-        public override Swe1rLodSelectorNodeChildReference Export(ModelExporter exporter) =>
+        public override Swe1rLodSelectorNodeChildReference Export(ModelBlockItemExporter exporter) =>
             new()
             {
                 LodSelectorNode = (Swe1rLodSelectorNode)exporter.GetFlaggedNode(lodSelectorNode.gameObject),

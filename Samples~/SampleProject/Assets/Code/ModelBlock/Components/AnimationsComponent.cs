@@ -13,7 +13,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
     {
         #region Methods
 
-        public override void Import(List<Swe1rAnimation> source, ModelImporter importer)
+        public override void Import(List<Swe1rAnimation> source, ModelBlockItemImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.Animations);
 
@@ -21,7 +21,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
                 gameObject.AddChild().AddComponent<AnimationComponent>().Import(animation, importer);
         }
 
-        public override List<Swe1rAnimation> Export(ModelExporter exporter) =>
+        public override List<Swe1rAnimation> Export(ModelBlockItemExporter exporter) =>
             gameObject.GetComponentsInChildren<AnimationComponent>()
                 .Select(ac => ac.Export(exporter)).ToList();
 

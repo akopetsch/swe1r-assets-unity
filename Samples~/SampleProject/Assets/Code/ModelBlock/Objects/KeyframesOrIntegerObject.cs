@@ -17,7 +17,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rKeyframesOrInteger source, ModelImporter importer)
+        public override void Import(Swe1rKeyframesOrInteger source, ModelBlockItemImporter importer)
         {
             if (source.Keyframes != null)
             {
@@ -28,7 +28,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
                 integer = source.Integer.Value;
         }
 
-        public override Swe1rKeyframesOrInteger Export(ModelExporter exporter)
+        public override Swe1rKeyframesOrInteger Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rKeyframesOrInteger();
             if (integer.HasValue)

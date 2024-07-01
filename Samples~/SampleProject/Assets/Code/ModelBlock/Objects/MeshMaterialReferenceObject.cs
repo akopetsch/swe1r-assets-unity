@@ -18,10 +18,10 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rMeshMaterialReference source, ModelImporter importer) =>
+        public override void Import(Swe1rMeshMaterialReference source, ModelBlockItemImporter importer) =>
             meshMaterial = importer.GetMeshMaterialScriptableObject(source.MeshMaterial);
 
-        public override Swe1rMeshMaterialReference Export(ModelExporter exporter) =>
+        public override Swe1rMeshMaterialReference Export(ModelBlockItemExporter exporter) =>
             new() {
                 MeshMaterial = exporter.GetMeshMaterial(meshMaterial)
             };

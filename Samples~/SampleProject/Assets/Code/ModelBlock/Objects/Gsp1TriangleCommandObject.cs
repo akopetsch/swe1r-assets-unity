@@ -18,14 +18,14 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rGsp1TriangleCommand source, ModelImporter importer)
+        public override void Import(Swe1rGsp1TriangleCommand source, ModelBlockItemImporter importer)
         {
             v0 = source.V0;
             v1 = source.V1;
             v2 = source.V2;
         }
 
-        public override Swe1rGsp1TriangleCommand Export(ModelExporter exporter) =>
+        public override Swe1rGsp1TriangleCommand Export(ModelBlockItemExporter exporter) =>
             new() {
                 V0 = v0,
                 V1 = v1,

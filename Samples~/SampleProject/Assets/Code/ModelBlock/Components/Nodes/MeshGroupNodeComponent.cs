@@ -18,14 +18,14 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 
         #region Methods
 
-        public override void Import(Swe1rMeshGroupNode source, ModelImporter importer)
+        public override void Import(Swe1rMeshGroupNode source, ModelBlockItemImporter importer)
         {
             base.Import(source, importer);
             aabbMin = source.Aabb.Min.ToUnityVector3();
             aabbMax = source.Aabb.Max.ToUnityVector3();
         }
 
-        public override Swe1rMeshGroupNode Export(ModelExporter exporter)
+        public override Swe1rMeshGroupNode Export(ModelBlockItemExporter exporter)
         {
             var result = base.Export(exporter);
             result.Aabb = new Swe1rBounds3Single() {

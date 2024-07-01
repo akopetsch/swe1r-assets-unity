@@ -27,7 +27,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rVtx source, ModelImporter importer)
+        public override void Import(Swe1rVtx source, ModelBlockItemImporter importer)
         {
             position = source.Position.ToUnityVector3Int();
             u = source.U;
@@ -40,7 +40,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
             color = source.Color.ToUnityColor32();
         }
 
-        public override Swe1rVtx Export(ModelExporter exporter) =>
+        public override Swe1rVtx Export(ModelBlockItemExporter exporter) =>
             new()
             {
                 Position = position.ToSwe1rVector3Int16(),

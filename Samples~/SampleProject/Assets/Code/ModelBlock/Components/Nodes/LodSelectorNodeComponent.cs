@@ -15,14 +15,14 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 
         #region Methods
 
-        public override void Import(Swe1rLodSelectorNode source, ModelImporter importer)
+        public override void Import(Swe1rLodSelectorNode source, ModelBlockItemImporter importer)
         {
             base.Import(source, importer);
             lodDistances = source.LodDistances;
             unk = source.Unk;
         }
 
-        public override Swe1rLodSelectorNode Export(ModelExporter exporter)
+        public override Swe1rLodSelectorNode Export(ModelBlockItemExporter exporter)
         {
             var result = base.Export(exporter);
             result.LodDistances = lodDistances;

@@ -8,7 +8,6 @@ using System.Linq;
 using Unity.EditorCoroutines.Editor;
 using UnityEditor;
 using UnityEngine;
-using ModelImporter = SWE1R.Assets.Blocks.Unity.ModelBlock.ModelImporter;
 using Swe1rModelBlockItem = SWE1R.Assets.Blocks.ModelBlock.ModelBlockItem;
 using Swe1rSplineBlockItem = SWE1R.Assets.Blocks.SplineBlock.SplineBlockItem;
 using Swe1rSpriteBlockItem = SWE1R.Assets.Blocks.SpriteBlock.SpriteBlockItem;
@@ -192,13 +191,13 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         private IEnumerator ImportCoroutine(int modelIndex)
         {
-            ModelImporter importer = GetModelImporter(modelIndex);
+            ModelBlockItemImporter importer = GetModelImporter(modelIndex);
             BlockEditorLogHelper.LogImport(importer.ModelIndex); yield return null;
             ImportAndSelect(importer);
             BlockEditorLogHelper.LogImported(importer.ModelIndex); yield return null;
         }
 
-        private void ImportAndSelect(ModelImporter importer)
+        private void ImportAndSelect(ModelBlockItemImporter importer)
         {
             importer.Import();
             Selection.activeGameObject = importer.GameObject;
@@ -210,7 +209,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         private IEnumerator ExportCoroutine(int modelIndex)
         {
-            ModelExporter exporter = GetModelExporter(modelIndex);
+            ModelBlockItemExporter exporter = GetModelExporter(modelIndex);
 
             BlockEditorLogHelper.LogExport(modelIndex); yield return null;
             exporter.Export();
@@ -219,7 +218,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         private IEnumerator ExportToBlockCoroutine(int modelIndex)
         {
-            ModelExporter exporter = GetModelExporter(modelIndex);
+            ModelBlockItemExporter exporter = GetModelExporter(modelIndex);
             if (exporter != null)
             {
                 BlockEditorLogHelper.LogExport(modelIndex); yield return null;
@@ -243,7 +242,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         private IEnumerator TestReExportCoroutine(int modelIndex)
         {
-            ModelImporter importer = GetModelImporter(modelIndex);
+            ModelBlockItemImporter importer = GetModelImporter(modelIndex);
 
             BlockEditorLogHelper.LogTestReExport(modelIndex); yield return null;
 
@@ -251,7 +250,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
             ImportAndSelect(importer);
             BlockEditorLogHelper.LogImported(modelIndex); yield return null;
 
-            ModelExporter exporter = GetModelExporter(modelIndex);
+            ModelBlockItemExporter exporter = GetModelExporter(modelIndex);
             bool successful = false;
             if (exporter != null)
             {
@@ -291,20 +290,20 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
 
         #region Methods (get importer/exporter)
 
-        private ModelImporter GetModelImporter(int modelIndex)
+        private ModelBlockItemImporter GetModelImporter(int modelIndex)
         {
             LoadBlocks();
-            return new ModelImporter(modelBlock, modelIndex, textureBlock);
+            return new ModelBlockItemImporter(modelBlock, modelIndex, textureBlock);
         }
 
-        private ModelExporter GetModelExporter(int modelIndex)
+        private ModelBlockItemExporter GetModelExporter(int modelIndex)
         {
             ModelComponent modelComponent = 
                 SelectionHelper.GetSelectedGameObjectComponent<ModelComponent>();
             if (modelComponent == null)
                 return null;
             else
-                return new ModelExporter(modelComponent, modelIndex);
+                return new ModelBlockItemExporter(modelComponent, modelIndex);
         }
 
         #endregion

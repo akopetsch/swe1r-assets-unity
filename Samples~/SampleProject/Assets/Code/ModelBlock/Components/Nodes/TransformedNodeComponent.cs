@@ -16,14 +16,14 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 
         #region Methods
 
-        public override void Import(Swe1rTransformedNode source, ModelImporter importer)
+        public override void Import(Swe1rTransformedNode source, ModelBlockItemImporter importer)
         {
             base.Import(source, importer);
             swe1rTransform = source.Transform.ToUnity();
             ApplyMatrix(swe1rTransform);
         }
 
-        public override Swe1rTransformedNode Export(ModelExporter exporter)
+        public override Swe1rTransformedNode Export(ModelBlockItemExporter exporter)
         {
             var result = base.Export(exporter);
             result.Transform = swe1rTransform.ToSwe1r();

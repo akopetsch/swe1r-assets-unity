@@ -17,13 +17,13 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rGspCullDisplayListCommand source, ModelImporter importer)
+        public override void Import(Swe1rGspCullDisplayListCommand source, ModelBlockItemImporter importer)
         {
             v0 = source.V0;
             vN = source.VN;
         }
 
-        public override Swe1rGspCullDisplayListCommand Export(ModelExporter exporter) =>
+        public override Swe1rGspCullDisplayListCommand Export(ModelBlockItemExporter exporter) =>
             new() {
                 V0 = v0,
                 VN = vN,

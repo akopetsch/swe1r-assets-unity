@@ -22,7 +22,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 
         #region Methods
 
-        public override void Import(T source, ModelImporter importer)
+        public override void Import(T source, ModelBlockItemImporter importer)
         {
             flags1 = source.Flags1;
             flags2 = source.Flags2;
@@ -43,7 +43,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
             }
         }
 
-        public override T Export(ModelExporter exporter) =>
+        public override T Export(ModelBlockItemExporter exporter) =>
             new()
             {
                 Flags1 = flags1,
@@ -53,10 +53,10 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
                 Flags5 = flags5
             };
 
-        void IFlaggedNodeComponent.Import(Swe1rFlaggedNode source, ModelImporter importer) =>
+        void IFlaggedNodeComponent.Import(Swe1rFlaggedNode source, ModelBlockItemImporter importer) =>
             Import((T)source, importer);
 
-        Swe1rFlaggedNode IFlaggedNodeComponent.Export(ModelExporter exporter) =>
+        Swe1rFlaggedNode IFlaggedNodeComponent.Export(ModelBlockItemExporter exporter) =>
             Export(exporter);
 
         #endregion

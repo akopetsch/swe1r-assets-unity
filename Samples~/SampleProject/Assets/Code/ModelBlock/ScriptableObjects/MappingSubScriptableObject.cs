@@ -16,7 +16,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 
         #region Methods
 
-        public override void Import(Swe1rMappingSub source, ModelImporter importer)
+        public override void Import(Swe1rMappingSub source, ModelBlockItemImporter importer)
         {
             int_0 = source.Int_0;
             int_1 = source.Int_1;
@@ -24,7 +24,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
                 child = importer.GetMappingChildScriptableObject(source.Child);
         }
 
-        public override Swe1rMappingSub Export(ModelExporter exporter)
+        public override Swe1rMappingSub Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rMappingSub();
             result.Int_0 = int_0;

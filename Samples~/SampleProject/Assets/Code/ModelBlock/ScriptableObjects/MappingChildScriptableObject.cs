@@ -28,7 +28,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 
         #region Methods
 
-        public override void Import(Swe1rMappingChild source, ModelImporter importer)
+        public override void Import(Swe1rMappingChild source, ModelBlockItemImporter importer)
         {
             center = source.Center.ToUnityVector3();
             direction = source.Direction.ToUnityVector3();
@@ -44,14 +44,14 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
                 next = importer.GetMappingChildScriptableObject(source.Next);
         }
 
-        public void ImportFlaggedNode(Swe1rMappingChild source, ModelImporter importer)
+        public void ImportFlaggedNode(Swe1rMappingChild source, ModelBlockItemImporter importer)
         {
             if (source.AffectedNode != null)
                 affectedNode = importer.GetFlaggedNodeComponent<IFlaggedNodeComponent>(
                     source.AffectedNode);
         }
 
-        public override Swe1rMappingChild Export(ModelExporter exporter)
+        public override Swe1rMappingChild Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rMappingChild();
             result.Center = center.ToSwe1rVector3Single();

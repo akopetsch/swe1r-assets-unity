@@ -34,7 +34,7 @@ using Swe1rVtx = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Vtx;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 {
-    public class ModelImporter : BlockItemImporter<ModelBlockItem>
+    public class ModelBlockItemImporter : BlockItemImporter<ModelBlockItem>
     {
         #region Fields
 
@@ -89,7 +89,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         #region Constructor
 
-        public ModelImporter(
+        public ModelBlockItemImporter(
             Block<Swe1rModelBlockItem> modelBlock,
             int modelIndex,
             Block<Swe1rTextureBlockItem> textureBlock)
@@ -217,7 +217,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
             meshMaterialReferenceObjects.GetOrCreate(source, 
                 x => CreateAndImport<MeshMaterialReferenceObject, MeshMaterialReference>(source, this));
 
-        private static TResult CreateAndImport<TResult, TSource>(TSource source, ModelImporter importer)
+        private static TResult CreateAndImport<TResult, TSource>(TSource source, ModelBlockItemImporter importer)
             where TResult : AbstractModelObject<TSource>, new()
         {
             var result = new TResult();

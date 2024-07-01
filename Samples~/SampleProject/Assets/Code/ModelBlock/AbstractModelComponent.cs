@@ -3,7 +3,7 @@
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 {
     public abstract class AbstractModelComponent<TSource> : 
-        AbstractComponent<TSource, ModelImporter, ModelExporter>
+        AbstractComponent<TSource, ModelBlockItemImporter, ModelBlockItemExporter>
     {
 
     }

@@ -30,7 +30,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public IGraphicsCommandObject CreateGraphicsCommandObject(Swe1rGraphicsCommand source, ModelImporter importer)
+        public IGraphicsCommandObject CreateGraphicsCommandObject(Swe1rGraphicsCommand source, ModelBlockItemImporter importer)
         {
             var result = (IGraphicsCommandObject)Activator.CreateInstance(typeByGraphicsCommandByte[source.Byte]);
             result.Import(source, importer);

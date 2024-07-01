@@ -24,7 +24,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rTargetOrInteger source, ModelImporter importer)
+        public override void Import(Swe1rTargetOrInteger source, ModelBlockItemImporter importer)
         {
             if (source.Integer.HasValue)
                 integer = source.Integer.Value;
@@ -42,7 +42,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
             }
         }
 
-        public override Swe1rTargetOrInteger Export(ModelExporter exporter)
+        public override Swe1rTargetOrInteger Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rTargetOrInteger();
             if (integer.HasValue)

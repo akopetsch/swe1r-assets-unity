@@ -11,7 +11,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
     {
         #region Methods
 
-        public override void Import(Swe1rModelBlockItem source, ModelImporter importer)
+        public override void Import(Swe1rModelBlockItem source, ModelBlockItemImporter importer)
         {
             // modelComponent
             Type modelComponentType = ModelComponentFactory.Instance.GetComponentType(source.Model);
@@ -27,7 +27,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
             gameObject.transform.localScale = new Vector3(-scale, scale, scale);
         }
 
-        public override Swe1rModelBlockItem Export(ModelExporter exporter) =>
+        public override Swe1rModelBlockItem Export(ModelBlockItemExporter exporter) =>
             new()
             {
                 Model = GetComponent<IModelComponent>().Export(exporter)

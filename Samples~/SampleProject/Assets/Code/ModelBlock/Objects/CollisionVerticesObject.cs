@@ -29,14 +29,14 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rCollisionVertices source, ModelImporter importer)
+        public override void Import(Swe1rCollisionVertices source, ModelBlockItemImporter importer)
         {
             shortVectors = source.ShortVectors?.Select(v => v.ToUnityVector3()).ToList();
             floatVectors = source.FloatVectors?.Select(v => v.ToUnityVector3()).ToList();
             paddingGarbage = source.PaddingGarbage;
         }
 
-        public override Swe1rCollisionVertices Export(ModelExporter exporter)
+        public override Swe1rCollisionVertices Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rCollisionVertices();
             if (shortVectors.Count > 0)

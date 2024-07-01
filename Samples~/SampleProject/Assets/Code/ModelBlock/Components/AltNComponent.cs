@@ -13,7 +13,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
     {
         #region Methods
 
-        public override void Import(List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference> source, ModelImporter importer)
+        public override void Import(List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference> source, ModelBlockItemImporter importer)
         {
             gameObject.name = nameof(Swe1rModel.AltN);
 
@@ -27,7 +27,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
             }
         }
 
-        public override List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference> Export(ModelExporter exporter)
+        public override List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference> Export(ModelBlockItemExporter exporter)
         {
             var result = new List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference>();
             foreach (GameObject go in gameObject.GetChildren())

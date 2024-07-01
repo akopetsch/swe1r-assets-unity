@@ -29,7 +29,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
         #region Methods
 
         public override void Import(
-            Swe1rMaterialTextureChild source, ModelImporter importer)
+            Swe1rMaterialTextureChild source, ModelBlockItemImporter importer)
         {
             byte_0 = source.Byte_0;
             byte_1 = source.Byte_1;
@@ -45,7 +45,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
             byte_f = source.Byte_f;
         }
 
-        public override Swe1rMaterialTextureChild Export(ModelExporter exporter) =>
+        public override Swe1rMaterialTextureChild Export(ModelBlockItemExporter exporter) =>
             new() {
                 Byte_0 = byte_0,
                 Byte_1 = byte_1,

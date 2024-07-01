@@ -14,13 +14,13 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 
         #region Methods
 
-        public override void Import(Swe1rSelectorNode source, ModelImporter importer)
+        public override void Import(Swe1rSelectorNode source, ModelBlockItemImporter importer)
         {
             base.Import(source, importer);
             selectionValue = source.SelectionValue;
         }
 
-        public override Swe1rSelectorNode Export(ModelExporter exporter)
+        public override Swe1rSelectorNode Export(ModelBlockItemExporter exporter)
         {
             var result = base.Export(exporter);
             result.SelectionValue = selectionValue;

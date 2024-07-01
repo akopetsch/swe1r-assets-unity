@@ -35,7 +35,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 
         #region Methods
 
-        public override void Import(Swe1rMaterialTexture source, ModelImporter importer)
+        public override void Import(Swe1rMaterialTexture source, ModelBlockItemImporter importer)
         {
             mask_Unk = source.Mask_Unk;
             width4 = source.Width4;
@@ -54,7 +54,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
             textureIndex = source.TextureIndex.Value;
         }
 
-        public override Swe1rMaterialTexture Export(ModelExporter exporter)
+        public override Swe1rMaterialTexture Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rMaterialTexture();
             result.Mask_Unk = mask_Unk;

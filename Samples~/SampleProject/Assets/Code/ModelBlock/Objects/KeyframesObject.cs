@@ -21,14 +21,14 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #region Methods
 
-        public override void Import(Swe1rKeyframes source, ModelImporter importer)
+        public override void Import(Swe1rKeyframes source, ModelBlockItemImporter importer)
         {
             materialTextures = source.MaterialTextures?
                 .Select(mt => importer.GetMaterialTextureScriptableObject(mt)).ToList();
             floats = source.Floats;
         }
 
-        public override Swe1rKeyframes Export(ModelExporter exporter)
+        public override Swe1rKeyframes Export(ModelBlockItemExporter exporter)
         {
             var result = new Swe1rKeyframes();
             if (materialTextures?.Count > 0)
