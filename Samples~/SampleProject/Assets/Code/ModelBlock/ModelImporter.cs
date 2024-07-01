@@ -3,6 +3,7 @@
 using ByteSerialization;
 using SWE1R.Assets.Blocks.Metadata;
 using SWE1R.Assets.Blocks.ModelBlock;
+using SWE1R.Assets.Blocks.ModelBlock.Animations;
 using SWE1R.Assets.Blocks.ModelBlock.Nodes;
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using SWE1R.Assets.Blocks.Unity.ModelBlock.Components;
@@ -60,8 +61,8 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
         
         private Dictionary<Swe1rVtx, VtxObject> vtxObjects = 
             new Dictionary<Swe1rVtx, VtxObject>();
-        private Dictionary<Swe1rGraphicsCommand, GraphicsCommandObject> graphicsCommandObjects = 
-            new Dictionary<Swe1rGraphicsCommand, GraphicsCommandObject>();
+        private Dictionary<Swe1rGraphicsCommand, IGraphicsCommandObject> graphicsCommandObjects = 
+            new Dictionary<Swe1rGraphicsCommand, IGraphicsCommandObject>();
 
         private Dictionary<Swe1rMeshMaterialReference, MeshMaterialReferenceObject> meshMaterialReferenceObjects =
             new Dictionary<Swe1rMeshMaterialReference, MeshMaterialReferenceObject>();
@@ -197,19 +198,32 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
             prefabByFlaggedNode[source].GetComponent<T>();
 
         public MaterialTextureChildObject GetMaterialTextureChildObject(Swe1rMaterialTextureChild source) =>
-            materialTextureChildObjects.GetOrCreate(source, x => new MaterialTextureChildObject(x, this));
+            materialTextureChildObjects.GetOrCreate(source,
+                x => CreateAndImport<MaterialTextureChildObject, Swe1rMaterialTextureChild>(source, this));
 
         public MaterialObject GetMaterialPropertiesObject(Swe1rMaterial source) =>
-            materialObjects.GetOrCreate(source, x => new MaterialObject(x, this));
+            materialObjects.GetOrCreate(source,
+                x => CreateAndImport<MaterialObject, Swe1rMaterial>(source, this));
 
-        public GraphicsCommandObject GetGraphicsCommandObject(Swe1rGraphicsCommand source) =>
-            graphicsCommandObjects.GetOrCreate(source, x => GraphicsCommandObjectFactory.Instance.CreateGraphicsCommandObject(x, this));
+        public IGraphicsCommandObject GetGraphicsCommandObject(Swe1rGraphicsCommand source) =>
+            graphicsCommandObjects.GetOrCreate(source, 
+                x => GraphicsCommandObjectFactory.Instance.CreateGraphicsCommandObject(x, this));
 
         public VtxObject GetVertexObject(Swe1rVtx source) =>
-            vtxObjects.GetOrCreate(source, x => new VtxObject(source));
+            vtxObjects.GetOrCreate(source, 
+                x => CreateAndImport<VtxObject, Swe1rVtx>(source, this));
 
         public MeshMaterialReferenceObject GetMeshMaterialReferenceObject(Swe1rMeshMaterialReference source) =>
-            meshMaterialReferenceObjects.GetOrCreate(source, x => new MeshMaterialReferenceObject(x, this));
+            meshMaterialReferenceObjects.GetOrCreate(source, 
+                x => CreateAndImport<MeshMaterialReferenceObject, MeshMaterialReference>(source, this));
+
+        private static TResult CreateAndImport<TResult, TSource>(TSource source, ModelImporter importer)
+            where TResult : AbstractObject<TSource>, new()
+        {
+            var result = new TResult();
+            result.Import(source, importer);
+            return result;
+        }
 
         #endregion
 

@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Swe1rGspVertexCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GspVertexCommand;
-using Swe1rMesh = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh;
-using Swe1rGraphicsCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommand;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
@@ -14,9 +12,9 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
     {
         #region Fields (serialized)
 
-        public short n;
-        public byte v0PlusN;
-        public int v0;
+        public int v;
+        public byte n;
+        public byte v0;
 
         #endregion
 
@@ -30,17 +28,18 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         public override void Import(Swe1rGspVertexCommand source, ModelImporter importer)
         {
+            v = source.VerticesStartIndex;
             n = source.N;
-            v0PlusN = source.V0PlusN;
-            v0 = source.V0;
+            v0 = (byte)source.V0;
         }
 
-        public override Swe1rGraphicsCommand Export(ModelExporter exporter, Swe1rMesh swe1rMesh)
-        {
-            var result = new Swe1rGspVertexCommand(
-                n, v0PlusN, v0, swe1rMesh.Vertices);
-            return result;
-        }
+        public override Swe1rGspVertexCommand Export(ModelExporter exporter) =>
+            new()
+            {
+                VerticesStartIndex = v,
+                N = n,
+                V0 = v0,
+            };
 
         #endregion
     }

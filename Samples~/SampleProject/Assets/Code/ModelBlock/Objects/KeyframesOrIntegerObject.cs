@@ -6,7 +6,7 @@ using Swe1rKeyframesOrInteger = SWE1R.Assets.Blocks.ModelBlock.Animations.Keyfra
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
-    public class KeyframesOrIntegerObject
+    public class KeyframesOrIntegerObject : AbstractObject<Swe1rKeyframesOrInteger>
     {
         #region Fields (serialized)
 
@@ -15,21 +15,20 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #endregion
 
-        #region Constructor
+        #region Methods
 
-        public KeyframesOrIntegerObject(Swe1rKeyframesOrInteger source, ModelImporter importer)
+        public override void Import(Swe1rKeyframesOrInteger source, ModelImporter importer)
         {
             if (source.Keyframes != null)
-                keyframes = new KeyframesObject(source.Keyframes, importer);
+            {
+                keyframes = new KeyframesObject();
+                keyframes.Import(source.Keyframes, importer);
+            }
             else
                 integer = source.Integer.Value;
         }
 
-        #endregion
-
-        #region Methods (export)
-
-        public Swe1rKeyframesOrInteger Export(ModelExporter exporter)
+        public override Swe1rKeyframesOrInteger Export(ModelExporter exporter)
         {
             var result = new Swe1rKeyframesOrInteger();
             if (integer.HasValue)

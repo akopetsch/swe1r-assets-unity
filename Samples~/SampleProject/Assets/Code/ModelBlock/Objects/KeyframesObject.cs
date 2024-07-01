@@ -10,7 +10,7 @@ using Swe1rKeyframes = SWE1R.Assets.Blocks.ModelBlock.Animations.Keyframes;
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
-    public class KeyframesObject
+    public class KeyframesObject : AbstractObject<Swe1rKeyframes>
     {
         #region Fields (serialized)
 
@@ -19,24 +19,21 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #endregion
 
-        #region Constructor
+        #region Methods
 
-        public KeyframesObject(Swe1rKeyframes source, ModelImporter importer)
+        public override void Import(Swe1rKeyframes source, ModelImporter importer)
         {
             materialTextures = source.MaterialTextures?
-                        .Select(mt => importer.GetMaterialTextureScriptableObject(mt)).ToList();
+                .Select(mt => importer.GetMaterialTextureScriptableObject(mt)).ToList();
             floats = source.Floats;
         }
 
-        #endregion
-
-        #region Methods (export)
-
-        public Swe1rKeyframes Export(ModelExporter exporter)
+        public override Swe1rKeyframes Export(ModelExporter exporter)
         {
             var result = new Swe1rKeyframes();
             if (materialTextures?.Count > 0)
-                result.MaterialTextures = materialTextures.Select(mt => exporter.GetMaterialTexture(mt)).ToList();
+                result.MaterialTextures = 
+                    materialTextures.Select(mt => exporter.GetMaterialTexture(mt)).ToList();
             else
                 result.Floats = floats;
             return result;

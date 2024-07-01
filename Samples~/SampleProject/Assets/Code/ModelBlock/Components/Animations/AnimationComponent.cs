@@ -28,7 +28,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Animations
 
         #endregion
 
-        #region Methods (import/export)
+        #region Methods
 
         public void Import(Swe1rAnimation source, Swe1rModelImporter importer)
         {
@@ -44,8 +44,10 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Animations
             int114 = source.Int114;
             int118 = source.Int118;
             keyframeTimestamps = source.KeyframeTimestamps;
-            keyframesOrInteger = new KeyframesOrIntegerObject(source.KeyframesOrInteger, importer);
-            targetOrInteger = new TargetOrIntegerObject(source.TargetOrInteger, importer);
+            keyframesOrInteger = new KeyframesOrIntegerObject();
+            keyframesOrInteger.Import(source.KeyframesOrInteger, importer);
+            targetOrInteger = new TargetOrIntegerObject();
+            targetOrInteger.Import(source.TargetOrInteger, importer);
             int_128 = source.Int_128;
         }
 

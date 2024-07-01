@@ -54,8 +54,8 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
             v12 = source.V12;
         }
 
-        public override Swe1rGraphicsCommand Export(ModelExporter exporter, Swe1rMesh swe1rMesh) =>
-            new Swe1rGsp2TrianglesCommand() {
+        public override Swe1rGsp2TrianglesCommand Export(ModelExporter exporter) =>
+            new() {
                 V00 = v00,
                 V01 = v01,
                 V02 = v02,

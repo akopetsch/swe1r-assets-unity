@@ -8,7 +8,7 @@ using Swe1rMeshMaterialReference = SWE1R.Assets.Blocks.ModelBlock.Animations.Mes
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
-    public class MeshMaterialReferenceObject
+    public class MeshMaterialReferenceObject : AbstractObject<Swe1rMeshMaterialReference>
     {
         #region Fields (serialized)
 
@@ -16,16 +16,12 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #endregion
 
-        #region Constructor
+        #region Methods
 
-        public MeshMaterialReferenceObject(Swe1rMeshMaterialReference source, ModelImporter importer) =>
+        public override void Import(Swe1rMeshMaterialReference source, ModelImporter importer) =>
             meshMaterial = importer.GetMeshMaterialScriptableObject(source.MeshMaterial);
 
-        #endregion
-
-        #region Methods (export)
-
-        public Swe1rMeshMaterialReference Export(ModelExporter exporter) =>
+        public override Swe1rMeshMaterialReference Export(ModelExporter exporter) =>
             new() {
                 MeshMaterial = exporter.GetMeshMaterial(meshMaterial)
             };

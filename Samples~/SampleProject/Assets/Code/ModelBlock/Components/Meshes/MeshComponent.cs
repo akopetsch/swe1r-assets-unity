@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 
+using SWE1R.Assets.Blocks.ModelBlock.F3DEX2;
 using SWE1R.Assets.Blocks.ModelBlock.Meshes;
 using SWE1R.Assets.Blocks.ModelBlock.Meshes.Geometry;
 using SWE1R.Assets.Blocks.Unity.Extensions;
@@ -9,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Swe1rGraphicsCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommand;
+using Swe1rGspVertexCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GspVertexCommand;
 using Swe1rGraphicsCommandList = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommandList;
 using Swe1rMaterialTexture = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture;
 using Swe1rMaterialTextureChild = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTextureChild;
@@ -40,7 +43,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes
         [SerializeReference] public List<int> facesVertexCounts;
         public MeshGroupNodeOrShortsObject meshGroupOrShorts;
         [SerializeReference] public CollisionVerticesObject collisionVertices;
-        [SerializeReference] public List<GraphicsCommandObject> commandList;
+        [SerializeReference] public List<IGraphicsCommandObject> commandList;
         public List<VtxObject> vertices;
         public short unk_Count;
 
@@ -62,13 +65,17 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes
             primitiveType = source.PrimitiveType;
             if (source.FacesVertexCounts != null)
                 facesVertexCounts = source.FacesVertexCounts;
-            meshGroupOrShorts = new MeshGroupNodeOrShortsObject(source.MeshGroupNodeOrShorts, importer);
+            meshGroupOrShorts = new MeshGroupNodeOrShortsObject();
+            meshGroupOrShorts.Import(source.MeshGroupNodeOrShorts, importer);
             if (source.CollisionVertices != null)
-                collisionVertices = new CollisionVerticesObject(source.CollisionVertices);
+            {
+                collisionVertices = new CollisionVerticesObject();
+                collisionVertices.Import(source.CollisionVertices, importer);
+            }
             if (source.CommandList != null)
                 commandList = source.CommandList.Select(x => importer.GetGraphicsCommandObject(x)).ToList();
             if (source.Vertices != null)
-                vertices = source.Vertices.Select(x => new VtxObject(x)).ToList();
+                vertices = source.Vertices.Select(x => importer.GetVertexObject(x)).ToList();
             unk_Count = source.Unk_Count;
 
             AddLabelsToName(source);
@@ -94,16 +101,26 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes
                 result.FacesVertexCounts = facesVertexCounts;
             result.MeshGroupNodeOrShorts = meshGroupOrShorts.Export(exporter);
             if (collisionVertices?.Count > 0) // TODO: nullable necessary? ([SerializeReference])
-                result.CollisionVertices = collisionVertices.Export();
+                result.CollisionVertices = collisionVertices.Export(exporter);
             if (vertices.Count > 0)
                 result.Vertices = vertices.Select(v => exporter.GetVertex(v)).ToList();
             if (commandList.Count > 0)
                 result.CommandList = 
-                    new Swe1rGraphicsCommandList(commandList.Select(ic => ic.Export(exporter, result)).ToList());
+                    new Swe1rGraphicsCommandList(
+                        commandList.Select(x => ExportGraphicsCommand(x, exporter, result.Vertices)).ToList());
             result.Unk_Count = unk_Count;
 
             result.UpdateCounts();
 
+            return result;
+        }
+
+        private Swe1rGraphicsCommand ExportGraphicsCommand(
+            IGraphicsCommandObject graphicsCommandObject, ModelExporter exporter, List<Vtx> vertices)
+        {
+            var result = graphicsCommandObject.Export(exporter);
+            if (result is Swe1rGspVertexCommand gspVertexCommand)
+                gspVertexCommand.Vertices = vertices;
             return result;
         }
 

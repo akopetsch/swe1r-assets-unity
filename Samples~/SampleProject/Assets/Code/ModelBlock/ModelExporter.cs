@@ -130,10 +130,10 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
             _materialTextures.GetOrCreate(materialTexureObject, x => x.Export(this));
 
         public Swe1rMaterialTextureChild GetMaterialTextureChild(MaterialTextureChildObject materialTexureChildObject) =>
-            _materialTextureChildren.GetOrCreate(materialTexureChildObject, x => x.Export());
+            _materialTextureChildren.GetOrCreate(materialTexureChildObject, x => x.Export(this));
 
         public Swe1rMaterial GetMaterial(MaterialObject materialObject) =>
-            _materials.GetOrCreate(materialObject, x => x.Export());
+            _materials.GetOrCreate(materialObject, x => x.Export(this));
 
         public Swe1rMapping GetMapping(MappingScriptableObject mappingObject) =>
             _mappings.GetOrCreate(mappingObject, x => x.Export(this));
@@ -142,7 +142,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
             _mappingChildren.GetOrCreate(mappingChildObject, x => x.Export(this));
 
         public Swe1rVtx GetVertex(VtxObject vertexObject) =>
-            _vtxs.GetOrCreate(vertexObject, x => x.Export());
+            _vtxs.GetOrCreate(vertexObject, x => x.Export(this));
 
         public Swe1rMeshMaterialReference GetMeshMaterialReference(MeshMaterialReferenceObject materialReferenceObject) =>
             _meshMaterialReferences.GetOrCreate(materialReferenceObject, x => x.Export(this));

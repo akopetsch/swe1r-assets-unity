@@ -6,7 +6,7 @@ using Swe1rMaterial = SWE1R.Assets.Blocks.ModelBlock.Materials.Material;
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
-    public class MaterialObject
+    public class MaterialObject : AbstractObject<Swe1rMaterial>
     {
         #region Fields (serialized)
 
@@ -43,9 +43,9 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #endregion
 
-        #region Constructor
+        #region Methods
 
-        public MaterialObject(Swe1rMaterial source, ModelImporter importer)
+        public override void Import(Swe1rMaterial source, ModelImporter importer)
         {
             alphaBpp = source.AlphaBpp;
             word_4 = source.Word_4;
@@ -70,11 +70,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
             unk_32 = source.Unk_32;
         }
 
-        #endregion
-
-        #region Methods (export)
-
-        public Swe1rMaterial Export() =>
+        public override Swe1rMaterial Export(ModelExporter modelExporter) =>
             new() {
                 AlphaBpp = alphaBpp,
                 Word_4 = word_4,

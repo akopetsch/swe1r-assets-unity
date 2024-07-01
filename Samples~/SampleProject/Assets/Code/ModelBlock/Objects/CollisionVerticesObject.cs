@@ -10,7 +10,7 @@ using UnityVector3 = UnityEngine.Vector3;
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
-    public class CollisionVerticesObject
+    public class CollisionVerticesObject : AbstractObject<Swe1rCollisionVertices>
     {
         #region Fields
 
@@ -26,20 +26,16 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #endregion
 
-        #region Constructor
+        #region Methods
 
-        public CollisionVerticesObject(Swe1rCollisionVertices source)
+        public override void Import(Swe1rCollisionVertices source, ModelImporter importer)
         {
             shortVectors = source.ShortVectors?.Select(v => v.ToUnityVector3()).ToList();
             floatVectors = source.FloatVectors?.Select(v => v.ToUnityVector3()).ToList();
             paddingGarbage = source.PaddingGarbage;
         }
 
-        #endregion
-
-        #region Methods (export)
-
-        public Swe1rCollisionVertices Export()
+        public override Swe1rCollisionVertices Export(ModelExporter exporter)
         {
             var result = new Swe1rCollisionVertices();
             if (shortVectors.Count > 0)

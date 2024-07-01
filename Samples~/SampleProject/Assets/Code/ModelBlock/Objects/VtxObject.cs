@@ -9,7 +9,7 @@ using UnityVectorInt = UnityEngine.Vector3Int;
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
-    public class VtxObject
+    public class VtxObject : AbstractObject<Swe1rVtx>
     {
         #region Fields (serialized)
 
@@ -25,9 +25,9 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #endregion
 
-        #region Constructor
+        #region Methods
 
-        public VtxObject(Swe1rVtx source)
+        public override void Import(Swe1rVtx source, ModelImporter importer)
         {
             position = source.Position.ToUnityVector3Int();
             u = source.U;
@@ -40,11 +40,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
             color = source.Color.ToUnityColor32();
         }
 
-        #endregion
-
-        #region Methods (export)
-
-        public Swe1rVtx Export() =>
+        public override Swe1rVtx Export(ModelExporter exporter) =>
             new()
             {
                 Position = position.ToSwe1rVector3Int16(),

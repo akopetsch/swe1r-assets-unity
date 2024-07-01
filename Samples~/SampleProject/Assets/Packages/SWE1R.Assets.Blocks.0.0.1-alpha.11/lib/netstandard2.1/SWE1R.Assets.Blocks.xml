@@ -73,11 +73,14 @@
             See also:
             <list type="bullet">
               <item>
-                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Alpha%20combiner%20constants">
-                  n64devkit.square7.ch - gbi.h - 'Alpha combiner constants'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/header/gbi.htm#:~:text=Alpha%20combiner%20constants">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - gbi.h - 'Alpha combiner constants'</see></item>
               <item>
-                <see href="http://n64devkit.square7.ch/n64man/gdp/gDPSetCombineLERP.htm">
-                  n64devkit.square7.ch - 'gDPSetCombineLERP'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/n64man/gdp/gDPSetCombineMode.html#:~:text=Alpha%20Combiner">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - 'N64® Functions Menu' - 'gDPSetCombineMode'</see></item>
+              <item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/pro-man/pro12/index12.6.html">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - 'Programming Manual' - '12. RDP Programming' - '12.6 CC: Color Combiner'</see></item>
             </list>
             </summary>
         </member>
@@ -136,11 +139,14 @@
             See also:
             <list type="bullet">
               <item>
-                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Color%20combiner%20constants">
-                  n64devkit.square7.ch - gbi.h - 'Color combiner constants'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/header/gbi.htm#:~:text=Color%20combiner%20constants">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - gbi.h - 'Color combiner constants'</see></item>
               <item>
-                <see href="http://n64devkit.square7.ch/n64man/gdp/gDPSetCombineLERP.htm">
-                  n64devkit.square7.ch - 'gDPSetCombineLERP'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/n64man/gdp/gDPSetCombineMode.html">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - 'N64® Functions Menu' - 'gDPSetCombineMode'</see></item>
+              <item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/pro-man/pro12/index12.6.html">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - 'Programming Manual' - '12. RDP Programming' - '12.6 CC: Color Combiner'</see></item>
             </list>
             </summary>
         </member>
@@ -254,8 +260,11 @@
             See also:
             <list type="bullet">
               <item>
-                <see href="http://n64devkit.square7.ch/n64man/gdp/gDPSetCombineLERP.htm">
-                  n64devkit.square7.ch - 'gDPSetCombineLERP'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/n64man/gdp/gDPSetCombineMode.html#:~:text=gDPSetCombineLERP">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - 'gDPSetCombineMode' - 'gDPSetCombineLERP'</see></item>
+              <item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/header/gbi.htm#:~:text=gDPSetCombineLERP">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - gbi.h - gDPSetCombineLERP</see></item>
             </list>
             </summary>
         </member>
@@ -264,8 +273,11 @@
             See also:
             <list type="bullet">
               <item>
-                <see href="http://n64devkit.square7.ch/n64man/gdp/gDPSetRenderMode.htm">
-                  n64devkit.square7.ch - 'gDPSetRenderMode'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/n64man/gdp/gDPSetRenderMode.html">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - 'gDPSetRenderMode'</see></item>
+              <item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/header/gbi.htm#:~:text=gDPSetRenderMode">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - gbi.h - gDPSetRenderMode</see></item>
             </list>
             </summary>
         </member>
@@ -274,11 +286,11 @@
             See also:
             <list type="bullet">
               <item>
-                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Graphics%20Commands">
-                  n64devkit.square7.ch - gbi.h - 'Graphics Commands'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/header/gbi.htm#:~:text=Gfx%3B">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - gbi.h - Gfx</see></item>
               <item>
-                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Gfx%3B">
-                  n64devkit.square7.ch - gbi.h - 'Gfx'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/header/gbi.htm#:~:text=Graphics%20Commands">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - gbi.h - 'Graphics Commands'</see></item>
               <item>
                 <see href="https://github.com/akopetsch/SW_RACER_RE/blob/d2d15c27d81e51e91996563795643c91439147aa/src/types.h#L1365">
                   github.com - akopetsch/SW_RACER_RE - types.h - Gfx</see></item>
@@ -293,8 +305,11 @@
             See also:
             <list type="bullet">
               <item>
-                <see href="http://n64devkit.square7.ch/n64man/gsp/gSP1Triangle.htm">
-                  n64devkit.square7.ch - 'gSP1Triangle'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/n64man/gsp/gSP1Triangle.html">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - 'gSP1Triangle'</see></item>
+              <item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/header/gbi.htm#:~:text=gSP1Triangle%28pkt">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - gbi.h - gSP1Triangle</see></item>
             </list>
             </summary>
         </member>
@@ -303,8 +318,11 @@
             See also:
             <list type="bullet">
               <item>
-                <see href="http://n64devkit.square7.ch/n64man/gsp/gSP2Triangles.htm">
-                  n64devkit.square7.ch - 'gSP2Triangles'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/n64man/gsp/gSP2Triangles.html">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - 'gSP2Triangles'</see></item>
+              <item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/header/gbi.htm#:~:text=gSP2Triangles">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - gbi.h - gSP2Triangles</see></item>
             </list>
             </summary>
         </member>
@@ -313,8 +331,11 @@
             See also:
             <list type="bullet">
               <item>
-                <see href="http://n64devkit.square7.ch/n64man/gsp/gSPCullDisplayList.htm">
-                  n64devkit.square7.ch - 'gSPCullDisplayList'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/n64man/gsp/gSPCullDisplayList.html">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - 'gSPCullDisplayList'</see></item>
+              <item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/header/gbi.htm#:~:text=gSPCullDisplayList">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - gbi.h - gSPCullDisplayList</see></item>
             </list>
             </summary>
         </member>
@@ -323,8 +344,11 @@
             See also:
             <list type="bullet">
               <item>
-                <see href="http://n64devkit.square7.ch/n64man/gsp/gSPVertex.htm">
-                  n64devkit.square7.ch - 'gSPVertex'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/n64man/gsp/gSPVertex.html">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - 'gSPVertex'</see></item>
+              <item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/header/gbi.htm#:~:text=gSPVertex">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - gbi.h - gSPVertex</see></item>
             </list>
             </summary>
         </member>
@@ -334,11 +358,11 @@
             See also:
             <list type="bullet">
               <item>
-                <see href="http://n64devkit.square7.ch/header/gbi.htm#:~:text=Vtx%3B">
-                  n64devkit.square7.ch - gbi.h - 'Vtx'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/n64man/gsp/gSPVertex.html#:~:text=Vtx%3B">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - 'gSPVertex'</see></item>
               <item>
-                <see href="http://n64devkit.square7.ch/n64man/gsp/gSPVertex.htm#:~:text=Vtx%3B">
-                  n64devkit.square7.ch - 'gSPVertex' - 'Vtx'</see></item>
+                <see href="https://ultra64.ca/files/documentation/online-manuals/man/header/gbi.htm#:~:text=Vtx">
+                  ultra64.ca - 'Online Manuals (OS 2.0J)' - gbi.h - Vtx</see></item>
               <item>
                 <see href="https://github.com/akopetsch/SW_RACER_RE/blob/d2d15c27d81e51e91996563795643c91439147aa/src/types.h#L1535">
                   github.com - akopetsch/SW_RACER_RE - types.h - Vtx</see></item>
@@ -1140,6 +1164,125 @@
             <summary>
             If <seealso cref="P:SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode.Flags3">Flags3</seealso> &amp; 0x10
             transforms are modified to use this position as the center position.
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData">
+            <summary>
+            <para>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="https://github.com/akopetsch/blender-swe1r/blob/b0d4019addb97d51523019ca1233411fae0508d6/splineblock.py#L29">
+                  github.com - akopetsch/blender-swe1r - splineblock.py - SplinePoint</see></item>
+            </list>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.Word_00">
+            <summary>
+            <para>Offset: 0x00</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.Word_02">
+            <summary>
+            <para>Offset: 0x02</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.Word_04">
+            <summary>
+            <para>Offset: 0x04</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.Word_06">
+            <summary>
+            <para>Offset: 0x06</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.PreviousNodeId">
+            <summary>
+            <para>Offset: 0x08</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.Unk_0a">
+            <summary>
+            <para>Offset: 0x0a</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.Unk_0c">
+            <summary>
+            <para>Offset: 0x0c</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.Unk_0e">
+            <summary>
+            <para>Offset: 0x0e</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.KnotVector">
+            <summary>
+            <para>Offset: 0x10</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.Float_24">
+            <summary>
+            <para>Offset: 0x24</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.ControlPoint1">
+            <summary>
+            <para>Offset: 0x28</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.ControlPoint2">
+            <summary>
+            <para>Offset: 0x34</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentData.Unk_40">
+            <summary>
+            <para>Offset: 0x40</para>
+            </summary>
+        </member>
+        <member name="T:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentHeader">
+            <summary>
+            <para>
+            See also:
+            <list type="bullet">
+              <item>
+                <see href="https://github.com/akopetsch/blender-swe1r/blob/b0d4019addb97d51523019ca1233411fae0508d6/splineblock.py#L103">
+                  github.com - akopetsch/blender-swe1r - splineblock.py - Spline</see></item>
+            </list>
+            </para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentHeader.Word_0">
+            <summary>
+            <para>Offset: 0x00</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentHeader.Word_2">
+            <summary>
+            <para>Offset: 0x02</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentHeader.ElementsCount">
+            <summary>
+            <para>Offset: 0x04</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentHeader.UnknownCount">
+            <summary>
+            <para>Offset: 0x08</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentHeader.Word_c">
+            <summary>
+            <para>Offset: 0x0c</para>
+            </summary>
+        </member>
+        <member name="P:SWE1R.Assets.Blocks.SplineBlock.SplineSegmentHeader.Word_e">
+            <summary>
+            <para>Offset: 0x0e</para>
             </summary>
         </member>
         <member name="T:SWE1R.Assets.Blocks.SpriteBlock.Sprite">

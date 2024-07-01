@@ -11,7 +11,7 @@ using Swe1rTransformedWithPivotNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.Trans
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
-    public class TargetOrIntegerObject
+    public class TargetOrIntegerObject : AbstractObject<Swe1rTargetOrInteger>
     {
         #region Fields (serialized)
 
@@ -22,31 +22,27 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #endregion
 
-        #region Constructor
+        #region Methods
 
-        public TargetOrIntegerObject(Swe1rTargetOrInteger source, ModelImporter importer)
+        public override void Import(Swe1rTargetOrInteger source, ModelImporter importer)
         {
             if (source.Integer.HasValue)
                 integer = source.Integer.Value;
             else if (source.Target != null)
             {
                 if (source.Target.MeshMaterialReference != null)
-                    meshMaterialReference = 
+                    meshMaterialReference =
                         importer.GetMeshMaterialReferenceObject(source.Target.MeshMaterialReference);
                 else if (source.Target.MeshMaterial != null)
-                    meshMaterial = 
+                    meshMaterial =
                         importer.GetMeshMaterialScriptableObject(source.Target.MeshMaterial);
                 else if (source.Target.TransformedWithPivotNode != null)
-                    transformedWithPivotNode = 
+                    transformedWithPivotNode =
                         importer.GetFlaggedNodeComponent<TransformedWithPivotNodeComponent>(source.Target.TransformedWithPivotNode);
             }
         }
 
-        #endregion
-
-        #region Methods (export)
-
-        public Swe1rTargetOrInteger Export(ModelExporter exporter)
+        public override Swe1rTargetOrInteger Export(ModelExporter exporter)
         {
             var result = new Swe1rTargetOrInteger();
             if (integer.HasValue)

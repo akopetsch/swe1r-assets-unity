@@ -32,8 +32,8 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
             vN = source.VN;
         }
 
-        public override Swe1rGraphicsCommand Export(ModelExporter exporter, Swe1rMesh swe1rMesh) =>
-            new Swe1rGspCullDisplayListCommand() {
+        public override Swe1rGspCullDisplayListCommand Export(ModelExporter exporter) =>
+            new() {
                 V0 = v0,
                 VN = vN,
             };

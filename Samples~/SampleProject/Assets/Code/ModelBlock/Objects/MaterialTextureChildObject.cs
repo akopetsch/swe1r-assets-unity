@@ -7,7 +7,7 @@ using Swe1rMaterialTextureChild = SWE1R.Assets.Blocks.ModelBlock.Materials.Mater
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
-    public class MaterialTextureChildObject
+    public class MaterialTextureChildObject : AbstractObject<Swe1rMaterialTextureChild>
     {
         #region Fields (serialized)
 
@@ -26,9 +26,9 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #endregion
 
-        #region Constructor
+        #region Methods
 
-        public MaterialTextureChildObject(
+        public override void Import(
             Swe1rMaterialTextureChild source, ModelImporter importer)
         {
             byte_0 = source.Byte_0;
@@ -45,11 +45,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
             byte_f = source.Byte_f;
         }
 
-        #endregion
-
-        #region Methods (export)
-
-        public Swe1rMaterialTextureChild Export() =>
+        public override Swe1rMaterialTextureChild Export(ModelExporter exporter) =>
             new() {
                 Byte_0 = byte_0,
                 Byte_1 = byte_1,

@@ -9,7 +9,7 @@ using Swe1rMeshGroupNodeOrShorts = SWE1R.Assets.Blocks.ModelBlock.Meshes.MeshGro
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
-    public class MeshGroupNodeOrShortsObject
+    public class MeshGroupNodeOrShortsObject : AbstractObject<Swe1rMeshGroupNodeOrShorts>
     {
         #region Fields (serialized)
 
@@ -18,9 +18,9 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 
         #endregion
 
-        #region Constructor
+        #region Methods
 
-        public MeshGroupNodeOrShortsObject(Swe1rMeshGroupNodeOrShorts source, ModelImporter importer)
+        public override void Import(Swe1rMeshGroupNodeOrShorts source, ModelImporter importer)
         {
             if (source.MeshGroupNode != null)
                 meshGroupNode = importer.GetFlaggedNodeComponent<MeshGroupNodeComponent>(source.MeshGroupNode);
@@ -28,11 +28,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
                 shorts = source.Shorts;
         }
 
-        #endregion
-
-        #region Methods (export)
-
-        public Swe1rMeshGroupNodeOrShorts Export(ModelExporter exporter)
+        public override Swe1rMeshGroupNodeOrShorts Export(ModelExporter exporter)
         {
             var result = new Swe1rMeshGroupNodeOrShorts();
             if (meshGroupNode != null)

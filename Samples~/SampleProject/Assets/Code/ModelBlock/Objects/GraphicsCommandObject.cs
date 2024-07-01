@@ -3,36 +3,28 @@
 using System;
 using System.Collections.Generic;
 using Swe1rGraphicsCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommand;
-using Swe1rMesh = SWE1R.Assets.Blocks.ModelBlock.Meshes.Mesh;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
-    public abstract class GraphicsCommandObject
+    public abstract class GraphicsCommandObject<T> : 
+        AbstractObject<T>, IGraphicsCommandObject where T : Swe1rGraphicsCommand
     {
         #region Properties
 
         public abstract IEnumerable<int> Indices { get; }
 
-        #endregion
-
-        #region Methods (import/export)
-
-        public abstract void Import(Swe1rGraphicsCommand source, ModelImporter importer);
-        public abstract Swe1rGraphicsCommand Export(ModelExporter exporter, Swe1rMesh swe1rMesh);
+        IEnumerable<int> IGraphicsCommandObject.Indices => throw new NotImplementedException();
 
         #endregion
-    }
 
-    [Serializable]
-    public abstract class GraphicsCommandObject<T> : GraphicsCommandObject where T : Swe1rGraphicsCommand
-    {
-        #region Methods (import)
+        #region Methods
 
-        public override void Import(Swe1rGraphicsCommand source, ModelImporter importer) => 
+        void IGraphicsCommandObject.Import(Swe1rGraphicsCommand source, ModelImporter importer) =>
             Import((T)source, importer);
 
-        public abstract void Import(T source, ModelImporter modelImporter);
+        Swe1rGraphicsCommand IGraphicsCommandObject.Export(ModelExporter exporter) =>
+            Export(exporter);
 
         #endregion
     }
