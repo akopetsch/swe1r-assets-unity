@@ -160,7 +160,7 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
         {
             // return EditorGUILayout.IntField(label, value);
 
-            GUIStyle style = new GUIStyle(EditorStyles.numberField);
+            GUIStyle style = new(EditorStyles.numberField);
             style.stretchWidth = false;
             return EditorGUILayout.IntField(label, value, style);
         }
@@ -172,9 +172,9 @@ namespace SWE1R.Assets.Blocks.Unity.Editor
         {
             // return GUILayout.Button(s);
 
-            GUIContent content = new GUIContent(s);
+            GUIContent content = new(s);
 
-            GUIStyle style = new GUIStyle(GUI.skin.button);
+            GUIStyle style = new(GUI.skin.button);
             style.stretchWidth = false;
 
             Vector2 size = style.CalcSize(content);

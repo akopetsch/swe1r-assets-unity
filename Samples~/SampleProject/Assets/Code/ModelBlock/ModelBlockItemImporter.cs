@@ -48,24 +48,17 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         #region Fields (mapping)
 
-        private Dictionary<Swe1rFlaggedNode, GameObject> prefabByFlaggedNode =
-            new Dictionary<Swe1rFlaggedNode, GameObject>();
+        private Dictionary<Swe1rFlaggedNode, GameObject> prefabByFlaggedNode = new();
 
-        private Dictionary<Type, Dictionary<object, ScriptableObject>> scriptableObjectsBySourceBySourceType =
-            new Dictionary<Type, Dictionary<object, ScriptableObject>>();
+        private Dictionary<Type, Dictionary<object, ScriptableObject>> scriptableObjectsBySourceBySourceType = new();
 
-        private Dictionary<Swe1rMaterialTextureChild, MaterialTextureChildObject> materialTextureChildObjects =
-            new Dictionary<Swe1rMaterialTextureChild, MaterialTextureChildObject>();
-        private Dictionary<Swe1rMaterial, MaterialObject> materialObjects = 
-            new Dictionary<Swe1rMaterial, MaterialObject>();
+        private Dictionary<Swe1rMaterialTextureChild, MaterialTextureChildObject> materialTextureChildObjects = new();
+        private Dictionary<Swe1rMaterial, MaterialObject> materialObjects = new();
         
-        private Dictionary<Swe1rVtx, VtxObject> vtxObjects = 
-            new Dictionary<Swe1rVtx, VtxObject>();
-        private Dictionary<Swe1rGraphicsCommand, IGraphicsCommandObject> graphicsCommandObjects = 
-            new Dictionary<Swe1rGraphicsCommand, IGraphicsCommandObject>();
+        private Dictionary<Swe1rVtx, VtxObject> vtxObjects = new();
+        private Dictionary<Swe1rGraphicsCommand, IGraphicsCommandObject> graphicsCommandObjects = new();
 
-        private Dictionary<Swe1rMeshMaterialReference, MeshMaterialReferenceObject> meshMaterialReferenceObjects =
-            new Dictionary<Swe1rMeshMaterialReference, MeshMaterialReferenceObject>();
+        private Dictionary<Swe1rMeshMaterialReference, MeshMaterialReferenceObject> meshMaterialReferenceObjects = new();
 
         #endregion
 

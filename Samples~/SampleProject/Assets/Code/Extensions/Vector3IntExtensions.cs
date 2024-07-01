@@ -10,21 +10,21 @@ namespace SWE1R.Assets.Blocks.Unity.Extensions
     public static class Vector3IntExtensions
     {
         public static UnityVector3Int ToUnityVector3Int(this Swe1rVector3Byte source) =>
-            new UnityVector3Int(source.X, source.Y, source.Z);
+            new(source.X, source.Y, source.Z);
 
         public static UnityVector3Int ToUnityVector3Int(this Swe1rVector3SByte source) =>
-            new UnityVector3Int(source.X, source.Y, source.Z);
+            new(source.X, source.Y, source.Z);
 
         public static UnityVector3Int ToUnityVector3Int(this Swe1rVector3Int16 source) =>
-            new UnityVector3Int(source.X, source.Y, source.Z);
+            new(source.X, source.Y, source.Z);
 
         public static Swe1rVector3Byte ToSwe1rVector3Byte(this UnityVector3Int source) =>
-            new Swe1rVector3Byte((byte)source.x, (byte)source.y, (byte)source.z);
+            new((byte)source.x, (byte)source.y, (byte)source.z);
 
         public static Swe1rVector3SByte ToSwe1rVector3SByte(this UnityVector3Int source) =>
-            new Swe1rVector3SByte((sbyte)source.x, (sbyte)source.y, (sbyte)source.z);
+            new((sbyte)source.x, (sbyte)source.y, (sbyte)source.z);
 
         public static Swe1rVector3Int16 ToSwe1rVector3Int16(this UnityVector3Int source) =>
-            new Swe1rVector3Int16((short)source.x, (short)source.y, (short)source.z);
+            new((short)source.x, (short)source.y, (short)source.z);
     }
 }

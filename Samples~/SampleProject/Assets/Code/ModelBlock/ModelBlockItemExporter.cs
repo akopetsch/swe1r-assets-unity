@@ -38,38 +38,17 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         #region Fields (mapping)
 
-        private Dictionary<GameObject, Swe1rFlaggedNode> _flaggedNodeByPrefab =
-            new Dictionary<GameObject, Swe1rFlaggedNode>();
-
-        private Dictionary<MeshMaterialScriptableObject, Swe1rMeshMaterial> _meshMaterials =
-            new Dictionary<MeshMaterialScriptableObject, Swe1rMeshMaterial>();
-
-        private Dictionary<MaterialTextureScriptableObject, Swe1rMaterialTexture> _materialTextures =
-            new Dictionary<MaterialTextureScriptableObject, Swe1rMaterialTexture>();
-
-        private Dictionary<MaterialTextureChildObject, Swe1rMaterialTextureChild> _materialTextureChildren =
-            new Dictionary<MaterialTextureChildObject, Swe1rMaterialTextureChild>();
-
-        private Dictionary<MaterialObject, Swe1rMaterial> _materials =
-            new Dictionary<MaterialObject, Swe1rMaterial>();
-
-        private Dictionary<MappingScriptableObject, Swe1rMapping> _mappings =
-            new Dictionary<MappingScriptableObject, Swe1rMapping>();
-
-        private Dictionary<MappingChildScriptableObject, Swe1rMappingChild> _mappingChildren =
-            new Dictionary<MappingChildScriptableObject, Swe1rMappingChild>();
-
-        private Dictionary<VtxObject, Swe1rVtx> _vtxs =
-            new Dictionary<VtxObject, Swe1rVtx>();
-
-        private Dictionary<MeshMaterialReferenceObject, Swe1rMeshMaterialReference> _meshMaterialReferences =
-            new Dictionary<MeshMaterialReferenceObject, Swe1rMeshMaterialReference>();
-
-        private Dictionary<KeyframesOrIntegerObject, Swe1rKeyframesOrInteger> _keyframesOrIntegers =
-            new Dictionary<KeyframesOrIntegerObject, Swe1rKeyframesOrInteger>();
-
-        private Dictionary<TargetOrIntegerObject, Swe1rTargetOrInteger> _targetOrIntegers =
-            new Dictionary<TargetOrIntegerObject, Swe1rTargetOrInteger>();
+        private Dictionary<GameObject, Swe1rFlaggedNode> _flaggedNodeByPrefab = new();
+        private Dictionary<MeshMaterialScriptableObject, Swe1rMeshMaterial> _meshMaterials = new();
+        private Dictionary<MaterialTextureScriptableObject, Swe1rMaterialTexture> _materialTextures = new();
+        private Dictionary<MaterialTextureChildObject, Swe1rMaterialTextureChild> _materialTextureChildren = new();
+        private Dictionary<MaterialObject, Swe1rMaterial> _materials = new();
+        private Dictionary<MappingScriptableObject, Swe1rMapping> _mappings = new();
+        private Dictionary<MappingChildScriptableObject, Swe1rMappingChild> _mappingChildren = new();
+        private Dictionary<VtxObject, Swe1rVtx> _vtxs = new();
+        private Dictionary<MeshMaterialReferenceObject, Swe1rMeshMaterialReference> _meshMaterialReferences = new();
+        private Dictionary<KeyframesOrIntegerObject, Swe1rKeyframesOrInteger> _keyframesOrIntegers = new();
+        private Dictionary<TargetOrIntegerObject, Swe1rTargetOrInteger> _targetOrIntegers = new();
 
         #endregion
 

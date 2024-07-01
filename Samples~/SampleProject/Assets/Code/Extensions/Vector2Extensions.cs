@@ -8,9 +8,9 @@ namespace SWE1R.Assets.Blocks.Unity.Extensions
     public static class Vector2Extensions
     {
         public static UnityVector2 ToUnityVector2(this NumericsVector2 source) =>
-            new UnityVector2(source.X, source.Y);
+            new(source.X, source.Y);
 
         public static NumericsVector2 ToNumericsVector2(this UnityVector2 source) =>
-            new NumericsVector2(source.x, source.y);
+            new(source.x, source.y);
     }
 }

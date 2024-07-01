@@ -80,10 +80,10 @@ namespace SWE1R.Assets.Blocks.Unity
         public void Reset()
         {
             points = new Vector3[] {
-                new Vector3(10f, 0f, 0f),
-                new Vector3(20f, 0f, 0f),
-                new Vector3(30f, 0f, 0f),
-                new Vector3(40f, 0f, 0f),
+                new(10f, 0f, 0f),
+                new(20f, 0f, 0f),
+                new(30f, 0f, 0f),
+                new(40f, 0f, 0f),
             };
                 modes = new BezierControlPointMode[] {
                 BezierControlPointMode.Aligned,

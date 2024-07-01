@@ -19,7 +19,7 @@ namespace SWE1R.Assets.Blocks.Unity.Extensions
         }
 
         public static Swe1rBoundsSingle ToSwe1rBoundsF(this UnityBounds source) =>
-            new Swe1rBoundsSingle() {
+            new() {
                 Min = source.min.ToSwe1rVector3Single(),
                 Max = source.max.ToSwe1rVector3Single(),
             };

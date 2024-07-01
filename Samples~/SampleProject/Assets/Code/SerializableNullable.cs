@@ -62,7 +62,7 @@ namespace SWE1R.Assets.Blocks.Unity
         #region Operators
 
         public static implicit operator SerializableNullable<T>(T value) =>
-            new SerializableNullable<T>(value);
+            new(value);
 
         public static implicit operator SerializableNullable<T>(T? value) =>
             value.HasValue ? new SerializableNullable<T>(value.Value) : new SerializableNullable<T>();

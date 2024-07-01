@@ -9,15 +9,15 @@ namespace SWE1R.Assets.Blocks.Unity.Extensions
     public static class Vector3Extensions
     {
         public static UnityVector3 ToUnityVector3(this Swe1rVector3Int16 source) =>
-            new UnityVector3(source.X, source.Y, source.Z);
+            new(source.X, source.Y, source.Z);
 
         public static UnityVector3 ToUnityVector3(this Swe1rVector3Float source) =>
-            new UnityVector3(source.X, source.Y, source.Z);
+            new(source.X, source.Y, source.Z);
         
         public static Swe1rVector3Int16 ToSwe1rVector3Int16(this UnityVector3 source) =>
-            new Swe1rVector3Int16((short)source.x, (short)source.y, (short)source.z);
+            new((short)source.x, (short)source.y, (short)source.z);
 
         public static Swe1rVector3Float ToSwe1rVector3Single(this UnityVector3 source) =>
-            new Swe1rVector3Float(source.x, source.y, source.z);
+            new(source.x, source.y, source.z);
     }
 }
