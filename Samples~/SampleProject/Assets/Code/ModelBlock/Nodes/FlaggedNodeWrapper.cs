@@ -7,7 +7,7 @@ using UnityMatrix4x4 = UnityEngine.Matrix4x4;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Nodes
 {
-    public abstract class FlaggedNodeWrapper<T> : AbstractModelComponent<T>, IFlaggedNodeWrapper 
+    public abstract class FlaggedNodeWrapper<T> : ModelMonoBehaviourWrapper<T>, IFlaggedNodeWrapper 
         where T : Swe1rFlaggedNode, new()
     {
         #region Fields

@@ -7,7 +7,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2
 {
     [Serializable]
     public abstract class GraphicsCommandWrapper<T> : 
-        AbstractModelObject<T>, IGraphicsCommandWrapper where T : Swe1rGraphicsCommand
+        ModelObjectWrapper<T>, IGraphicsCommandWrapper where T : Swe1rGraphicsCommand
     {
         #region Methods
 

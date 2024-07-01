@@ -2,7 +2,7 @@
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 {
-    public class NullWrapper : AbstractModelComponent<object> // TODO: <object>?
+    public class NullWrapper : ModelMonoBehaviourWrapper<object> // TODO: <object>?
     {
         #region Methods
 

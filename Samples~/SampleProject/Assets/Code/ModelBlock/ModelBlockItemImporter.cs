@@ -136,7 +136,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         #region Methods (ScriptableObjects)
 
-        public TResult GetScriptableObject<TResult, TSource>(TSource source) where TResult : AbstractModelScriptableObject<TSource>
+        public TResult GetScriptableObject<TResult, TSource>(TSource source) where TResult : ModelScriptableObjectWrapper<TSource>
         {
             if (source == null)
                 return null;
@@ -212,7 +212,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
                 x => CreateAndImport<MeshMaterialReferenceWrapper, MeshMaterialReference>(source, this));
 
         private static TResult CreateAndImport<TResult, TSource>(TSource source, ModelBlockItemImporter importer)
-            where TResult : AbstractModelObject<TSource>, new()
+            where TResult : ModelObjectWrapper<TSource>, new()
         {
             var result = new TResult();
             result.Import(source, importer);

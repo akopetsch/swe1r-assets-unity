@@ -6,7 +6,7 @@ using Swe1rMaterial = SWE1R.Assets.Blocks.ModelBlock.Materials.Material;
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Materials
 {
     [Serializable]
-    public class MaterialWrapper : AbstractModelObject<Swe1rMaterial>
+    public class MaterialWrapper : ModelObjectWrapper<Swe1rMaterial>
     {
         #region Fields
 

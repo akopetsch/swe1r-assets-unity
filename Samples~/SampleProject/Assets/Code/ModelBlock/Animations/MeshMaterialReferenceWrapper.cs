@@ -8,7 +8,7 @@ using Swe1rMeshMaterialReference = SWE1R.Assets.Blocks.ModelBlock.Animations.Mes
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Animations
 {
     [Serializable]
-    public class MeshMaterialReferenceWrapper : AbstractModelObject<Swe1rMeshMaterialReference>
+    public class MeshMaterialReferenceWrapper : ModelObjectWrapper<Swe1rMeshMaterialReference>
     {
         #region Fields
 

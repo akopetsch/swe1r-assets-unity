@@ -6,7 +6,7 @@ using Swe1rKeyframesOrInteger = SWE1R.Assets.Blocks.ModelBlock.Animations.Keyfra
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Animations
 {
     [Serializable]
-    public class KeyframesOrIntegerWrapper : AbstractModelObject<Swe1rKeyframesOrInteger>
+    public class KeyframesOrIntegerWrapper : ModelObjectWrapper<Swe1rKeyframesOrInteger>
     {
         #region Fields
 

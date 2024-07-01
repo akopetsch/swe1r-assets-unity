@@ -9,7 +9,7 @@ using Swe1rMeshGroupNodeOrShorts = SWE1R.Assets.Blocks.ModelBlock.Meshes.MeshGro
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes
 {
     [Serializable]
-    public class MeshGroupNodeOrShortsWrapper : AbstractModelObject<Swe1rMeshGroupNodeOrShorts>
+    public class MeshGroupNodeOrShortsWrapper : ModelObjectWrapper<Swe1rMeshGroupNodeOrShorts>
     {
         #region Fields
 

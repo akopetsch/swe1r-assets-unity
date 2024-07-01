@@ -4,9 +4,9 @@ using SWE1R.Assets.Blocks.Unity.Wrappers;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 {
-    public abstract class AbstractModelComponent<TSource> : 
-        MonoBehaviourWrapper<TSource, ModelBlockItemImporter, ModelBlockItemExporter>
+    public abstract class ModelObjectWrapper<TSource> : 
+        ObjectWrapper<TSource, ModelBlockItemImporter, ModelBlockItemExporter>
     {
-
+        
     }
 }

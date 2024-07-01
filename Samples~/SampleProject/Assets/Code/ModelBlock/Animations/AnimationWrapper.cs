@@ -6,7 +6,7 @@ using Swe1rModelImporter = SWE1R.Assets.Blocks.Unity.ModelBlock.ModelBlockItemIm
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Animations
 {
-    public class AnimationWrapper : AbstractModelComponent<Swe1rAnimation>
+    public class AnimationWrapper : ModelMonoBehaviourWrapper<Swe1rAnimation>
     {
         #region Fields
 

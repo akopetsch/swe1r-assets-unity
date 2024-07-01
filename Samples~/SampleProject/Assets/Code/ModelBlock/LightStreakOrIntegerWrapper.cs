@@ -6,7 +6,7 @@ using Swe1rLightStreakOrInteger = SWE1R.Assets.Blocks.ModelBlock.LightStreakOrIn
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 {
-    public class LightStreakOrIntegerWrapper : AbstractModelComponent<Swe1rLightStreakOrInteger>
+    public class LightStreakOrIntegerWrapper : ModelMonoBehaviourWrapper<Swe1rLightStreakOrInteger>
     {
         #region Fields
 

@@ -9,7 +9,7 @@ using Swer1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 {
-    public class NodesWrapper : AbstractModelComponent<List<Swe1rFlaggedNodeOrInteger>>
+    public class NodesWrapper : ModelMonoBehaviourWrapper<List<Swe1rFlaggedNodeOrInteger>>
     {
         #region Methods
 

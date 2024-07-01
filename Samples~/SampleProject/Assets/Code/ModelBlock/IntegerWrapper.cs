@@ -2,7 +2,7 @@
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 {
-    public class IntegerWrapper : AbstractModelComponent<int>
+    public class IntegerWrapper : ModelMonoBehaviourWrapper<int>
     {
         #region Fields
 

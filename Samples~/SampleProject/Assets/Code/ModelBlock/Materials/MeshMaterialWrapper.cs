@@ -5,7 +5,7 @@ using Swe1rMeshMaterial = SWE1R.Assets.Blocks.ModelBlock.Materials.MeshMaterial;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Materials
 {
-    public class MeshMaterialWrapper : AbstractModelScriptableObject<Swe1rMeshMaterial>
+    public class MeshMaterialWrapper : ModelScriptableObjectWrapper<Swe1rMeshMaterial>
     {
         #region Fields
 

@@ -7,7 +7,7 @@ using Swe1rMaterialTextureChild = SWE1R.Assets.Blocks.ModelBlock.Materials.Mater
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Materials
 {
     [Serializable]
-    public class MaterialTextureChildWrapper : AbstractModelObject<Swe1rMaterialTextureChild>
+    public class MaterialTextureChildWrapper : ModelObjectWrapper<Swe1rMaterialTextureChild>
     {
         #region Fields
 

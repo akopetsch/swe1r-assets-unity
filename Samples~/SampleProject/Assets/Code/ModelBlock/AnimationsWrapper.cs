@@ -9,7 +9,7 @@ using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 {
-    public class AnimationsWrapper : AbstractModelComponent<List<Swe1rAnimation>>
+    public class AnimationsWrapper : ModelMonoBehaviourWrapper<List<Swe1rAnimation>>
     {
         #region Methods
 

@@ -13,7 +13,7 @@ using Swe1rFlaggedNodeOrLodSelectorNodeChildReference = SWE1R.Assets.Blocks.Mode
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Types
 {
     public abstract class ModelWrapper<T> : 
-        AbstractModelComponent<T>, IModelWrapper where T : Swe1rModel, new()
+        ModelMonoBehaviourWrapper<T>, IModelWrapper where T : Swe1rModel, new()
     {
         #region Fields
 
@@ -41,7 +41,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Types
         }
 
         private TWrapper ImportProperty<TSource, TWrapper>(TSource source, ModelBlockItemImporter importer)
-            where TWrapper : AbstractModelComponent<TSource>
+            where TWrapper : ModelMonoBehaviourWrapper<TSource>
         {
             var result = gameObject.AddChild().AddComponent<TWrapper>();
             result.Import(source, importer);

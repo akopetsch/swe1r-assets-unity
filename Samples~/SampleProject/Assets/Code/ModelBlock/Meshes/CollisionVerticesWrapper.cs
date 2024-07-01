@@ -10,7 +10,7 @@ using UnityVector3 = UnityEngine.Vector3;
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes
 {
     [Serializable]
-    public class CollisionVerticesWrapper : AbstractModelObject<Swe1rCollisionVertices>
+    public class CollisionVerticesWrapper : ModelObjectWrapper<Swe1rCollisionVertices>
     {
         #region Fields
 

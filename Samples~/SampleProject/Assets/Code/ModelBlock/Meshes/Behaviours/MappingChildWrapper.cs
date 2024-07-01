@@ -7,7 +7,7 @@ using UnityVector3 = UnityEngine.Vector3;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours
 {
-    public class MappingChildWrapper : AbstractModelScriptableObject<Swe1rMappingChild>
+    public class MappingChildWrapper : ModelScriptableObjectWrapper<Swe1rMappingChild>
     {
         #region Fields
 

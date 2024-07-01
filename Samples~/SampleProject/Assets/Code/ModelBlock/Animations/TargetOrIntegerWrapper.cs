@@ -11,7 +11,7 @@ using Swe1rTransformedWithPivotNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.Trans
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Animations
 {
     [Serializable]
-    public class TargetOrIntegerWrapper : AbstractModelObject<Swe1rTargetOrInteger>
+    public class TargetOrIntegerWrapper : ModelObjectWrapper<Swe1rTargetOrInteger>
     {
         #region Fields
 

@@ -10,7 +10,7 @@ using UnityVector3Int = UnityEngine.Vector3Int;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours
 {
-    public class MappingWrapper : AbstractModelScriptableObject<Swe1rMapping>
+    public class MappingWrapper : ModelScriptableObjectWrapper<Swe1rMapping>
     {
         #region Fields
 

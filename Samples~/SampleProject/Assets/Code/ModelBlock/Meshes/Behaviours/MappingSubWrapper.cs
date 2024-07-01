@@ -4,7 +4,7 @@ using Swe1rMappingSub = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.Mapping
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours
 {
-    public class MappingSubWrapper : AbstractModelScriptableObject<Swe1rMappingSub>
+    public class MappingSubWrapper : ModelScriptableObjectWrapper<Swe1rMappingSub>
     {
         #region Fields
 

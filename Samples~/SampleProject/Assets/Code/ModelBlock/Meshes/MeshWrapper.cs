@@ -31,7 +31,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes
     [RequireComponent(typeof(MeshFilter))]
     [RequireComponent(typeof(MeshRenderer))]
     [RequireComponent(typeof(MeshCollider))]
-    public class MeshWrapper : AbstractModelComponent<Swe1rMesh>
+    public class MeshWrapper : ModelMonoBehaviourWrapper<Swe1rMesh>
     {
         #region Fields
 

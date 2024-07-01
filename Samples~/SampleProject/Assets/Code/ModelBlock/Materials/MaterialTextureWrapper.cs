@@ -8,7 +8,7 @@ using Swe1rTextureFormat = SWE1R.Assets.Blocks.Textures.TextureFormat;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Materials
 {
-    public class MaterialTextureWrapper : AbstractModelScriptableObject<Swe1rMaterialTexture>
+    public class MaterialTextureWrapper : ModelScriptableObjectWrapper<Swe1rMaterialTexture>
     {
         #region Fields
 

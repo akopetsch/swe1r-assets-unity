@@ -9,7 +9,7 @@ using UnityVectorInt = UnityEngine.Vector3Int;
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2
 {
     [Serializable]
-    public class VtxWrapper : AbstractModelObject<Swe1rVtx>
+    public class VtxWrapper : ModelObjectWrapper<Swe1rVtx>
     {
         #region Fields
 

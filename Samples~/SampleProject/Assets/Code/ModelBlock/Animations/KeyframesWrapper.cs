@@ -10,7 +10,7 @@ using Swe1rKeyframes = SWE1R.Assets.Blocks.ModelBlock.Animations.Keyframes;
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Animations
 {
     [Serializable]
-    public class KeyframesWrapper : AbstractModelObject<Swe1rKeyframes>
+    public class KeyframesWrapper : ModelObjectWrapper<Swe1rKeyframes>
     {
         #region Fields
 
