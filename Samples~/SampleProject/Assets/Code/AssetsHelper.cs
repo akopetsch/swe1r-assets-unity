@@ -1,7 +1,7 @@
 ﻿// SPDX-License-Identifier: MIT
 
 using SWE1R.Assets.Blocks.ModelBlock.Nodes;
-using SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes;
+using SWE1R.Assets.Blocks.Unity.ModelBlock.Nodes;
 using System;
 using System.Collections.Generic;
 using System.IO;

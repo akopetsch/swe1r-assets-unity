@@ -2,11 +2,12 @@
 
 using ByteSerialization;
 using SWE1R.Assets.Blocks.Unity.Extensions;
-using SWE1R.Assets.Blocks.Unity.ModelBlock.Components;
-using SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes;
-using SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes;
-using SWE1R.Assets.Blocks.Unity.ModelBlock.Objects;
-using SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects;
+using SWE1R.Assets.Blocks.Unity.ModelBlock.Animations;
+using SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2;
+using SWE1R.Assets.Blocks.Unity.ModelBlock.Materials;
+using SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes;
+using SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours;
+using SWE1R.Assets.Blocks.Unity.ModelBlock.Nodes;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
