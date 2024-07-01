@@ -23,7 +23,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
         #endregion
     }
 
-    public abstract class FlaggedNodeComponent<T> : AbstractComponent<T>, IFlaggedNodeComponent 
+    public abstract class FlaggedNodeComponent<T> : AbstractModelComponent<T>, IFlaggedNodeComponent 
         where T : Swe1rFlaggedNode, new()
     {
         #region Fields

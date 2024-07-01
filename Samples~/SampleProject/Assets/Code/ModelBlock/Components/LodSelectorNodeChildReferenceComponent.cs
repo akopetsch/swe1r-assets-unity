@@ -6,7 +6,7 @@ using Swe1rLodSelectorNodeChildReference = SWE1R.Assets.Blocks.ModelBlock.LodSel
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class LodSelectorNodeChildReferenceComponent : AbstractComponent<Swe1rLodSelectorNodeChildReference>
+    public class LodSelectorNodeChildReferenceComponent : AbstractModelComponent<Swe1rLodSelectorNodeChildReference>
     {
         #region Fields
 

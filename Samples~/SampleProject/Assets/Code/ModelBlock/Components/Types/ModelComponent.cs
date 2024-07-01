@@ -8,7 +8,7 @@ using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Types
 {
     public abstract class ModelComponent<T> : 
-        AbstractComponent<T>, IModelComponent where T : Swe1rModel, new()
+        AbstractModelComponent<T>, IModelComponent where T : Swe1rModel, new()
     {
         #region Fields
 

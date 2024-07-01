@@ -4,7 +4,7 @@ using Swe1rMappingSub = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.Mapping
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 {
-    public class MappingSubScriptableObject : AbstractScriptableObject<Swe1rMappingSub>
+    public class MappingSubScriptableObject : AbstractModelScriptableObject<Swe1rMappingSub>
     {
         #region Fields (serialized)
 

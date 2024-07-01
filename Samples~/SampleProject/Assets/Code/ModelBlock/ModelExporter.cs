@@ -27,7 +27,7 @@ using Swe1rVtx = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Vtx;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 {
-    public class ModelExporter
+    public class ModelExporter : BlockItemExporter<Swe1rModelBlockItem>
     {
         #region Fields
 

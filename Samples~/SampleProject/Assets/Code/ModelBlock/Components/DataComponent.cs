@@ -9,7 +9,7 @@ using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class DataComponent : AbstractComponent<Swe1rHeaderData>
+    public class DataComponent : AbstractModelComponent<Swe1rHeaderData>
     {
         #region Methods
 

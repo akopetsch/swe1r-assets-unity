@@ -2,7 +2,7 @@
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class IntegerComponent : AbstractComponent<int>
+    public class IntegerComponent : AbstractModelComponent<int>
     {
         #region Fields
 

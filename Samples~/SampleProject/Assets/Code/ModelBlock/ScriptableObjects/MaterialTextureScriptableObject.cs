@@ -9,7 +9,7 @@ using Swe1rTextureFormat = SWE1R.Assets.Blocks.Textures.TextureFormat;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 {
-    public class MaterialTextureScriptableObject : AbstractScriptableObject<Swe1rMaterialTexture>
+    public class MaterialTextureScriptableObject : AbstractModelScriptableObject<Swe1rMaterialTexture>
     {
         #region Fields (serialized)
 

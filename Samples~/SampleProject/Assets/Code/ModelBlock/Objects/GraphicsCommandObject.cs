@@ -8,7 +8,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
     public abstract class GraphicsCommandObject<T> : 
-        AbstractObject<T>, IGraphicsCommandObject where T : Swe1rGraphicsCommand
+        AbstractModelObject<T>, IGraphicsCommandObject where T : Swe1rGraphicsCommand
     {
         #region Properties
 

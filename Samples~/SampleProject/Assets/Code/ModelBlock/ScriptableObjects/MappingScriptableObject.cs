@@ -10,7 +10,7 @@ using UnityVector3Int = UnityEngine.Vector3Int;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 {
-    public class MappingScriptableObject : AbstractScriptableObject<Swe1rMapping>
+    public class MappingScriptableObject : AbstractModelScriptableObject<Swe1rMapping>
     {
         #region Fields (serialized)
 

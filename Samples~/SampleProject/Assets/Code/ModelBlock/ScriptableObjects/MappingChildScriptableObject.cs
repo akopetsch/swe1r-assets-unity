@@ -7,7 +7,7 @@ using UnityVector3 = UnityEngine.Vector3;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.ScriptableObjects
 {
-    public class MappingChildScriptableObject : AbstractScriptableObject<Swe1rMappingChild>
+    public class MappingChildScriptableObject : AbstractModelScriptableObject<Swe1rMappingChild>
     {
         #region Fields (serialized)
 

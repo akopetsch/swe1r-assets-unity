@@ -9,7 +9,7 @@ using UnityVectorInt = UnityEngine.Vector3Int;
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Objects
 {
     [Serializable]
-    public class VtxObject : AbstractObject<Swe1rVtx>
+    public class VtxObject : AbstractModelObject<Swe1rVtx>
     {
         #region Fields (serialized)
 

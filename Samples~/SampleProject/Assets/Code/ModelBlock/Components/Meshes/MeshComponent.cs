@@ -30,7 +30,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Meshes
     [RequireComponent(typeof(MeshFilter))]
     [RequireComponent(typeof(MeshRenderer))]
     [RequireComponent(typeof(MeshCollider))]
-    public class MeshComponent : AbstractComponent<Swe1rMesh>
+    public class MeshComponent : AbstractModelComponent<Swe1rMesh>
     {
         #region Fields (serialized)
 

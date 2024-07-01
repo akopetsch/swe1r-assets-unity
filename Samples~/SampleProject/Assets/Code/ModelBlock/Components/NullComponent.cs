@@ -2,7 +2,7 @@
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components
 {
-    public class NullComponent : AbstractComponent<object> // TODO: <object>?
+    public class NullComponent : AbstractModelComponent<object> // TODO: <object>?
     {
         #region Methods
 
