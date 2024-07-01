@@ -1,8 +1,9 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace SWE1R.Assets.Blocks.Unity
+namespace SWE1R.Assets.Blocks.Unity.Wrappers
 {
-    public abstract class AbstractObject<TSource, TImporter, TExporter>
+    public abstract class ObjectWrapper<TSource, TImporter, TExporter> :
+        IWrapper<TSource, TImporter, TExporter>
     {
         #region Methods
 

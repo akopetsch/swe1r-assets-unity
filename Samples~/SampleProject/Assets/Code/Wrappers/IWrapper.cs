@@ -1,10 +1,8 @@
 ﻿// SPDX-License-Identifier: MIT
 
-using UnityEngine;
-
-namespace SWE1R.Assets.Blocks.Unity
+namespace SWE1R.Assets.Blocks.Unity.Wrappers
 {
-    public abstract class AbstractScriptableObject<TSource, TImporter, TExporter> : ScriptableObject
+    public interface IWrapper<TSource, TImporter, TExporter>
     {
         #region Methods
 

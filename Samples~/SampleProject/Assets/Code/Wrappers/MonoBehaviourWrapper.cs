@@ -2,9 +2,10 @@
 
 using UnityEngine;
 
-namespace SWE1R.Assets.Blocks.Unity
+namespace SWE1R.Assets.Blocks.Unity.Wrappers
 {
-    public abstract class AbstractComponent<TSource, TImporter, TExporter> : MonoBehaviour
+    public abstract class MonoBehaviourWrapper<TSource, TImporter, TExporter> : 
+        MonoBehaviour, IWrapper<TSource, TImporter, TExporter>
     {
         #region Methods
 
