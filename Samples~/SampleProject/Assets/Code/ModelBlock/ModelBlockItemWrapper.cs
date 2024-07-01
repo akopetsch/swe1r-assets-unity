@@ -7,7 +7,7 @@ using Swe1rModelBlockItem = SWE1R.Assets.Blocks.ModelBlock.ModelBlockItem;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 {
-    public class ModelWrapper : AbstractModelComponent<Swe1rModelBlockItem>
+    public class ModelBlockItemWrapper : AbstractModelComponent<Swe1rModelBlockItem>
     {
         #region Methods
 

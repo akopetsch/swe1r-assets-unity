@@ -4,6 +4,11 @@ using SWE1R.Assets.Blocks.Unity.Extensions;
 using SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours;
 using Swe1rMappingChild = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild;
 using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;
+using Swe1rFlaggedNodeOrInteger = SWE1R.Assets.Blocks.ModelBlock.FlaggedNodeOrInteger;
+using Swe1rHeaderData = SWE1R.Assets.Blocks.ModelBlock.HeaderData;
+using System.Collections.Generic;
+using Swe1rAnimation = SWE1R.Assets.Blocks.ModelBlock.Animations.Animation;
+using Swe1rFlaggedNodeOrLodSelectorNodeChildReference = SWE1R.Assets.Blocks.ModelBlock.FlaggedNodeOrLodSelectorNodeChildReference;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Types
 {
@@ -13,7 +18,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Types
         #region Fields
 
         public NodesWrapper nodesComponent;
-        public DataWrapper dataComponent;
+        public HeaderDataWrapper dataComponent;
         public AnimationsWrapper animationsComponent;
         public AltNWrapper altNComponent;
 
@@ -23,32 +28,24 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Types
 
         public override void Import(T source, ModelBlockItemImporter importer)
         {
-            // Nodes
-            nodesComponent = gameObject.AddChild().AddComponent<NodesWrapper>();
-            nodesComponent.Import(source.Nodes, importer);
+            nodesComponent = ImportProperty<List<Swe1rFlaggedNodeOrInteger>, NodesWrapper>(source.Nodes, importer);
             
-            // Data
             if (source.Data != null)
-            {
-                dataComponent = gameObject.AddChild().AddComponent<DataWrapper>();
-                dataComponent.Import(source.Data, importer);
-            }
-
-            // Animations
+                dataComponent = ImportProperty<Swe1rHeaderData, HeaderDataWrapper>(source.Data, importer);
             if (source.Animations != null)
-            {
-                animationsComponent = gameObject.AddChild().AddComponent<AnimationsWrapper>();
-                animationsComponent.Import(source.Animations, importer);
-            }
-
-            // AltN
+                animationsComponent = ImportProperty<List<Swe1rAnimation>, AnimationsWrapper>(source.Animations, importer);
             if (source.AltN != null)
-            {
-                altNComponent = gameObject.AddChild().AddComponent<AltNWrapper>();
-                altNComponent.Import(source.AltN, importer);
-            }
-
+                altNComponent = ImportProperty<List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference>, AltNWrapper>(source.AltN, importer);
+            
             ImportMappingChildPostponedReferences(importer);
+        }
+
+        private TWrapper ImportProperty<TSource, TWrapper>(TSource source, ModelBlockItemImporter importer)
+            where TWrapper : AbstractModelComponent<TSource>
+        {
+            var result = gameObject.AddChild().AddComponent<TWrapper>();
+            result.Import(source, importer);
+            return result;
         }
 
         private void ImportMappingChildPostponedReferences(ModelBlockItemImporter importer)

@@ -114,7 +114,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
             // import
             GameObject = new GameObject(Name);
-            GameObject.AddComponent<ModelWrapper>().Import(ModelBlockItem, this);
+            GameObject.AddComponent<ModelBlockItemWrapper>().Import(ModelBlockItem, this);
             AssetDatabase.SaveAssets();
         }
 

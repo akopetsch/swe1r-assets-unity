@@ -55,7 +55,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         #region Properties (constructor)
 
-        public ModelWrapper ModelComponent { get; }
+        public ModelBlockItemWrapper ModelComponent { get; }
         public int ModelIndex { get; private set; }
 
         #endregion
@@ -68,7 +68,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
 
         #region Constructor
 
-        public ModelBlockItemExporter(ModelWrapper modelComponent, int modelIndex)
+        public ModelBlockItemExporter(ModelBlockItemWrapper modelComponent, int modelIndex)
         {
             ModelComponent = modelComponent;
             ModelIndex = modelIndex;
