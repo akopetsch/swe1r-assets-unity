@@ -7,22 +7,6 @@ using UnityMatrix4x4 = UnityEngine.Matrix4x4;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Components.Nodes
 {
-    public interface IFlaggedNodeComponent
-    {
-        #region Properties
-
-        GameObject gameObject { get; }
-
-        #endregion
-
-        #region Methods
-
-        void Import(Swe1rFlaggedNode source, ModelImporter importer);
-        Swe1rFlaggedNode Export(ModelExporter exporter);
-
-        #endregion
-    }
-
     public abstract class FlaggedNodeComponent<T> : AbstractModelComponent<T>, IFlaggedNodeComponent 
         where T : Swe1rFlaggedNode, new()
     {
