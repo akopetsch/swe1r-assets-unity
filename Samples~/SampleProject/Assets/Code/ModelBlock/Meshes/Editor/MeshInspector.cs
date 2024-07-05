@@ -31,6 +31,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Editor
                 // TODO: implement loading obj file
             }
         }
+
         private LabeledVectors GetLabeledVectors(List<Vector3> vectors, Color vectorColor, Color labelColor)
         {
             var lv = new LabeledVectors();
