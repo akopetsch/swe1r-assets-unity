@@ -3,9 +3,9 @@
 using SWE1R.Assets.Blocks.ModelBlock.Meshes;
 using SWE1R.Assets.Blocks.ModelBlock.Meshes.Geometry;
 using SWE1R.Assets.Blocks.Unity.Extensions;
+using SWE1R.Assets.Blocks.Unity.ModelBlock.Behaviours;
 using SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2;
 using SWE1R.Assets.Blocks.Unity.ModelBlock.Materials;
-using SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -32,7 +32,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes
         #region Fields
 
         public MeshMaterialWrapper meshMaterial;
-        [SerializeReference] public MappingWrapper mapping;
+        [SerializeReference] public BehaviourWrapper behaviour;
         public UnityVector3 bounds0;
         public UnityVector3 bounds1;
         public short facesCount;
@@ -54,8 +54,8 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes
 
             meshMaterial = importer.GetMeshMaterialScriptableObject(source.MeshMaterial);
             
-            if (source.Mapping != null)
-                mapping = importer.GetMappingScriptableObject(source.Mapping);
+            if (source.Behaviour != null)
+                behaviour = importer.GetBehaviourScriptableObject(source.Behaviour);
             
             bounds0 = source.Bounds0.ToUnityVector3();
             bounds1 = source.Bounds1.ToUnityVector3();
@@ -96,8 +96,8 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes
             var result = new Swe1rMesh();
 
             result.MeshMaterial = exporter.GetMeshMaterial(meshMaterial);
-            if (mapping != null)
-                result.Mapping = exporter.GetMapping(mapping);
+            if (behaviour != null)
+                result.Behaviour = exporter.GetBehaviour(behaviour);
             result.Bounds0 = bounds0.ToSwe1rVector3Single();
             result.Bounds1 = bounds1.ToSwe1rVector3Single();
             result.FacesCount = facesCount;
@@ -131,11 +131,11 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes
                 labels.Add($"fmt:{((short)texture.Format):x4}");
                 labels.Add($"i:{texture.TextureIndex}");
             }
-            if (source.Mapping != null)
+            if (source.Behaviour != null)
             {
-                labels.Add("Mp");
-                if (source.Mapping.Subs.Any(x => x.Child?.AffectedNode != null))
-                    labels.Add("MpSubFn");
+                labels.Add("B");
+                if (source.Behaviour.Subs.Any(x => x.Trigger?.AffectedNode != null))
+                    labels.Add("BTFn");
             }
             if (source.CollisionVertices != null)
                 labels.Add("Cv");

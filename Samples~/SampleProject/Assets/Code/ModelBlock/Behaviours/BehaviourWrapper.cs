@@ -1,16 +1,16 @@
 ﻿// SPDX-License-Identifier: MIT
 
-using SWE1R.Assets.Blocks.ModelBlock.Meshes;
+using SWE1R.Assets.Blocks.ModelBlock.Behaviours;
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using System.Collections.Generic;
 using System.Linq;
-using Swe1rMapping = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.Mapping;
+using Swe1rBehaviour = SWE1R.Assets.Blocks.ModelBlock.Behaviours.Behaviour;
 using UnityVector3 = UnityEngine.Vector3;
 using UnityVector3Int = UnityEngine.Vector3Int;
 
-namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours
+namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Behaviours
 {
-    public class MappingWrapper : ModelScriptableObjectWrapper<Swe1rMapping>
+    public class BehaviourWrapper : ModelScriptableObjectWrapper<Swe1rBehaviour>
     {
         #region Fields
 
@@ -30,13 +30,13 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours
         public VehicleReaction vehicleReaction;
         public short word_30;
         public short word_32;
-        public List<MappingSubWrapper> subs;
+        public List<TriggerReferenceWrapper> subs;
 
         #endregion
 
         #region Methods
 
-        public override void Import(Swe1rMapping source, ModelBlockItemImporter importer)
+        public override void Import(Swe1rBehaviour source, ModelBlockItemImporter importer)
         {
             word_00 = source.Word_00;
             fogFlags = source.FogFlags;
@@ -54,10 +54,10 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours
             vehicleReaction = source.VehicleReaction;
             word_30 = source.Word_30;
             word_32 = source.Word_32;
-            subs = source.Subs.Select(x => importer.GetMappingSubScriptableObject(x)).ToList();
+            subs = source.Subs.Select(x => importer.GetTriggerReferenceScriptableObject(x)).ToList();
         }
 
-        public override Swe1rMapping Export(ModelBlockItemExporter exporter) =>
+        public override Swe1rBehaviour Export(ModelBlockItemExporter exporter) =>
             new() {
                 Word_00 = word_00,
                 FogFlags = fogFlags,

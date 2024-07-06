@@ -1,14 +1,14 @@
 ﻿// SPDX-License-Identifier: MIT
 
 using SWE1R.Assets.Blocks.Unity.Extensions;
-using SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours;
-using Swe1rMappingChild = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild;
-using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;
-using Swe1rFlaggedNodeOrInteger = SWE1R.Assets.Blocks.ModelBlock.FlaggedNodeOrInteger;
-using Swe1rHeaderData = SWE1R.Assets.Blocks.ModelBlock.HeaderData;
+using SWE1R.Assets.Blocks.Unity.ModelBlock.Behaviours;
 using System.Collections.Generic;
 using Swe1rAnimation = SWE1R.Assets.Blocks.ModelBlock.Animations.Animation;
+using Swe1rFlaggedNodeOrInteger = SWE1R.Assets.Blocks.ModelBlock.FlaggedNodeOrInteger;
 using Swe1rFlaggedNodeOrLodSelectorNodeChildReference = SWE1R.Assets.Blocks.ModelBlock.FlaggedNodeOrLodSelectorNodeChildReference;
+using Swe1rHeaderData = SWE1R.Assets.Blocks.ModelBlock.HeaderData;
+using Swe1rModel = SWE1R.Assets.Blocks.ModelBlock.Model;
+using Swe1rTriggerDescription = SWE1R.Assets.Blocks.ModelBlock.Behaviours.TriggerDescription;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Types
 {
@@ -37,7 +37,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Types
             if (source.AltN != null)
                 altNComponent = ImportProperty<List<Swe1rFlaggedNodeOrLodSelectorNodeChildReference>, AltNWrapper>(source.AltN, importer);
             
-            ImportMappingChildPostponedReferences(importer);
+            ImportTriggerDescriptionPostponedReferences(importer);
         }
 
         private TWrapper ImportProperty<TSource, TWrapper>(TSource source, ModelBlockItemImporter importer)
@@ -48,12 +48,12 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Types
             return result;
         }
 
-        private void ImportMappingChildPostponedReferences(ModelBlockItemImporter importer)
+        private void ImportTriggerDescriptionPostponedReferences(ModelBlockItemImporter importer)
         {
-            foreach (Swe1rMappingChild source in importer.GetSourceObjects<Swe1rMappingChild>())
+            foreach (Swe1rTriggerDescription source in importer.GetSourceObjects<Swe1rTriggerDescription>())
             {
                 var scriptableObject = importer
-                    .GetScriptableObject<MappingChildWrapper, Swe1rMappingChild>(source);
+                    .GetScriptableObject<TriggerDescriptionWrapper, Swe1rTriggerDescription>(source);
                 scriptableObject.ImportFlaggedNode(source, importer);
             }
         }

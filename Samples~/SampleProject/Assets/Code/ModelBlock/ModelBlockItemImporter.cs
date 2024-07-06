@@ -7,10 +7,10 @@ using SWE1R.Assets.Blocks.ModelBlock.Animations;
 using SWE1R.Assets.Blocks.ModelBlock.Nodes;
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using SWE1R.Assets.Blocks.Unity.ModelBlock.Animations;
+using SWE1R.Assets.Blocks.Unity.ModelBlock.Behaviours;
 using SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2;
 using SWE1R.Assets.Blocks.Unity.ModelBlock.Materials;
 using SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes;
-using SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours;
 using SWE1R.Assets.Blocks.Unity.ModelBlock.Nodes;
 using System;
 using System.Collections.Generic;
@@ -18,11 +18,9 @@ using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Swe1rBehaviour = SWE1R.Assets.Blocks.ModelBlock.Behaviours.Behaviour;
 using Swe1rFlaggedNode = SWE1R.Assets.Blocks.ModelBlock.Nodes.FlaggedNode;
 using Swe1rGraphicsCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommand;
-using Swe1rMapping = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.Mapping;
-using Swe1rMappingChild = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild;
-using Swe1rMappingSub = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingSub;
 using Swe1rMaterial = SWE1R.Assets.Blocks.ModelBlock.Materials.Material;
 using Swe1rMaterialTexture = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTexture;
 using Swe1rMaterialTextureChild = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTextureChild;
@@ -31,6 +29,8 @@ using Swe1rMeshMaterial = SWE1R.Assets.Blocks.ModelBlock.Materials.MeshMaterial;
 using Swe1rMeshMaterialReference = SWE1R.Assets.Blocks.ModelBlock.Animations.MeshMaterialReference;
 using Swe1rModelBlockItem = SWE1R.Assets.Blocks.ModelBlock.ModelBlockItem;
 using Swe1rTextureBlockItem = SWE1R.Assets.Blocks.TextureBlock.TextureBlockItem;
+using Swe1rTriggerDescription = SWE1R.Assets.Blocks.ModelBlock.Behaviours.TriggerDescription;
+using Swe1rTriggerReference = SWE1R.Assets.Blocks.ModelBlock.Behaviours.TriggerReference;
 using Swe1rVtx = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Vtx;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock
@@ -175,14 +175,14 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock
         public MaterialTextureWrapper GetMaterialTextureScriptableObject(Swe1rMaterialTexture source) =>
             GetScriptableObject<MaterialTextureWrapper, Swe1rMaterialTexture>(source);
 
-        public MappingWrapper GetMappingScriptableObject(Swe1rMapping source) =>
-            GetScriptableObject<MappingWrapper, Swe1rMapping>(source);
+        public BehaviourWrapper GetBehaviourScriptableObject(Swe1rBehaviour source) =>
+            GetScriptableObject<BehaviourWrapper, Swe1rBehaviour>(source);
 
-        public MappingSubWrapper GetMappingSubScriptableObject(Swe1rMappingSub source) =>
-            GetScriptableObject<MappingSubWrapper, Swe1rMappingSub>(source);
+        public TriggerReferenceWrapper GetTriggerReferenceScriptableObject(Swe1rTriggerReference source) =>
+            GetScriptableObject<TriggerReferenceWrapper, Swe1rTriggerReference>(source);
 
-        public MappingChildWrapper GetMappingChildScriptableObject(Swe1rMappingChild source) =>
-            GetScriptableObject<MappingChildWrapper, Swe1rMappingChild>(source);
+        public TriggerDescriptionWrapper GetTriggerDescriptionScriptableObject(Swe1rTriggerDescription source) =>
+            GetScriptableObject<TriggerDescriptionWrapper, Swe1rTriggerDescription>(source);
 
         #endregion
 

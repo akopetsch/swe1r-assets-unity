@@ -1,7 +1,7 @@
 ﻿// SPDX-License-Identifier: MIT
 
 using System;
-using Swe1rDimensionsBitmask = SWE1R.Assets.Blocks.ModelBlock.Meshes.DimensionsBitmask;
+using Swe1rDimensionsBitmask = SWE1R.Assets.Blocks.ModelBlock.Materials.DimensionsBitmask;
 using Swe1rMaterialTextureChild = SWE1R.Assets.Blocks.ModelBlock.Materials.MaterialTextureChild;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Materials

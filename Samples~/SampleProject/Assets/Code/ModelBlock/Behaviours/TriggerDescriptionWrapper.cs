@@ -2,12 +2,13 @@
 
 using SWE1R.Assets.Blocks.Unity.Extensions;
 using SWE1R.Assets.Blocks.Unity.ModelBlock.Nodes;
-using Swe1rMappingChild = SWE1R.Assets.Blocks.ModelBlock.Meshes.Behaviours.MappingChild;
+using Swe1rTriggerDescription = SWE1R.Assets.Blocks.ModelBlock.Behaviours.TriggerDescription;
+using Swe1rTriggerType = SWE1R.Assets.Blocks.ModelBlock.Behaviours.TriggerType;
 using UnityVector3 = UnityEngine.Vector3;
 
-namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours
+namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Behaviours
 {
-    public class MappingChildWrapper : ModelScriptableObjectWrapper<Swe1rMappingChild>
+    public class TriggerDescriptionWrapper : ModelScriptableObjectWrapper<Swe1rTriggerDescription>
     {
         #region Fields
 
@@ -20,15 +21,15 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours
         public byte byte_1e;
         public byte byte_1f;
         public IFlaggedNodeWrapper affectedNode;
-        public short word_24;
+        public Swe1rTriggerType triggerType;
         public short word_26;
-        public MappingChildWrapper next;
+        public TriggerDescriptionWrapper next;
 
         #endregion
 
         #region Methods
 
-        public override void Import(Swe1rMappingChild source, ModelBlockItemImporter importer)
+        public override void Import(Swe1rTriggerDescription source, ModelBlockItemImporter importer)
         {
             center = source.Center.ToUnityVector3();
             direction = source.Direction.ToUnityVector3();
@@ -38,22 +39,22 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours
             word_1c = source.Word_1c;
             byte_1e = source.Byte_1e;
             byte_1f = source.Byte_1f;
-            word_24 = source.Word_24;
+            triggerType = source.TriggerType;
             word_26 = source.Word_26;
             if (source.Next != null)
-                next = importer.GetMappingChildScriptableObject(source.Next);
+                next = importer.GetTriggerDescriptionScriptableObject(source.Next);
         }
 
-        public void ImportFlaggedNode(Swe1rMappingChild source, ModelBlockItemImporter importer)
+        public void ImportFlaggedNode(Swe1rTriggerDescription source, ModelBlockItemImporter importer)
         {
             if (source.AffectedNode != null)
                 affectedNode = importer.GetFlaggedNodeComponent<IFlaggedNodeWrapper>(
                     source.AffectedNode);
         }
 
-        public override Swe1rMappingChild Export(ModelBlockItemExporter exporter)
+        public override Swe1rTriggerDescription Export(ModelBlockItemExporter exporter)
         {
-            var result = new Swe1rMappingChild();
+            var result = new Swe1rTriggerDescription();
             result.Center = center.ToSwe1rVector3Single();
             result.Direction = direction.ToSwe1rVector3Single();
             result.Word_18 = word_18;
@@ -64,10 +65,10 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Behaviours
             result.Byte_1f = byte_1f;
             if (affectedNode != null)
                 result.AffectedNode = exporter.GetFlaggedNode(affectedNode.gameObject);
-            result.Word_24 = word_24;
+            result.TriggerType = triggerType;
             result.Word_26 = word_26;
             if (next != null)
-                result.Next = exporter.GetMappingChild(next);
+                result.Next = exporter.GetTriggerDescription(next);
             return result;
         }
 
