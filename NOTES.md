@@ -29,3 +29,4 @@
 * [forum.unity.com - 'How to change the name of List elements in the inspector'](https://forum.unity.com/threads/how-to-change-the-name-of-list-elements-in-the-inspector.448910/)
 * [docs.unity3d.com - 'EditorGUILayout.PrefixLabel'](https://docs.unity3d.com/ScriptReference/EditorGUILayout.PrefixLabel.html)
 * [forum.unity.com - 'Property drawer renaming Element text for array'](https://forum.unity.com/threads/property-drawer-renaming-element-text-for-array.905396/)
+* [forum.unity.com - 'HelpAttribute - allows you to use HelpBox in the Unity inspector window'](https://forum.unity.com/threads/helpattribute-allows-you-to-use-helpbox-in-the-unity-inspector-window.462768/)
