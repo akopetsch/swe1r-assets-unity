@@ -14,7 +14,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2.Editor
         protected override string[] PropertyNames =>
             new string[]
             {
-                // TODO: macro argument 'v'
+                nameof(GspVertexCommandWrapper.i),
                 nameof(GspVertexCommandWrapper.n),
                 nameof(GspVertexCommandWrapper.v0),
             };

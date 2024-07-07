@@ -10,7 +10,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2
     {
         #region Fields
 
-        public int v;
+        public int i;
         public byte n;
         public byte v0;
 
@@ -20,7 +20,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2
 
         public override void Import(Swe1rGspVertexCommand source, ModelBlockItemImporter importer)
         {
-            v = source.VerticesStartIndex;
+            i = source.I;
             n = source.N;
             v0 = (byte)source.V0;
         }
@@ -28,7 +28,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2
         public override Swe1rGspVertexCommand Export(ModelBlockItemExporter exporter) =>
             new()
             {
-                VerticesStartIndex = v,
+                VerticesStartIndex = i,
                 N = n,
                 V0 = v0,
             };
