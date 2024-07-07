@@ -1,16 +1,15 @@
 ﻿// SPDX-License-Identifier: MIT
 
 using UnityEditor;
+using Swe1rGsp2TrianglesCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.Gsp2TrianglesCommand;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2.Editor
 {
     [CustomPropertyDrawer(typeof(Gsp2TrianglesCommandWrapper))]
-    public class Gsp2TrianglesCommandWrapperPropertyDrawer : GraphicsCommandListWrapperPropertyDrawer<Gsp2TrianglesCommandWrapper>
+    public class Gsp2TrianglesCommandWrapperPropertyDrawer : 
+        GraphicsCommandWrapperPropertyDrawer<Swe1rGsp2TrianglesCommand>
     {
         #region Properties
-
-        protected override string MacroName =>
-            "gSP2Triangles"; // TODO: string literal
 
         protected override string[] PropertyNames =>
             new string[]

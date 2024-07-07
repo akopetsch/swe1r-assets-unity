@@ -2,15 +2,18 @@
 
 using UnityEditor;
 using UnityEngine;
+using Swe1rGraphicsCommand = SWE1R.Assets.Blocks.ModelBlock.F3DEX2.GraphicsCommand;
 
 namespace SWE1R.Assets.Blocks.Unity.ModelBlock.F3DEX2.Editor
 {
-    public abstract class GraphicsCommandListWrapperPropertyDrawer<TWrapper> : PropertyDrawer
-        where TWrapper : IGraphicsCommandWrapper
+    public abstract class GraphicsCommandWrapperPropertyDrawer<TSource> : PropertyDrawer
+        where TSource : Swe1rGraphicsCommand
     {
         #region Properties
 
-        protected abstract string MacroName { get; }
+        protected string MacroName => 
+            Swe1rGraphicsCommand.GetMacroName<TSource>();
+
         protected abstract string[] PropertyNames { get; }
 
         #endregion
