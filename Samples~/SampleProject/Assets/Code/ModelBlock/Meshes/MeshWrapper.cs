@@ -163,7 +163,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes
             if (triangles != null)
             {
                 List<UnityVector3> unityVertices = source.Vertices
-                    .Select(v => v.Position.ToUnityVector3()).ToList();
+                    .Select(v => v.Ob.ToUnityVector3()).ToList();
                 List<UnityVector2> unityUvs = source.Vertices
                     .Select(v => v.GetEffectiveUV(sourceMaterialTextureChild).ToUnityVector2()).ToList();
                 unityMesh = new UnityMesh() {

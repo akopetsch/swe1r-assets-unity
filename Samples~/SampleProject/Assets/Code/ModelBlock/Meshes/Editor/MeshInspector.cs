@@ -11,10 +11,16 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Editor
     [CustomEditor(typeof(MeshWrapper))]
     public  class MeshInspector : UnityEditor.Editor
     {
+        #region Properties
+
         private MeshWrapper Mesh { get; set; }
         private GUIStyle Style { get; set; }
         private LabeledVectors LabeledVertices { get; set; }
         private LabeledVectors LabeledCollision { get; set; }
+
+        #endregion
+
+        #region Methods
 
         public override void OnInspectorGUI()
         {
@@ -22,7 +28,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Editor
 
             Mesh = (MeshWrapper)target;
             Style = new GUIStyle();
-            LabeledVertices = GetLabeledVectors(Mesh.vertices.Select(v => (Vector3)v.position).ToList(), Color.red, Color.magenta);
+            LabeledVertices = GetLabeledVectors(Mesh.vertices.Select(v => (Vector3)v.ob).ToList(), Color.red, Color.magenta);
             if (Mesh.collisionVertices != null)
                 LabeledCollision = GetLabeledVectors(Mesh.collisionVertices.shortVectors, Color.cyan, Color.blue);
 
@@ -56,11 +62,11 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Editor
                     Transform t = Mesh.transform;
                     foreach (VtxWrapper vertex in Mesh.vertices)
                     {
-                        if (vertex.byte_F != 255)
+                        if (vertex.a != byte.MaxValue)
                         {
                             Handles.color = Color.green;
-                            Vector3 v = t.TransformPoint(vertex.position);
-                            Handles.SphereHandleCap(0, v, Quaternion.identity, HandleUtility.GetHandleSize(v) * 0.0005f * vertex.byte_F, EventType.Repaint);
+                            Vector3 v = t.TransformPoint(vertex.ob);
+                            Handles.SphereHandleCap(0, v, Quaternion.identity, HandleUtility.GetHandleSize(v) * 0.0005f * vertex.a, EventType.Repaint);
                         }
                     }
                 }
@@ -80,5 +86,7 @@ namespace SWE1R.Assets.Blocks.Unity.ModelBlock.Meshes.Editor
                 }
             }
         }
+
+        #endregion
     }
 }
